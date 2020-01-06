@@ -1,4 +1,205 @@
 <resources>
     <string name="app_name">Umbral Legacy</string>
     <string name="title_item_detail">Item Detail</string>
+
+    <string name="group_stillblood_name">Stillblood</string>
+    <string name="group_cursed_name">Cursed</string>
+    <string name="group_piercers_name">Piercers of the Veil</string>
+    <string name="group_fae_name">Fae</string>
+    <string name="group_old_ones_name">Old Ones</string>
+    <string name="group_hellbound_name">Hellbound</string>
+
+    <string name="faction_vampire_name">Vampire</string>
+    <string name="faction_nosferatu_name">Nosferatu</string>
+    <string name="faction_wight_name">Wight</string>
+    <string name="faction_lycanthrope_name">Lycanthrope</string>
+    <string name="faction_animaged_name">Animated</string>
+    <string name="faction_totemic_spirit_name">Totemic Spirit</string>
+    <string name="faction_witch_bound_name">Witch Bound</string>
+    <string name="faction_warlock_name">Warlock/Witch</string>
+    <string name="faction_elemental_name">Elemental</string>
+    <string name="faction_bound_demon_name">Bound Demon</string>
+    <string name="faction_magical_construct_name">Magical Construct</string>
+    <string name="faction_horned_one_name">Horned One</string>
+    <string name="faction_unseelie_name">Unseelie</string>
+    <string name="faction_wish_granter_name">Wish Granter</string>
+    <string name="faction_troll_name">Troll</string>
+    <string name="faction_great_old_one_name">Great Old One</string>
+    <string name="faction_cultist_name">Cultist</string>
+    <string name="faction_ancient_race_name">Ancient Race</string>
+    <string name="faction_yellow_mask_name">Yellow Mask</string>
+    <string name="faction_architect_name">Architect</string>
+    <string name="faction_doppelganger_name">Doppelganger</string>
+    <string name="faction_marked_name">Marked</string>
+    <string name="faction_hellspawn_name">Hellspawn</string>
+
+    <string name="term_sacrifice">sacrifice value</string>
+    <string name="term_summon_cost">summon_cost</string>
+    <string name="term_deck">deck</string>
+    <string name="term_hand">hand</string>
+    <string name="term_graveyard">graveyard</string>
+    <string name="term_turn">turn</string>
+    <string name="term_mana_ball">cost</string>
+    <string name="term_costs">costs</string>
+    <string name="term_strength">strength</string>
+    <string name="term_life">health</string>
+    <string name="term_colorless">un-typed</string>
+    <string name="term_front_row">front row</string>
+    <string name="term_back_row">back row</string>
+    <string name="term_tap">tap</string>
+    <string name="term_summoned">summoned</string>
+    <string name="term_subservient">subservient</string>
+
+    <string name="term_trigger_kills">kills</string>
+    <string name="term_trigger_kill">kill</string>
+    <string name="term_trigger_dies">dies</string>
+    <string name="term_trigger_sacrifice">sacrifice from play</string>
+    <string name="term_trigger_death">is killed</string>
+    <string name="term_trigger_death_pt">was killed</string>
+    <string name="term_trigger_takes_damage">takes damage</string>
+    <string name="term_trigger_takes_damage_part">damage taken</string>
+    <string name="term_trigger_damage_dealt">damage dealt</string>
+    <string name="term_trigger_pay_to_summon">pay to summon</string>
+    <string name="term_trigger_removed_from_play">removed from play</string>
+
+    <string name="term_action_put_in_play">put in play</string>
+
+    <string name="ability_vampire_name">Vampire</string>
+    <string name="ability_vampire_description">
+        When a unit @string/term_trigger_death by this unit, @string/term_action_put_in_play another
+        @string/group_stillblood_name from your @string/term_deck with a @string/term_summon_cost less than
+        the @string/term_sacrifice of the unit that @string/term_trigger_death_pt.
+    </string>
+
+    <string name="ability_nosferatu_name">Nosferatu</string>
+    <string name="ability_nosferatu_description">
+        When this unit @string/term_trigger_takes_damage in combat, subtract any @string/term_trigger_damage_dealt
+        by this unit from the @string/term_trigger_takes_damage_part by this unit.
+    </string>
+
+    <string name="ability_wight_name">Wight</string>
+    <string name="ability_wight_description">
+        When this unit @string/term_trigger_death set it aside for one @string/term_turn. At the end
+        of your next @string/term_turn shuffle it back into your @string/term_deck.
+    </string>
+
+    <string name="ability_zombie_name">Zombie</string>
+    <string name="ability_zombie_description">
+        This unit is immune to non-damage effects.
+    </string>
+
+    <string name="ability_lycanthrope_name">Lycanthrope</string>
+    <string name="ability_lycanthrope_description">
+        When this unit @string/term_trigger_kills another unit in combat, give this unit a +1/0 counter.
+    </string>
+
+    <string name="ability_animated_name">Animated</string>
+    <string name="ability_animated_description">
+        When you @string/term_trigger_pay_to_summon this unit treat all @string/term_costs as @string/term_colorless.
+    </string>
+
+    <string name="ability_totemic_spirit_name">Totemic Spirit</string>
+    <string name="ability_totemic_spirit_description">
+        Before attacking you may switch your opponents @string/term_front_row and @string/term_back_row.
+    </string>
+
+    <string name="ability_witch_bound_name">Witch Bound</string>
+    <string name="ability_witch_bound_description">
+        This unit is immune to damage. If any effect causes it to switch positions, this unit @string/term_trigger_dies.
+    </string>
+
+    <string name="ability_warlock_name">Warlock/Witch</string>
+    <string name="ability_warlock_description">
+        You may @string/term_tap this unit and pay its @string/term_sacrifice to search your
+        @string/term_deck for a @string/term_subservient @string/group_piercers unit and put it into
+        your @string/term_hand.
+    </string>
+
+    <string name="ability_elemental_name">Elemental</string>
+    <string name="ability_elemental_description">
+        (Add one additional @string/term_strength or @string/term_life per @string/term_mana_ball.
+        This unit may not have @string/term_colorless @string/term_costs).
+    </string>
+
+    <string name="ability_bound_demon_name">Bound Demon</string>
+    <string name="ability_bound_demon_description">
+        This unit takes no damage from @string/term_subservient units.
+    </string>
+
+    <string name="ability_magical_construct_name">Magical Construct</string>
+    <string name="ability_magical_construct_description">
+        This unit may only be @string/term_summoned by a @string/faction_warlock_name using its
+        ability to draw it from their @string/term_deck and then paying the @string/term_mana_ball
+        difference between the @string/faction_warlock ability and the @string/term_costs of this
+        unit.
+    </string>
+
+    <string name="ability_horned_one_name">Horned One</string>
+    <string name="ability_horned_one_description">
+        If this unit would damage another unit in combat, but that unit is immune to damage, that unit instantly @string/term_dies.
+    </string>
+
+    <string name="ability_wish_granter_name">Wish Granter</string>
+    <string name="ability_wish_granter_description">
+        When this unit is @string/summoned, search your @string/term_deck for any unit and put it
+        directly into play. When this unit leaves play the target unit is @string/term_trigger_removed_from_play.
+    </string>
+
+    <string name="ability_unseelie_name">Unseelie</string>
+    <string name="ability_unseelie_description">
+        When this unit @string/term_kills another unit, look at your opponent\'s @string/term_hand.
+    </string>
+
+    <string name="ability_troll_name">Troll</string>
+    <string name="ability_troll_description">
+        When this unit @string/term_trigger_kills another unit in combat, give this unit a 0/+1 counter.
+    </string>
+
+    <string name="ability_great_old_one_name">Great Old One</string>
+    <string name="ability_great_old_one_description">
+        This unit can be @string/term_summoned from the @string/term_graveyard as if it were in your
+        @string/term_hand.
+    </string>
+
+    <string name="ability_cultist_name">Cultist</string>
+    <string name="ability_cultist_description">
+        When this unit is @string/term_summoned it gains one ability of your choice from an adjacent
+        @string/group_old_ones_name.
+    </string>
+
+    <string name="ability_ancient_race_name">Ancient Race</string>
+    <string name="ability_ancient_race_description">
+        Once per @string/term_turn you may search your @string/term_deck for another
+        @string/faction_ancient_race_name and put it into your @string/term_hand.
+    </string>
+
+    <string name="ability_yellow_mask_name">Yellow Mask</string>
+    <string name="ability_yellow_mask_description">
+        When this unit attacks, if there is a unit in the @string/term_back_row, you may choose to
+        have the unit in the @string/term_back_row take damage instead of this unit.
+    </string>
+
+    <string name="ability_architect_name">Architect</string>
+    <string name="ability_architect_description">
+        You may @string/term_trigger_sacrifice a @string/faction_hellspawn_name to prevent all damage
+        to this unit this turn.
+    </string>
+
+    <string name="ability_doppelganger_name">Doppelganger</string>
+    <string name="ability_doppelganger_description">
+        Copy all of the abilities of an enemy unit in play when this unit is @string/term_summoned.
+    </string>
+
+    <string name="ability_marked_name">Marked</string>
+    <string name="ability_marked_description">
+        Once this unit has been @string/term_summoned, it may returned to your @string/term_hand at
+        any time, and returned to play during a subsequent @string/term_turn without paying its
+        @string/term_costs.
+    </string>
+
+    <string name="ability_hellspawn_name">Hellspawn</string>
+    <string name="ability_hellspawn_description">
+        You may @string/term_trigger_sacrifice this unit to @string/term_trigger_kill a target enemy
+        unit with a lower @string/term_sacrifice.
+    </string>
 </resources>
