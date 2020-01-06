@@ -1,5 +1,7 @@
 package org.ajar.umbrallegacy.model
 
+import org.ajar.umbrallegacy.R
+
 enum class FactionType {
     PRIMARY,
     SECONDARY,
@@ -7,19 +9,19 @@ enum class FactionType {
 }
 
 open class FactionDefinition (
-    val member: String,
-    val type: FactionType,
-    val plural: String = "${member}s",
-    val nomnitive: String = "The $plural",
-    val opposedFaction: MutableList<Faction> = ArrayList(),
-    val subFaction: MutableList<Faction> = ArrayList()
+        val name: Int,
+        val member: Int,
+        val members: Int,
+        val type: FactionType,
+        val opposedFaction: MutableList<Faction> = ArrayList(),
+        val subFaction: MutableList<Faction> = ArrayList()
 ) {
     init {
         Faction.setup()
     }
 }
 
-sealed class Faction(member: String, type: FactionType, plural: String = "${member}s", nomnitive: String = "The $plural") : FactionDefinition(member, type, plural, nomnitive) {
+sealed class Faction(name: Int, member: Int, members: Int, type: FactionType) : FactionDefinition(name, member, members, type) {
     object Vampire : Faction("Vampire", FactionType.PRIMARY)
     object Nosferatu : Faction("Nosferatu", FactionType.PRIMARY)
     object Wight : Faction("Wight", FactionType.SECONDARY)
