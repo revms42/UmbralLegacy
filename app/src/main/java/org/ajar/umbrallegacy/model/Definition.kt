@@ -21,36 +21,36 @@ open class FactionDefinition (
     }
 }
 
-sealed class Faction(name: Int, member: Int, members: Int, type: FactionType) : FactionDefinition(name, member, members, type) {
-    object Vampire : Faction("Vampire", FactionType.PRIMARY)
-    object Nosferatu : Faction("Nosferatu", FactionType.PRIMARY)
-    object Wight : Faction("Wight", FactionType.SECONDARY)
-    object Zombie : Faction("Zombie", FactionType.SUBSERVIENT)
+sealed class Faction(name: Int, member: Int, members: Int, type: FactionType, val ability: FactionAbility) : FactionDefinition(name, member, members, type) {
+    object Vampire : Faction(R.string.faction_vampires_name, R.string.faction_vampires_member, R.string.faction_vampires_members, FactionType.PRIMARY, FactionAbility.VampireFactionAbility)
+    object Nosferatu : Faction(R.string.faction_nosferatu_name, R.string.faction_nosferatu_member, R.string.faction_nosferatu_members, FactionType.PRIMARY, FactionAbility.NosferatuFactionAbility)
+    object Wight : Faction(R.string.faction_wights_name, R.string.faction_wights_member, R.string.faction_wights_members, FactionType.SECONDARY, FactionAbility.WightFactionAbility)
+    object Zombie : Faction(R.string.faction_zombies_name, R.string.faction_zombies_member, R.string.faction_zombies_members, FactionType.SUBSERVIENT, FactionAbility.ZombieFactionAbility)
 
-    object Lycanthrope : Faction("Lycanthrope", FactionType.SUBSERVIENT)
-    object Animated : Faction("Animated", FactionType.SECONDARY,"Animated")
-    object TotemicSpirit : Faction("Totemic Spirit", FactionType.PRIMARY)
-    object WitchBound : Faction("Witch Bound", FactionType.PRIMARY,"Witch Bound")
+    object Lycanthrope : Faction(R.string.faction_lycanthropes_name, R.string.faction_lycanthropes_member, R.string.faction_lycanthropes_members, FactionType.SUBSERVIENT, FactionAbility.LycanthropeFactionAbility)
+    object Animated : Faction(R.string.faction_animated_name, R.string.faction_animated_member, R.string.faction_animated_members, FactionType.SECONDARY, FactionAbility.AnimatedFactionAbility)
+    object TotemicSpirit : Faction(R.string.faction_totemic_spirits_name, R.string.faction_totemic_spirits_member, R.string.faction_totemic_spirits_members, FactionType.PRIMARY, FactionAbility.TotemicSpiritFactionAbility)
+    object WitchBound : Faction(R.string.faction_witch_bound_name, R.string.faction_witch_bound_member, R.string.faction_witch_bound_members, FactionType.PRIMARY, FactionAbility.WitchBoundFactionAbility)
 
-    object Warlock : Faction("Warlock/Witch", FactionType.PRIMARY,"Warlocks/Witches")
-    object Elemental : Faction("Elemental", FactionType.SUBSERVIENT)
-    object BoundDemon : Faction("Bound Demon", FactionType.SUBSERVIENT)
-    object MagicalConstruct : Faction("Magical Construct", FactionType.SUBSERVIENT)
+    object Warlock : Faction(R.string.faction_warlocks_name, R.string.faction_warlocks_member, R.string.faction_warlocks_members, FactionType.PRIMARY, FactionAbility.WarlockFactionAbility)
+    object Elemental : Faction(R.string.faction_elementals_name, R.string.faction_elementals_member, R.string.faction_elementals_members, FactionType.SUBSERVIENT, FactionAbility.ElementalFactionAbility)
+    object BoundDemon : Faction(R.string.faction_bound_demons_name, R.string.faction_bound_demons_member, R.string.faction_bound_demons_members, FactionType.SUBSERVIENT, FactionAbility.BoundDemonFactionAbility)
+    object MagicalConstruct : Faction(R.string.faction_magical_constructs_name, R.string.faction_magical_constructs_member, R.string.faction_magical_constructs_members, FactionType.SUBSERVIENT, FactionAbility.MagicalConstructFactionAbility)
 
-    object HornedOne : Faction("Horned One", FactionType.PRIMARY)
-    object WishGranter : Faction("Wish Granter", FactionType.SECONDARY)
-    object Unseelie: Faction("Unseelie", FactionType.PRIMARY, "Unseelie")
-    object Troll: Faction("Troll", FactionType.SUBSERVIENT)
+    object HornedOne : Faction(R.string.faction_horned_ones_name, R.string.faction_horned_ones_member, R.string.faction_horned_ones_members, FactionType.PRIMARY, FactionAbility.HornedOneFactionAbility)
+    object WishGranter : Faction(R.string.faction_wish_granters_name, R.string.faction_wish_granters_member, R.string.faction_wish_granters_members, FactionType.SECONDARY, FactionAbility.WishGranterFactionAbility)
+    object Unseelie: Faction(R.string.faction_unseelie_name, R.string.faction_unseelie_member, R.string.faction_unseelie_members, FactionType.PRIMARY, FactionAbility.UnseelieFactionAbility)
+    object Troll: Faction(R.string.faction_trolls_name, R.string.faction_trolls_member, R.string.faction_trolls_members, FactionType.SUBSERVIENT, FactionAbility.TrollFactionAbility)
 
-    object GreatOldOne: Faction("Great Old One", FactionType.PRIMARY)
-    object Cultist: Faction("Cultist", FactionType.SUBSERVIENT)
-    object AncientRace : Faction("Ancient", FactionType.PRIMARY, "Ancient", "The Ancient Race")
-    object YellowMask : Faction("Yellow Mask", FactionType.SECONDARY)
+    object GreatOldOne: Faction(R.string.faction_great_old_ones_name, R.string.faction_great_old_ones_member, R.string.faction_great_old_ones_members, FactionType.PRIMARY, FactionAbility.GreatOldOneFactionAbility)
+    object Cultist: Faction(R.string.faction_cultists_name, R.string.faction_cultists_member, R.string.faction_cultists_members, FactionType.SUBSERVIENT, FactionAbility.CultistFactionAbility)
+    object AncientRace : Faction(R.string.faction_ancient_race_name, R.string.faction_ancient_race_member, R.string.faction_ancient_race_members, FactionType.PRIMARY, FactionAbility.AncientRaceFactionAbility)
+    object YellowMask : Faction(R.string.faction_yellow_masks_name, R.string.faction_yellow_masks_member, R.string.faction_yellow_masks_members, FactionType.SECONDARY, FactionAbility.YellowMaskFactionAbility)
 
-    object Architect: Faction("Architect", FactionType.PRIMARY)
-    object Doppleganger: Faction("Doppelganger", FactionType.SUBSERVIENT)
-    object Marked: Faction("Marked", FactionType.PRIMARY, "Marked")
-    object Hellspawn: Faction("Hellspawn", FactionType.SUBSERVIENT, "Hellspawn")
+    object Architect: Faction(R.string.faction_architects_name, R.string.faction_architects_member, R.string.faction_architects_members, FactionType.PRIMARY, FactionAbility.ArchitectFactionAbility)
+    object Doppleganger: Faction(R.string.faction_doppelgangers_name, R.string.faction_doppelgangers_member, R.string.faction_doppelgangers_members, FactionType.SUBSERVIENT, FactionAbility.DoppelgangerFactionAbility)
+    object Marked: Faction(R.string.faction_marked_name, R.string.faction_marked_member, R.string.faction_marked_members, FactionType.PRIMARY, FactionAbility.MarkedFactionAbility)
+    object Hellspawn: Faction(R.string.faction_hellspawn_name, R.string.faction_hellspawn_member, R.string.faction_hellspawn_members, FactionType.SUBSERVIENT, FactionAbility.HellspawnFactionAbility)
 
     companion object {
         private var _setup: Boolean = false

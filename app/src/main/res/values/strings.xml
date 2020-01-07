@@ -1,175 +1,328 @@
+<!DOCTYPE resources [
+    <!ENTITY group_stillblood_name "Stillblood">
+    <!ENTITY group_stillblood_member "Stillblood">
+    <!ENTITY group_stillblood_members "Stillbloods">
+
+    <!ENTITY group_cursed_name "Cursed">
+    <!ENTITY group_cursed_member "Cursed">
+    <!ENTITY group_cursed_members "Cursed">
+
+    <!ENTITY group_piercers_name "Piercers of the Veil">
+    <!ENTITY group_piercers_member "Piercer of the Veil">
+    <!ENTITY group_piercers_members "Piercers of the Veil">
+
+    <!ENTITY group_fae_name "Fae">
+    <!ENTITY group_fae_member "Fae">
+    <!ENTITY group_fae_members "Fae">
+
+    <!ENTITY group_old_ones_name "Old Ones">
+    <!ENTITY group_old_ones_member "Old One">
+    <!ENTITY group_old_ones_members "Old Ones">
+
+    <!ENTITY group_hellbound_name "Hellbound">
+    <!ENTITY group_hellbound_member "Hellbound">
+    <!ENTITY group_hellbound_members "Hellbound">
+
+    <!ENTITY faction_vampires_name "Vampires">
+    <!ENTITY faction_vampires_member "Vampire">
+    <!ENTITY faction_vampires_members "Vampires">
+
+    <!ENTITY faction_nosferatu_name "Nosferatu">
+    <!ENTITY faction_nosferatu_member "Nosferatu">
+    <!ENTITY faction_nosferatu_members "Nosferatu">
+
+    <!ENTITY faction_wights_name "Wights">
+    <!ENTITY faction_wights_member "Wight">
+    <!ENTITY faction_wights_members "Wights">
+
+    <!ENTITY faction_zombies_name "Zombies">
+    <!ENTITY faction_zombies_member "Zombie">
+    <!ENTITY faction_zombies_members "Zombies">
+
+    <!ENTITY faction_lycanthropes_name "Lycanthropes">
+    <!ENTITY faction_lycanthropes_member "Lycanthrope">
+    <!ENTITY faction_lycanthropes_members "Lycanthropes">
+
+    <!ENTITY faction_animated_name "Animated">
+    <!ENTITY faction_animated_member "Animated">
+    <!ENTITY faction_animated_members "Animated">
+
+    <!ENTITY faction_totemic_spirits_name "Totemic Spirits">
+    <!ENTITY faction_totemic_spirits_member "Totemic Spirit">
+    <!ENTITY faction_totemic_spirits_members "Totemic Spirits">
+
+    <!ENTITY faction_witch_bound_name "Witch Bound">
+    <!ENTITY faction_witch_bound_member "Witch Bound">
+    <!ENTITY faction_witch_bound_members "Witch Bound">
+
+    <!ENTITY faction_warlocks_name "Warlocks/Witches">
+    <!ENTITY faction_warlocks_member "Warlock/Witch">
+    <!ENTITY faction_warlocks_members "Warlocks/Witches">
+
+    <!ENTITY faction_elementals_name "Elementals">
+    <!ENTITY faction_elementals_member "Elemental">
+    <!ENTITY faction_elementals_members "Elementals">
+
+    <!ENTITY faction_bound_demons_name "Bound Demons">
+    <!ENTITY faction_bound_demons_member "Bound Demon">
+    <!ENTITY faction_bound_demons_members "Bound Demons">
+
+    <!ENTITY faction_magical_constructs_name "Magical Constructs">
+    <!ENTITY faction_magical_constructs_member "Magical Construct">
+    <!ENTITY faction_magical_constructs_members "Magical Constructs">
+
+    <!ENTITY faction_horned_ones_name "Horned Ones">
+    <!ENTITY faction_horned_ones_member "Horned One">
+    <!ENTITY faction_horned_ones_members "Horned Ones">
+
+    <!ENTITY faction_unseelie_name "Unseelie">
+    <!ENTITY faction_unseelie_member "Unseelie">
+    <!ENTITY faction_unseelie_members "Unseelie">
+
+    <!ENTITY faction_wish_granters_name "Wish Granters">
+    <!ENTITY faction_wish_granters_member "Wish Granter">
+    <!ENTITY faction_wish_granters_members "Wish Granters">
+
+    <!ENTITY faction_trolls_name "Trolls">
+    <!ENTITY faction_trolls_member "Troll">
+    <!ENTITY faction_trolls_members "Trolls">
+
+    <!ENTITY faction_great_old_ones_name "Great Old Ones">
+    <!ENTITY faction_great_old_ones_member "Great Old One">
+    <!ENTITY faction_great_old_ones_members "Great Old Ones">
+
+    <!ENTITY faction_cultists_name "Cultists">
+    <!ENTITY faction_cultists_member "Cultist">
+    <!ENTITY faction_cultists_members "Cultists">
+
+    <!ENTITY faction_ancient_race_name "Ancient Race">
+    <!ENTITY faction_ancient_race_member "Ancient">
+    <!ENTITY faction_ancient_race_members "Ancients">
+
+    <!ENTITY faction_yellow_masks_name "Yellow Masks">
+    <!ENTITY faction_yellow_masks_member "Yellow Mask">
+    <!ENTITY faction_yellow_masks_members "Yellow Masks">
+
+    <!ENTITY faction_architects_name "Architects">
+    <!ENTITY faction_architects_member "Architect">
+    <!ENTITY faction_architects_members "Architects">
+
+    <!ENTITY faction_doppelgangers_name "Doppelgangers">
+    <!ENTITY faction_doppelgangers_member "Doppelganger">
+    <!ENTITY faction_doppelgangers_members "Doppelgangers">
+
+    <!ENTITY faction_marked_name "Marked">
+    <!ENTITY faction_marked_member "Marked">
+    <!ENTITY faction_marked_members "Marked">
+
+    <!ENTITY faction_hellspawn_name "Hellspawn">
+    <!ENTITY faction_hellspawn_member "Hellspawn">
+    <!ENTITY faction_hellspawn_members "Hellspawn">
+
+    <!ENTITY term_sacrifice "sacrifice value">
+    <!ENTITY term_summon_cost "summon_cost">
+    <!ENTITY term_deck "deck">
+    <!ENTITY term_hand "hand">
+    <!ENTITY term_graveyard "graveyard">
+    <!ENTITY term_turn "turn">
+    <!ENTITY term_mana_ball "cost">
+    <!ENTITY term_costs "costs">
+    <!ENTITY term_strength "strength">
+    <!ENTITY term_life "health">
+    <!ENTITY term_colorless "un-typed">
+    <!ENTITY term_front_row "front row">
+    <!ENTITY term_back_row "back row">
+    <!ENTITY term_tap "tap">
+    <!ENTITY term_summoned "summoned">
+    <!ENTITY term_subservient "subservient">
+
+    <!ENTITY term_trigger_kills "kills">
+    <!ENTITY term_trigger_kill "kill">
+    <!ENTITY term_trigger_dies "dies">
+    <!ENTITY term_trigger_sacrifice "sacrifice from play">
+    <!ENTITY term_trigger_death "is killed">
+    <!ENTITY term_trigger_death_pt "was killed">
+    <!ENTITY term_trigger_takes_damage "takes damage">
+    <!ENTITY term_trigger_takes_damage_part "damage taken">
+    <!ENTITY term_trigger_damage_dealt "damage dealt">
+    <!ENTITY term_trigger_pay_to_summon "pay to summon">
+    <!ENTITY term_trigger_removed_from_play "removed from play">
+
+    <!ENTITY term_action_put_in_play "put in play">
+]>
+
 <resources>
     <string name="app_name">Umbral Legacy</string>
     <string name="title_item_detail">Item Detail</string>
 
-    <string name="group_stillblood_name">Stillblood</string>
-    <string name="group_stillblood_member">Stillblood</string>
-    <string name="group_stillblood_members">Stillbloods</string>
+    <string name="group_stillblood_name">&group_stillblood_name;</string>
+    <string name="group_stillblood_member">&group_stillblood_member;</string>
+    <string name="group_stillblood_members">&group_stillblood_members;</string>
 
-    <string name="group_cursed_name">Cursed</string>
-    <string name="group_cursed_member">Cursed</string>
-    <string name="group_cursed_members">Cursed</string>
+    <string name="group_cursed_name">&group_cursed_name;</string>
+    <string name="group_cursed_member">&group_cursed_member;</string>
+    <string name="group_cursed_members">&group_cursed_members;</string>
 
-    <string name="group_piercers_name">Piercers of the Veil</string>
-    <string name="group_piercers_member">Piercer of the Veil</string>
-    <string name="group_piercers_members">Piercers of the Veil</string>
+    <string name="group_piercers_name">&group_piercers_name;</string>
+    <string name="group_piercers_member">&group_piercers_member;</string>
+    <string name="group_piercers_members">&group_piercers_members;</string>
 
-    <string name="group_fae_name">Fae</string>
-    <string name="group_fae_member">Fae</string>
-    <string name="group_fae_members">Fae</string>
+    <string name="group_fae_name">&group_fae_name;</string>
+    <string name="group_fae_member">&group_fae_member;</string>
+    <string name="group_fae_members">&group_fae_members;</string>
 
-    <string name="group_old_ones_name">Old Ones</string>
-    <string name="group_old_ones_member">Old One</string>
-    <string name="group_old_ones_members">Old Ones</string>
+    <string name="group_old_ones_name">&group_old_ones_name;</string>
+    <string name="group_old_ones_member">&group_old_ones_member;</string>
+    <string name="group_old_ones_members">&group_old_ones_members;</string>
 
-    <string name="group_hellbound_name">Hellbound</string>
-    <string name="group_hellbound_member">Hellbound</string>
-    <string name="group_hellbound_members">Hellbound</string>
+    <string name="group_hellbound_name">&group_hellbound_name;</string>
+    <string name="group_hellbound_member">&group_hellbound_member;</string>
+    <string name="group_hellbound_members">&group_hellbound_members;</string>
 
-    <string name="faction_vampires_name">Vampires</string>
-    <string name="faction_vampires_member">Vampire</string>
-    <string name="faction_vampires_members">Vampires</string>
+    <string name="faction_vampires_name">&faction_vampires_name;</string>
+    <string name="faction_vampires_member">&faction_vampires_member;</string>
+    <string name="faction_vampires_members">&faction_vampires_members;</string>
 
-    <string name="faction_nosferatu_name">Nosferatu</string>
-    <string name="faction_nosferatu_member">Nosferatu</string>
-    <string name="faction_nosferatu_members">Nosferatu</string>
+    <string name="faction_nosferatu_name">&faction_nosferatu_name;</string>
+    <string name="faction_nosferatu_member">&faction_nosferatu_member;</string>
+    <string name="faction_nosferatu_members">&faction_nosferatu_members;</string>
 
-    <string name="faction_wights_name">Wights</string>
-    <string name="faction_wights_member">Wight</string>
-    <string name="faction_wights_members">Wights</string>
+    <string name="faction_wights_name">&faction_wights_name;</string>
+    <string name="faction_wights_member">&faction_wights_member;</string>
+    <string name="faction_wights_members">&faction_wights_members;</string>
 
-    <string name="faction_zombies_name">Zombies</string>
-    <string name="faction_zombies_member">Zombie</string>
-    <string name="faction_zombies_members">Zombies</string>
+    <string name="faction_zombies_name">&faction_zombies_name;</string>
+    <string name="faction_zombies_member">&faction_zombies_member;</string>
+    <string name="faction_zombies_members">&faction_zombies_members;</string>
 
-    <string name="faction_lycanthropes_name">Lycanthropes</string>
-    <string name="faction_lycanthropes_member">Lycanthrope</string>
-    <string name="faction_lycanthropes_members">Lycanthropes</string>
+    <string name="faction_lycanthropes_name">&faction_lycanthropes_name;</string>
+    <string name="faction_lycanthropes_member">&faction_lycanthropes_member;</string>
+    <string name="faction_lycanthropes_members">&faction_lycanthropes_members;</string>
 
-    <string name="faction_animaged_name">Animated</string>
-    <string name="faction_animaged_member">Animated</string>
-    <string name="faction_animaged_members">Animated</string>
+    <string name="faction_animated_name">&faction_animated_name;</string>
+    <string name="faction_animated_member">&faction_animated_member;</string>
+    <string name="faction_animated_members">&faction_animated_members;</string>
 
-    <string name="faction_totemic_spirits_name">Totemic Spirits</string>
-    <string name="faction_totemic_spirits_member">Totemic Spirit</string>
-    <string name="faction_totemic_spirits_members">Totemic Spirits</string>
+    <string name="faction_totemic_spirits_name">&faction_totemic_spirits_name;</string>
+    <string name="faction_totemic_spirits_member">&faction_totemic_spirits_member;</string>
+    <string name="faction_totemic_spirits_members">&faction_totemic_spirits_members;</string>
 
-    <string name="faction_witch_bound_name">Witch Bound</string>
-    <string name="faction_witch_bound_member">Witch Bound</string>
-    <string name="faction_witch_bound_members">Witch Bound</string>
+    <string name="faction_witch_bound_name">&faction_witch_bound_name;</string>
+    <string name="faction_witch_bound_member">&faction_witch_bound_member;</string>
+    <string name="faction_witch_bound_members">&faction_witch_bound_members;</string>
 
-    <string name="faction_warlocks_name">Warlocks/Witches</string>
-    <string name="faction_warlocks_member">Warlock/Witch</string>
-    <string name="faction_warlocks_members">Warlocks/Witches</string>
+    <string name="faction_warlocks_name">&faction_warlocks_name;</string>
+    <string name="faction_warlocks_member">&faction_warlocks_member;</string>
+    <string name="faction_warlocks_members">&faction_warlocks_members;</string>
 
-    <string name="faction_elementals_name">Elementals</string>
-    <string name="faction_elementals_member">Elemental</string>
-    <string name="faction_elementals_members">Elementals</string>
+    <string name="faction_elementals_name">&faction_elementals_name;</string>
+    <string name="faction_elementals_member">&faction_elementals_member;</string>
+    <string name="faction_elementals_members">&faction_elementals_members;</string>
 
-    <string name="faction_bound_demons_name">Bound Demons</string>
-    <string name="faction_bound_demons_member">Bound Demon</string>
-    <string name="faction_bound_demons_members">Bound Demons</string>
+    <string name="faction_bound_demons_name">&faction_bound_demons_name;</string>
+    <string name="faction_bound_demons_member">&faction_bound_demons_member;</string>
+    <string name="faction_bound_demons_members">&faction_bound_demons_members;</string>
 
-    <string name="faction_magical_constructs_name">Magical Constructs</string>
-    <string name="faction_magical_constructs_member">Magical Construct</string>
-    <string name="faction_magical_constructs_members">Magical Constructs</string>
+    <string name="faction_magical_constructs_name">&faction_magical_constructs_name;</string>
+    <string name="faction_magical_constructs_member">&faction_magical_constructs_member;</string>
+    <string name="faction_magical_constructs_members">&faction_magical_constructs_members;</string>
 
-    <string name="faction_horned_ones_name">Horned Ones</string>
-    <string name="faction_horned_ones_member">Horned One</string>
-    <string name="faction_horned_ones_members">Horned Ones</string>
+    <string name="faction_horned_ones_name">&faction_horned_ones_name;</string>
+    <string name="faction_horned_ones_member">&faction_horned_ones_member;</string>
+    <string name="faction_horned_ones_members">&faction_horned_ones_members;</string>
 
-    <string name="faction_unseelie_name">Unseelie</string>
-    <string name="faction_unseelie_member">Unseelie</string>
-    <string name="faction_unseelie_members">Unseelie</string>
+    <string name="faction_unseelie_name">&faction_unseelie_name;</string>
+    <string name="faction_unseelie_member">&faction_unseelie_member;</string>
+    <string name="faction_unseelie_members">&faction_unseelie_members;</string>
 
-    <string name="faction_wish_granters_name">Wish Granters</string>
-    <string name="faction_wish_granters_member">Wish Granter</string>
-    <string name="faction_wish_granters_members">Wish Granters</string>
+    <string name="faction_wish_granters_name">&faction_wish_granters_name;</string>
+    <string name="faction_wish_granters_member">&faction_wish_granters_member;</string>
+    <string name="faction_wish_granters_members">&faction_wish_granters_members;</string>
 
-    <string name="faction_trolls_name">Trolls</string>
-    <string name="faction_trolls_member">Troll</string>
-    <string name="faction_trolls_members">Trolls</string>
+    <string name="faction_trolls_name">&faction_trolls_name;</string>
+    <string name="faction_trolls_member">&faction_trolls_member;</string>
+    <string name="faction_trolls_members">&faction_trolls_members;</string>
 
-    <string name="faction_great_old_ones_name">Great Old Ones</string>
-    <string name="faction_great_old_ones_member">Great Old One</string>
-    <string name="faction_great_old_ones_members">Great Old Ones</string>
+    <string name="faction_great_old_ones_name">&faction_great_old_ones_name;</string>
+    <string name="faction_great_old_ones_member">&faction_great_old_ones_member;</string>
+    <string name="faction_great_old_ones_members">&faction_great_old_ones_members;</string>
 
-    <string name="faction_cultists_name">Cultists</string>
-    <string name="faction_cultists_member">Cultist</string>
-    <string name="faction_cultists_members">Cultists</string>
+    <string name="faction_cultists_name">&faction_cultists_name;</string>
+    <string name="faction_cultists_member">&faction_cultists_member;</string>
+    <string name="faction_cultists_members">&faction_cultists_members;</string>
 
-    <string name="faction_ancient_races_name">Ancient Race</string>
-    <string name="faction_ancient_races_member">Ancient</string>
-    <string name="faction_ancient_races_members">Ancients</string>
+    <string name="faction_ancient_race_name">&faction_ancient_race_name;</string>
+    <string name="faction_ancient_race_member">&faction_ancient_race_member;</string>
+    <string name="faction_ancient_race_members">&faction_ancient_race_members;</string>
 
-    <string name="faction_yellow_masks_name">Yellow Masks</string>
-    <string name="faction_yellow_masks_member">Yellow Mask</string>
-    <string name="faction_yellow_masks_members">Yellow Masks</string>
+    <string name="faction_yellow_masks_name">&faction_yellow_masks_name;</string>
+    <string name="faction_yellow_masks_member">&faction_yellow_masks_member;</string>
+    <string name="faction_yellow_masks_members">&faction_yellow_masks_members;</string>
 
-    <string name="faction_architects_name">Architects</string>
-    <string name="faction_architects_member">Architect</string>
-    <string name="faction_architects_members">Architects</string>
+    <string name="faction_architects_name">&faction_architects_name;</string>
+    <string name="faction_architects_member">&faction_architects_member;</string>
+    <string name="faction_architects_members">&faction_architects_members;</string>
 
-    <string name="faction_doppelgangers_name">Doppelgangers</string>
-    <string name="faction_doppelgangers_member">Doppelganger</string>
-    <string name="faction_doppelgangers_members">Doppelgangers</string>
+    <string name="faction_doppelgangers_name">&faction_doppelgangers_name;</string>
+    <string name="faction_doppelgangers_member">&faction_doppelgangers_member;</string>
+    <string name="faction_doppelgangers_members">&faction_doppelgangers_members;</string>
 
-    <string name="faction_marked_name">Marked</string>
-    <string name="faction_marked_member">Marked</string>
-    <string name="faction_marked_members">Marked</string>
+    <string name="faction_marked_name">&faction_marked_name;</string>
+    <string name="faction_marked_member">&faction_marked_member;</string>
+    <string name="faction_marked_members">&faction_marked_members;</string>
 
-    <string name="faction_hellspawn_name">Hellspawn</string>
-    <string name="faction_hellspawn_member">Hellspawn</string>
-    <string name="faction_hellspawn_members">Hellspawn</string>
+    <string name="faction_hellspawn_name">&faction_hellspawn_name;</string>
+    <string name="faction_hellspawn_member">&faction_hellspawn_member;</string>
+    <string name="faction_hellspawn_members">&faction_hellspawn_members;</string>
 
-    <string name="term_sacrifice">sacrifice value</string>
-    <string name="term_summon_cost">summon_cost</string>
-    <string name="term_deck">deck</string>
-    <string name="term_hand">hand</string>
-    <string name="term_graveyard">graveyard</string>
-    <string name="term_turn">turn</string>
-    <string name="term_mana_ball">cost</string>
-    <string name="term_costs">costs</string>
-    <string name="term_strength">strength</string>
-    <string name="term_life">health</string>
-    <string name="term_colorless">un-typed</string>
-    <string name="term_front_row">front row</string>
-    <string name="term_back_row">back row</string>
-    <string name="term_tap">tap</string>
-    <string name="term_summoned">summoned</string>
-    <string name="term_subservient">subservient</string>
+    <string name="term_sacrifice">&term_sacrifice;</string>
+    <string name="term_summon_cost">&term_summon_cost;</string>
+    <string name="term_deck">&term_deck;</string>
+    <string name="term_hand">&term_hand;</string>
+    <string name="term_graveyard">&term_graveyard;</string>
+    <string name="term_turn">&term_turn;</string>
+    <string name="term_mana_ball">&term_mana_ball;</string>
+    <string name="term_costs">&term_costs;</string>
+    <string name="term_strength">&term_strength;</string>
+    <string name="term_life">&term_life;</string>
+    <string name="term_colorless">&term_colorless;</string>
+    <string name="term_front_row">&term_front_row;</string>
+    <string name="term_back_row">&term_back_row;</string>
+    <string name="term_tap">&term_tap;</string>
+    <string name="term_summoned">&term_summoned;</string>
+    <string name="term_subservient">&term_subservient;</string>
 
-    <string name="term_trigger_kills">kills</string>
-    <string name="term_trigger_kill">kill</string>
-    <string name="term_trigger_dies">dies</string>
-    <string name="term_trigger_sacrifice">sacrifice from play</string>
-    <string name="term_trigger_death">is killed</string>
-    <string name="term_trigger_death_pt">was killed</string>
-    <string name="term_trigger_takes_damage">takes damage</string>
-    <string name="term_trigger_takes_damage_part">damage taken</string>
-    <string name="term_trigger_damage_dealt">damage dealt</string>
-    <string name="term_trigger_pay_to_summon">pay to summon</string>
-    <string name="term_trigger_removed_from_play">removed from play</string>
+    <string name="term_trigger_kills">&term_trigger_kills;</string>
+    <string name="term_trigger_kill">&term_trigger_kill;</string>
+    <string name="term_trigger_dies">&term_trigger_dies;</string>
+    <string name="term_trigger_sacrifice">&term_trigger_sacrifice;</string>
+    <string name="term_trigger_death">&term_trigger_death;</string>
+    <string name="term_trigger_death_pt">&term_trigger_death_pt;</string>
+    <string name="term_trigger_takes_damage">&term_trigger_takes_damage;</string>
+    <string name="term_trigger_takes_damage_part">&term_trigger_takes_damage_part;</string>
+    <string name="term_trigger_damage_dealt">&term_trigger_damage_dealt;</string>
+    <string name="term_trigger_pay_to_summon">&term_trigger_pay_to_summon;</string>
+    <string name="term_trigger_removed_from_play">&term_trigger_removed_from_play;</string>
 
-    <string name="term_action_put_in_play">put in play</string>
+    <string name="term_action_put_in_play">&term_action_put_in_play;</string>
 
     <string name="ability_vampire_name">Vampire</string>
     <string name="ability_vampire_description">
-        When a unit @string/term_trigger_death by this unit, @string/term_action_put_in_play another
-        @string/group_stillblood_name from your @string/term_deck with a @string/term_summon_cost less than
-        the @string/term_sacrifice of the unit that @string/term_trigger_death_pt.
+        When a unit &term_trigger_death; by this unit, &term_action_put_in_play; another
+        &group_stillblood_name; from your &term_deck; with a &term_summon_cost; less than
+        the &term_sacrifice; of the unit that &term_trigger_death_pt;.
     </string>
 
     <string name="ability_nosferatu_name">Nosferatu</string>
     <string name="ability_nosferatu_description">
-        When this unit @string/term_trigger_takes_damage in combat, subtract any @string/term_trigger_damage_dealt
-        by this unit from the @string/term_trigger_takes_damage_part by this unit.
+        When this unit &term_trigger_takes_damage; in combat, subtract any &term_trigger_damage_dealt;
+        by this unit from the &term_trigger_takes_damage_part; by this unit.
     </string>
 
     <string name="ability_wight_name">Wight</string>
     <string name="ability_wight_description">
-        When this unit @string/term_trigger_death set it aside for one @string/term_turn. At the end
-        of your next @string/term_turn shuffle it back into your @string/term_deck.
+        When this unit &term_trigger_death; set it aside for one &term_turn;. At the end
+        of your next &term_turn; shuffle it back into your &term_deck;.
     </string>
 
     <string name="ability_zombie_name">Zombie</string>
@@ -179,116 +332,116 @@
 
     <string name="ability_lycanthrope_name">Lycanthrope</string>
     <string name="ability_lycanthrope_description">
-        When this unit @string/term_trigger_kills another unit in combat, give this unit a +1/0 counter.
+        When this unit &term_trigger_kills; another unit in combat, give this unit a +1/0 counter.
     </string>
 
     <string name="ability_animated_name">Animated</string>
     <string name="ability_animated_description">
-        When you @string/term_trigger_pay_to_summon this unit treat all @string/term_costs as @string/term_colorless.
+        When you &term_trigger_pay_to_summon; this unit treat all &term_costs; as &term_colorless;.
     </string>
 
     <string name="ability_totemic_spirit_name">Totemic Spirit</string>
     <string name="ability_totemic_spirit_description">
-        Before attacking you may switch your opponents @string/term_front_row and @string/term_back_row.
+        Before attacking you may switch your opponents &term_front_row; and &term_back_row;.
     </string>
 
     <string name="ability_witch_bound_name">Witch Bound</string>
     <string name="ability_witch_bound_description">
-        This unit is immune to damage. If any effect causes it to switch positions, this unit @string/term_trigger_dies.
+        This unit is immune to damage. If any effect causes it to switch positions, this unit &term_trigger_dies;.
     </string>
 
     <string name="ability_warlock_name">Warlock/Witch</string>
     <string name="ability_warlock_description">
-        You may @string/term_tap this unit and pay its @string/term_sacrifice to search your
-        @string/term_deck for a @string/term_subservient @string/group_piercers_member unit and put it into
-        your @string/term_hand.
+        You may &term_tap; this unit and pay its &term_sacrifice; to search your
+        &term_deck; for a &term_subservient; &group_piercers_member; unit and put it into
+        your &term_hand;.
     </string>
 
     <string name="ability_elemental_name">Elemental</string>
     <string name="ability_elemental_description">
-        (Add one additional @string/term_strength or @string/term_life per @string/term_mana_ball.
-        This unit may not have @string/term_colorless @string/term_costs).
+        (Add one additional &term_strength; or &term_life; per &term_mana_ball;.
+        This unit may not have &term_colorless; &term_costs;).
     </string>
 
     <string name="ability_bound_demon_name">Bound Demon</string>
     <string name="ability_bound_demon_description">
-        This unit takes no damage from @string/term_subservient units.
+        This unit takes no damage from &term_subservient; units.
     </string>
 
     <string name="ability_magical_construct_name">Magical Construct</string>
     <string name="ability_magical_construct_description">
-        This unit may only be @string/term_summoned by a @string/faction_warlocks_member using its
-        ability to draw it from their @string/term_deck and then paying the @string/term_mana_ball
-        difference between the @string/faction_warlock ability and the @string/term_costs of this
+        This unit may only be &term_summoned; by a &faction_warlocks_member; using its
+        ability to draw it from their &term_deck; and then paying the &term_mana_ball;
+        difference between the &faction_warlocks_member; ability and the &term_costs; of this
         unit.
     </string>
 
     <string name="ability_horned_one_name">Horned One</string>
     <string name="ability_horned_one_description">
-        If this unit would damage another unit in combat, but that unit is immune to damage, that unit instantly @string/term_dies.
+        If this unit would damage another unit in combat, but that unit is immune to damage, that unit instantly &term_trigger_dies;.
     </string>
 
     <string name="ability_wish_granter_name">Wish Granter</string>
     <string name="ability_wish_granter_description">
-        When this unit is @string/summoned, search your @string/term_deck for any unit and put it
-        directly into play. When this unit leaves play the target unit is @string/term_trigger_removed_from_play.
+        When this unit is &term_summoned;, search your &term_deck; for any unit and put it
+        directly into play. When this unit leaves play the target unit is &term_trigger_removed_from_play;.
     </string>
 
     <string name="ability_unseelie_name">Unseelie</string>
     <string name="ability_unseelie_description">
-        When this unit @string/term_kills another unit, look at your opponent\'s @string/term_hand.
+        When this unit &term_trigger_kills; another unit, look at your opponent\'s &term_hand;.
     </string>
 
     <string name="ability_troll_name">Troll</string>
     <string name="ability_troll_description">
-        When this unit @string/term_trigger_kills another unit in combat, give this unit a 0/+1 counter.
+        When this unit &term_trigger_kills; another unit in combat, give this unit a 0/+1 counter.
     </string>
 
     <string name="ability_great_old_one_name">Great Old One</string>
     <string name="ability_great_old_one_description">
-        This unit can be @string/term_summoned from the @string/term_graveyard as if it were in your
-        @string/term_hand.
+        This unit can be &term_summoned; from the &term_graveyard; as if it were in your
+        &term_hand;.
     </string>
 
     <string name="ability_cultist_name">Cultist</string>
     <string name="ability_cultist_description">
-        When this unit is @string/term_summoned it gains one ability of your choice from an adjacent
-        @string/group_old_ones_member.
+        When this unit is &term_summoned; it gains one ability of your choice from an adjacent
+        &group_old_ones_member;.
     </string>
 
     <string name="ability_ancient_race_name">Ancient Race</string>
     <string name="ability_ancient_race_description">
-        Once per @string/term_turn you may search your @string/term_deck for another
-        @string/faction_ancient_race_member and put it into your @string/term_hand.
+        Once per &term_turn; you may search your &term_deck; for another
+        &faction_ancient_race_member; and put it into your &term_hand;.
     </string>
 
     <string name="ability_yellow_mask_name">Yellow Mask</string>
     <string name="ability_yellow_mask_description">
-        When this unit attacks, if there is a unit in the @string/term_back_row, you may choose to
-        have the unit in the @string/term_back_row take damage instead of this unit.
+        When this unit attacks, if there is a unit in the &term_back_row;, you may choose to
+        have the unit in the &term_back_row; take damage instead of this unit.
     </string>
 
     <string name="ability_architect_name">Architect</string>
     <string name="ability_architect_description">
-        You may @string/term_trigger_sacrifice a @string/faction_hellspawn_member to prevent all damage
+        You may &term_trigger_sacrifice; a &faction_hellspawn_member; to prevent all damage
         to this unit this turn.
     </string>
 
     <string name="ability_doppelganger_name">Doppelganger</string>
     <string name="ability_doppelganger_description">
-        Copy all of the abilities of an enemy unit in play when this unit is @string/term_summoned.
+        Copy all of the abilities of an enemy unit in play when this unit is &term_summoned;.
     </string>
 
     <string name="ability_marked_name">Marked</string>
     <string name="ability_marked_description">
-        Once this unit has been @string/term_summoned, it may returned to your @string/term_hand at
-        any time, and returned to play during a subsequent @string/term_turn without paying its
-        @string/term_costs.
+        Once this unit has been &term_summoned;, it may returned to your &term_hand; at
+        any time, and returned to play during a subsequent &term_turn; without paying its
+        &term_costs;.
     </string>
 
     <string name="ability_hellspawn_name">Hellspawn</string>
     <string name="ability_hellspawn_description">
-        You may @string/term_trigger_sacrifice this unit to @string/term_trigger_kill a target enemy
-        unit with a lower @string/term_sacrifice.
+        You may &term_trigger_sacrifice; this unit to &term_trigger_kill; a target enemy
+        unit with a lower &term_sacrifice;.
     </string>
 </resources>

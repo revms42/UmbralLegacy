@@ -1,5 +1,6 @@
 package org.ajar.umbrallegacy
 
+import org.ajar.umbrallegacy.model.AbilityDefinition
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -9,9 +10,9 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class AbilityTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun listAllAbilities() {
+
     }
 }
