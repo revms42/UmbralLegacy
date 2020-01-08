@@ -119,7 +119,8 @@
     <!ENTITY faction_hellspawn_member "Hellspawn">
     <!ENTITY faction_hellspawn_members "Hellspawn">
 
-    <!ENTITY term_sacrifice "sacrifice value">
+    <!ENTITY term_sacrifice_value "sacrifice value">
+    <!ENTITY term_unit "unit">
     <!ENTITY term_summon_cost "summon_cost">
     <!ENTITY term_deck "deck">
     <!ENTITY term_hand "hand">
@@ -135,6 +136,7 @@
     <!ENTITY term_tap "tap">
     <!ENTITY term_summoned "summoned">
     <!ENTITY term_subservient "subservient">
+    <!ENTITY term_counter "counter">
 
     <!ENTITY term_trigger_kills "kills">
     <!ENTITY term_trigger_kill "kill">
@@ -147,13 +149,24 @@
     <!ENTITY term_trigger_damage_dealt "damage dealt">
     <!ENTITY term_trigger_pay_to_summon "pay to summon">
     <!ENTITY term_trigger_removed_from_play "removed from play">
+    <!ENTITY term_trigger_discard "discard">
+    <!ENTITY term_trigger_is_put_into_play "is put into play">
 
     <!ENTITY term_action_put_in_play "put in play">
+    <!ENTITY term_action_discard "discard">
+    <!ENTITY term_action_untap "untap">
+    <!ENTITY term_action_block_pt "blocked">
+    <!ENTITY term_action_sacrifice "sacrifice">
+    <!ENTITY term_action_kill "kill">
+
+    <!ENTITY term_phase_untap "untap phase">
 ]>
 
 <resources>
     <string name="app_name">Umbral Legacy</string>
     <string name="title_item_detail">Item Detail</string>
+
+    <!-- Names -->
 
     <string name="group_stillblood_name">&group_stillblood_name;</string>
     <string name="group_stillblood_member">&group_stillblood_member;</string>
@@ -275,7 +288,9 @@
     <string name="faction_hellspawn_member">&faction_hellspawn_member;</string>
     <string name="faction_hellspawn_members">&faction_hellspawn_members;</string>
 
-    <string name="term_sacrifice">&term_sacrifice;</string>
+    <!-- Terms -->
+
+    <string name="term_sacrifice_value">&term_sacrifice_value;</string>
     <string name="term_summon_cost">&term_summon_cost;</string>
     <string name="term_deck">&term_deck;</string>
     <string name="term_hand">&term_hand;</string>
@@ -303,41 +318,52 @@
     <string name="term_trigger_damage_dealt">&term_trigger_damage_dealt;</string>
     <string name="term_trigger_pay_to_summon">&term_trigger_pay_to_summon;</string>
     <string name="term_trigger_removed_from_play">&term_trigger_removed_from_play;</string>
+    <string name="term_trigger_discard">&term_trigger_discard;</string>
+    <string name="term_trigger_is_put_into_play">&term_trigger_is_put_into_play;</string>
 
     <string name="term_action_put_in_play">&term_action_put_in_play;</string>
+    <string name="term_action_discard">&term_action_discard;</string>
+    <string name="term_action_untap">&term_action_untap;</string>
+    <string name="term_action_block_pt">&term_action_block_pt;</string>
+    <string name="term_action_sacrifice">&term_action_sacrifice;</string>
+    <string name="term_action_kill">&term_action_kill;</string>
+
+    <string name="term_phase_untap">&term_phase_untap;</string>
+
+    <!-- Faction Abilities -->
 
     <string name="ability_vampire_name">Vampire</string>
     <string name="ability_vampire_description">
-        When a unit &term_trigger_death; by this unit, &term_action_put_in_play; another
+        When a &term_unit; &term_trigger_death; by this &term_unit;, &term_action_put_in_play; another
         &group_stillblood_name; from your &term_deck; with a &term_summon_cost; less than
-        the &term_sacrifice; of the unit that &term_trigger_death_pt;.
+        the &term_sacrifice_value; of the &term_unit; that &term_trigger_death_pt;.
     </string>
 
     <string name="ability_nosferatu_name">Nosferatu</string>
     <string name="ability_nosferatu_description">
-        When this unit &term_trigger_takes_damage; in combat, subtract any &term_trigger_damage_dealt;
-        by this unit from the &term_trigger_takes_damage_part; by this unit.
+        When this &term_unit; &term_trigger_takes_damage; in combat, subtract any &term_trigger_damage_dealt;
+        by this &term_unit; from the &term_trigger_takes_damage_part; by this &term_unit;.
     </string>
 
     <string name="ability_wight_name">Wight</string>
     <string name="ability_wight_description">
-        When this unit &term_trigger_death; set it aside for one &term_turn;. At the end
+        When this &term_unit; &term_trigger_death; set it aside for one &term_turn;. At the end
         of your next &term_turn; shuffle it back into your &term_deck;.
     </string>
 
     <string name="ability_zombie_name">Zombie</string>
     <string name="ability_zombie_description">
-        This unit is immune to non-damage effects.
+        This &term_unit; is immune to non-damage effects.
     </string>
 
     <string name="ability_lycanthrope_name">Lycanthrope</string>
     <string name="ability_lycanthrope_description">
-        When this unit &term_trigger_kills; another unit in combat, give this unit a +1/0 counter.
+        When this &term_unit; &term_trigger_kills; another &term_unit; in combat, give this &term_unit; a +1/0 &term_counter;.
     </string>
 
     <string name="ability_animated_name">Animated</string>
     <string name="ability_animated_description">
-        When you &term_trigger_pay_to_summon; this unit treat all &term_costs; as &term_colorless;.
+        When you &term_trigger_pay_to_summon; this &term_unit; treat all &term_costs; as &term_colorless;.
     </string>
 
     <string name="ability_totemic_spirit_name">Totemic Spirit</string>
@@ -347,65 +373,65 @@
 
     <string name="ability_witch_bound_name">Witch Bound</string>
     <string name="ability_witch_bound_description">
-        This unit is immune to damage. If any effect causes it to switch positions, this unit &term_trigger_dies;.
+        This &term_unit; is immune to damage. If any effect causes it to switch positions, this &term_unit; &term_trigger_dies;.
     </string>
 
     <string name="ability_warlock_name">Warlock/Witch</string>
     <string name="ability_warlock_description">
-        You may &term_tap; this unit and pay its &term_sacrifice; to search your
-        &term_deck; for a &term_subservient; &group_piercers_member; unit and put it into
+        You may &term_tap; this &term_unit; and pay its &term_sacrifice_value; to search your
+        &term_deck; for a &term_subservient; &group_piercers_member; &term_unit; and put it into
         your &term_hand;.
     </string>
 
     <string name="ability_elemental_name">Elemental</string>
     <string name="ability_elemental_description">
         (Add one additional &term_strength; or &term_life; per &term_mana_ball;.
-        This unit may not have &term_colorless; &term_costs;).
+        This &term_unit; may not have &term_colorless; &term_costs;).
     </string>
 
     <string name="ability_bound_demon_name">Bound Demon</string>
     <string name="ability_bound_demon_description">
-        This unit takes no damage from &term_subservient; units.
+        This &term_unit; takes no damage from &term_subservient; &term_unit;s.
     </string>
 
     <string name="ability_magical_construct_name">Magical Construct</string>
     <string name="ability_magical_construct_description">
-        This unit may only be &term_summoned; by a &faction_warlocks_member; using its
+        This &term_unit; may only be &term_summoned; by a &faction_warlocks_member; using its
         ability to draw it from their &term_deck; and then paying the &term_mana_ball;
         difference between the &faction_warlocks_member; ability and the &term_costs; of this
-        unit.
+        &term_unit;.
     </string>
 
     <string name="ability_horned_one_name">Horned One</string>
     <string name="ability_horned_one_description">
-        If this unit would damage another unit in combat, but that unit is immune to damage, that unit instantly &term_trigger_dies;.
+        If this &term_unit; would damage another &term_unit; in combat, but that &term_unit; is immune to damage, that &term_unit; instantly &term_trigger_dies;.
     </string>
 
     <string name="ability_wish_granter_name">Wish Granter</string>
     <string name="ability_wish_granter_description">
-        When this unit is &term_summoned;, search your &term_deck; for any unit and put it
-        directly into play. When this unit leaves play the target unit is &term_trigger_removed_from_play;.
+        When this &term_unit; is &term_summoned;, search your &term_deck; for any &term_unit; and put it
+        directly into play. When this &term_unit; leaves play the target &term_unit; is &term_trigger_removed_from_play;.
     </string>
 
     <string name="ability_unseelie_name">Unseelie</string>
     <string name="ability_unseelie_description">
-        When this unit &term_trigger_kills; another unit, look at your opponent\'s &term_hand;.
+        When this &term_unit; &term_trigger_kills; another &term_unit;, look at your opponent\'s &term_hand;.
     </string>
 
     <string name="ability_troll_name">Troll</string>
     <string name="ability_troll_description">
-        When this unit &term_trigger_kills; another unit in combat, give this unit a 0/+1 counter.
+        When this &term_unit; &term_trigger_kills; another &term_unit; in combat, give this &term_unit; a 0/+1 &term_counter;.
     </string>
 
     <string name="ability_great_old_one_name">Great Old One</string>
     <string name="ability_great_old_one_description">
-        This unit can be &term_summoned; from the &term_graveyard; as if it were in your
+        This &term_unit; can be &term_summoned; from the &term_graveyard; as if it were in your
         &term_hand;.
     </string>
 
     <string name="ability_cultist_name">Cultist</string>
     <string name="ability_cultist_description">
-        When this unit is &term_summoned; it gains one ability of your choice from an adjacent
+        When this &term_unit; is &term_summoned; it gains one ability of your choice from an adjacent
         &group_old_ones_member;.
     </string>
 
@@ -417,31 +443,128 @@
 
     <string name="ability_yellow_mask_name">Yellow Mask</string>
     <string name="ability_yellow_mask_description">
-        When this unit attacks, if there is a unit in the &term_back_row;, you may choose to
-        have the unit in the &term_back_row; take damage instead of this unit.
+        When this &term_unit; attacks, if there is a &term_unit; in the &term_back_row;, you may choose to
+        have the &term_unit; in the &term_back_row; take damage instead of this &term_unit;.
     </string>
 
     <string name="ability_architect_name">Architect</string>
     <string name="ability_architect_description">
         You may &term_trigger_sacrifice; a &faction_hellspawn_member; to prevent all damage
-        to this unit this turn.
+        to this &term_unit; this turn.
     </string>
 
     <string name="ability_doppelganger_name">Doppelganger</string>
     <string name="ability_doppelganger_description">
-        Copy all of the abilities of an enemy unit in play when this unit is &term_summoned;.
+        Copy all of the abilities of an enemy &term_unit; in play when this &term_unit; is &term_summoned;.
     </string>
 
     <string name="ability_marked_name">Marked</string>
     <string name="ability_marked_description">
-        Once this unit has been &term_summoned;, it may returned to your &term_hand; at
+        Once this &term_unit; has been &term_summoned;, it may returned to your &term_hand; at
         any time, and returned to play during a subsequent &term_turn; without paying its
         &term_costs;.
     </string>
 
     <string name="ability_hellspawn_name">Hellspawn</string>
     <string name="ability_hellspawn_description">
-        You may &term_trigger_sacrifice; this unit to &term_trigger_kill; a target enemy
-        unit with a lower &term_sacrifice;.
+        You may &term_trigger_sacrifice; this &term_unit; to &term_trigger_kill; a target enemy
+        &term_unit; with a lower &term_sacrifice_value;.
+    </string>
+
+    <!-- Positive Abilities -->
+
+    <string name="ability_burn_name">Burn</string>
+    <string name="ability_burn_description">
+        If this &term_unit; causes an opponent to &term_trigger_discard;, the must &term_action_discard;
+        an additional card.
+    </string>
+
+    <string name="ability_sacrifice_name">Sacrifice</string>
+    <string name="ability_sacrifice_description">
+        Sacrifice another &term_unit; you control to put a +1/+1 &term_counter; on this &term_unit;
+    </string>
+
+    <string name="ability_paralyze_name">Paralyze</string>
+    <string name="ability_paralyze_description">
+        &term_unit;s that take damage from this &term_unit; don't &term_action_untap; during their
+        owner's next &term_phase_untap;.
+    </string>
+
+    <string name="ability_relentless_name">Relentless</string>
+    <string name="ability_relentless_description">
+        This &term_unit; also &term_action_untap;s during your opponent's &term_phase_untap;.
+    </string>
+
+    <string name="ability_decaying_name">Decaying</string>
+    <string name="ability_decaying_description">
+        Every turn (during your &term_phase_untap;), this &term_unit; gets a +1/-1 &term_counter;.
+    </string>
+
+    <string name="ability_protection_greater_name">Protection from %1$s</string>
+    <string name="ability_protection_greater_description">
+        This &term_unit; ignores damage from all &term_unit;s of %1$s.
+    </string>
+
+    <string name="ability_protection_lesser_name">Protection from %1$s</string>
+    <string name="ability_protection_lesser_description">
+        This &term_unit; ignores damage from all &term_unit;s of %1$s.
+    </string>
+
+    <string name="ability_hypnosis_name">Hypnosis</string>
+    <string name="ability_hypnosis_description">
+        This &term_unit; cannot be &term_action_block_pt; by &term_subservient; &term_unit;s.
+    </string>
+
+    <string name="ability_ritual_name">Ritual</string>
+    <string name="ability_ritual_description">
+        When this &term_unit; &term_trigger_kills; in combat, during your next turn add &term_mana_ball;
+        equal to the &term_sacrifice_value;.
+    </string>
+
+    <string name="ability_lord_name">Lord</string>
+    <string name="ability_lord_description">
+        When this &term_unit; &term_trigger_is_put_into_play;, search for a &term_subservient; &term_unit;
+        to pair with this &term_unit; and &term_action_put_in_play; this &term_subservient; &term_unit;
+        without paying it's &term_summon_cost;. If this &term_unit; &term_trigger_death; you
+        may &term_action_sacrifice; the paired &term_subservient; &term_unit; to keep this &term_unit;
+        in play.
+    </string>
+
+    <string name="ability_vindictive_name">Vindictive</string>
+    <string name="ability_vindictive_description">
+        It this unit &term_trigger_dies; in combat, &term_action_kill; it's opponent as well.
+    </string>
+
+    <string name="ability_curse_name">Curse</string>
+    <string name="ability_curse_description">
+        &term_action_sacrifice; another &term_unit; to put a -1/-1 &term_counter; on an opponent's &term_unit;.
+    </string>
+
+    <string name="ability_wither_name">Wither</string>
+    <string name="ability_wither_description">
+        Put a -1/0 &term_counter; on any &term_unit; that survives an attack from this &term_unit;.
+    </string>
+
+    <string name="ability_poison_name">Poison</string>
+    <string name="ability_poison_description">
+        Put a 0/-1 &term_counter; on any &term_unit; that survives an attack from this &term_unit;.
+    </string>
+
+    <string name="ability_fate_name">Fate</string>
+    <string name="ability_fate_description">
+        When this &term_unit; deals damage, look at the top three cards of your opponent's &term_deck;,
+        and return them in any order.
+    </string>
+
+    <string name="ability_heresy_name">Heresy</string>
+    <string name="ability_heresy_description">
+        When this &term_unit; deals damage to an opponent, look at the top two cards of your opponent's &term_deck;,
+        and discard one of them.
+    </string>
+
+    <string name="ability_taxation_name">Taxation</string>
+    <string name="ability_taxation_description">
+        While this &term_unit; is in play, if your opponent puts a card into their &term_graveyard;
+        due to combat they must discard a card.
     </string>
 </resources>
