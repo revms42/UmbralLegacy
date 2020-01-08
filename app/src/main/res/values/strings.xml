@@ -119,6 +119,8 @@
     <!ENTITY faction_hellspawn_member "Hellspawn">
     <!ENTITY faction_hellspawn_members "Hellspawn">
 
+    <!ENTITY term_group "group">
+    <!ENTITY term_faction "faction">
     <!ENTITY term_sacrifice_value "sacrifice value">
     <!ENTITY term_unit "unit">
     <!ENTITY term_summon_cost "summon_cost">
@@ -133,10 +135,10 @@
     <!ENTITY term_colorless "un-typed">
     <!ENTITY term_front_row "front row">
     <!ENTITY term_back_row "back row">
-    <!ENTITY term_tap "tap">
     <!ENTITY term_summoned "summoned">
     <!ENTITY term_subservient "subservient">
     <!ENTITY term_counter "counter">
+    <!ENTITY term_mana_pool "available energy">
 
     <!ENTITY term_trigger_kills "kills">
     <!ENTITY term_trigger_kill "kill">
@@ -158,6 +160,7 @@
     <!ENTITY term_action_block_pt "blocked">
     <!ENTITY term_action_sacrifice "sacrifice">
     <!ENTITY term_action_kill "kill">
+    <!ENTITY term_action_tap "tap">
 
     <!ENTITY term_phase_untap "untap phase">
 ]>
@@ -290,6 +293,8 @@
 
     <!-- Terms -->
 
+    <string name="term_group">&term_group;</string>
+    <string name="term_faction">&term_faction;</string>
     <string name="term_sacrifice_value">&term_sacrifice_value;</string>
     <string name="term_summon_cost">&term_summon_cost;</string>
     <string name="term_deck">&term_deck;</string>
@@ -303,9 +308,10 @@
     <string name="term_colorless">&term_colorless;</string>
     <string name="term_front_row">&term_front_row;</string>
     <string name="term_back_row">&term_back_row;</string>
-    <string name="term_tap">&term_tap;</string>
     <string name="term_summoned">&term_summoned;</string>
     <string name="term_subservient">&term_subservient;</string>
+    <string name="term_counter">&term_counter;</string>
+    <string name="term_mana_pool">&term_mana_pool;</string>
 
     <string name="term_trigger_kills">&term_trigger_kills;</string>
     <string name="term_trigger_kill">&term_trigger_kill;</string>
@@ -327,6 +333,7 @@
     <string name="term_action_block_pt">&term_action_block_pt;</string>
     <string name="term_action_sacrifice">&term_action_sacrifice;</string>
     <string name="term_action_kill">&term_action_kill;</string>
+    <string name="term_action_tap">&term_action_tap;</string>
 
     <string name="term_phase_untap">&term_phase_untap;</string>
 
@@ -378,7 +385,7 @@
 
     <string name="ability_warlock_name">Warlock/Witch</string>
     <string name="ability_warlock_description">
-        You may &term_tap; this &term_unit; and pay its &term_sacrifice_value; to search your
+        You may &term_action_tap; this &term_unit; and pay its &term_sacrifice_value; to search your
         &term_deck; for a &term_subservient; &group_piercers_member; &term_unit; and put it into
         your &term_hand;.
     </string>
@@ -566,5 +573,47 @@
     <string name="ability_taxation_description">
         While this &term_unit; is in play, if your opponent puts a card into their &term_graveyard;
         due to combat they must discard a card.
+    </string>
+
+    <string name="ability_necromancy_name">Necromancy</string>
+    <string name="ability_necromancy_description">
+        When this &term_unit; leaves play you may search your &term_deck; for an identical copy
+        and put it on top of you &term_deck;.
+    </string>
+
+    <string name="ability_dark_revelation_name">Dark Revelation</string>
+    <string name="ability_dark_revelation_description">
+        When you play this card, draw a card.
+    </string>
+
+    <string name="ability_amnesia_name">Amnesia</string>
+    <string name="ability_amnesia_description">
+        &term_action_tap; this &term_unit;: Target &term_unit; looses the ability of your choice until
+        this &term_unit; &term_action_untap;s.
+    </string>
+
+    <string name="ability_font_name">Font</string>
+    <string name="ability_font_description">
+        &term_action_tap; this &term_unit;: Add one &term_mana_ball; of this &term_unit;'s type to your
+        &term_mana_pool;.
+    </string>
+
+    <string name="ability_primal_nature_name">Primal Nature</string>
+    <string name="ability_primal_nature_description">
+        Once per turn, you may choose to change the &term_group; or &term_faction; of this &term_unit;
+    </string>
+
+    <string name="ability_assassin_name">Assassin</string>
+    <string name="ability_assassin_description">
+        When this &term_unit; is played, &term_action_kill; an opponent's &term_unit; with &term_life;
+        less than or equal to this card's &term_strength;.
+    </string>
+
+    <string name="ability_seance_name">Seance</string>
+    <string name="ability_seance_description">
+        &term_action_tap; this &term_unit;: Specify a card in your &term_graveyard;, then search your
+        &term_deck; for an identical copy of that card. Choose one of the two cards immediately after
+        it in your &term_deck; and set it aside. Shuffle your &term_deck;, then place the card you've
+        set aside on top of your &term_deck;.
     </string>
 </resources>
