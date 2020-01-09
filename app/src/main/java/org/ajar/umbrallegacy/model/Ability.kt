@@ -25,6 +25,10 @@ interface AbilityDefinition {
                 if(!initialized) {
                     FactionAbility.register()
                     PositiveAbility.register()
+                    NegativeAbility.register()
+                    ArchetypeAbilities.register()
+                    CombatAbilities.register()
+                    initialized = true
                 }
                 return _allAbilities
             }
@@ -87,7 +91,74 @@ enum class PositiveAbility (override val abilityName: Int, override val descript
     POISON(R.string.ability_poison_name, R.string.ability_poison_description),
     FATE(R.string.ability_fate_name, R.string.ability_fate_description),
     HERESY(R.string.ability_heresy_name, R.string.ability_heresy_description),
-    TAXATION(R.string.ability_taxation_name, R.string.ability_taxation_description);
+    TAXATION(R.string.ability_taxation_name, R.string.ability_taxation_description),
+    NECROMANCY(R.string.ability_necromancy_name, R.string.ability_necromancy_description),
+    DARK_REVELATION(R.string.ability_dark_revelation_name, R.string.ability_dark_revelation_description),
+    AMNESIA(R.string.ability_amnesia_name, R.string.ability_amnesia_description),
+    FONT(R.string.ability_font_name, R.string.ability_font_description),
+    PRIMAL_NATURE(R.string.ability_primal_nature_name, R.string.ability_primal_nature_description),
+    ASSASSIN(R.string.ability_assassin_name, R.string.ability_assassin_description),
+    SEANCE(R.string.ability_seance_name, R.string.ability_seance_description),
+    CHAMPION(R.string.ability_champion_name, R.string.ability_champion_description),
+    UNHOLY_TRANSFORMATION(R.string.ability_unholy_transformation_name, R.string.ability_unholy_transformation_description),
+    HEX(R.string.ability_hex_name, R.string.ability_hex_description),
+    GRAVE_ROBBER(R.string.ability_grave_robber_name, R.string.ability_grave_robber_description),
+    DEMONIC_FIDDLER(R.string.ability_demonic_fiddler_name, R.string.ability_demonic_fiddler_description),
+    FRIGHTENING_ASSAULT(R.string.ability_frightening_assault_name, R.string.ability_frightening_assault_description);
+
+    companion object {
+        fun register() {
+            AbilityDefinition._allAbilities.addAll(values())
+        }
+    }
+}
+
+enum class NegativeAbility(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+    FRAGILE(R.string.ability_fragile_name, R.string.ability_fragile_description),
+    HUNGRY(R.string.ability_hungry_name, R.string.ability_hungry_description),
+    BLOOD_PRICE(R.string.ability_blood_price_name, R.string.ability_blood_price_description),
+    DARK_COST(R.string.ability_dark_cost_name, R.string.ability_dark_cost_description),
+    VENGEFUL(R.string.ability_vengeful_name, R.string.ability_vengeful_description),
+    COWARDLY(R.string.ability_cowardly_name, R.string.ability_cowardly_description),
+    BRASH(R.string.ability_brash_name, R.string.ability_brash_description),
+    HOLLOW(R.string.ability_hollow_name, R.string.ability_hollow_description),
+    ANCIENT(R.string.ability_ancient_name, R.string.ability_ancient_description),
+    UNIQUE(R.string.ability_unique_name, R.string.ability_unique_description),
+    ETHERIAL(R.string.ability_etherial_name, R.string.ability_etherial_description),
+    GHOUL(R.string.ability_ghoul_name, R.string.ability_ghoul_description),
+    SYCOPHANT(R.string.ability_sycophant_name, R.string.ability_sycophant_description),
+    SLOTH(R.string.ability_sloth_name, R.string.ability_sloth_description),
+    DEATHS_GIFT(R.string.ability_deaths_gift_name, R.string.ability_deaths_gift_description);
+
+    companion object {
+        fun register() {
+            AbilityDefinition._allAbilities.addAll(values())
+        }
+    }
+}
+
+enum class ArchetypeAbilities(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+    ARBITER(R.string.ability_arbiter_name, R.string.ability_arbiter_description),
+    REAPER(R.string.ability_reaper_name, R.string.ability_reaper_description),
+    EXECUTIONER(R.string.ability_executioner_name, R.string.ability_executioner_description),
+    LUNATIC_PIPER(R.string.ability_lunatic_piper_name, R.string.ability_lunatic_piper_description),
+    LICH(R.string.ability_lich_name, R.string.ability_lich_description),
+    INQUISITOR(R.string.ability_inquisitor_name, R.string.ability_inquisitor_description);
+
+    companion object {
+        fun register() {
+            AbilityDefinition._allAbilities.addAll(values())
+        }
+    }
+}
+
+enum class CombatAbilities(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+    PHALANX(R.string.ability_phalanx_name, R.string.ability_phalanx_description),
+    ARTILLERY(R.string.ability_artillery_name, R.string.ability_artillery_description),
+    OVERRUN(R.string.ability_overrun_name, R.string.ability_overrun_description),
+    FLANKING(R.string.ability_flanking_name, R.string.ability_flanking_description),
+    WEDGE(R.string.ability_wedge_name, R.string.ability_wedge_description),
+    REACH(R.string.ability_reach_name, R.string.ability_reach_description);
 
     companion object {
         fun register() {

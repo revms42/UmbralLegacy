@@ -611,7 +611,7 @@
 
     <string name="ability_font_name">Font</string>
     <string name="ability_font_description">
-        &term_action_tap; this &term_unit;: Add one &term_mana_ball; of this &term_unit;'s type to your
+        &term_action_tap; this &term_unit;: Add one &term_mana_ball; of this &term_unit;\'s type to your
         &term_mana_pool;.
     </string>
 
@@ -622,15 +622,15 @@
 
     <string name="ability_assassin_name">Assassin</string>
     <string name="ability_assassin_description">
-        When this &term_unit; is played, &term_action_kill; an opponent's &term_unit; with &term_life;
-        less than or equal to this card's &term_strength;.
+        When this &term_unit; is played, &term_action_kill; an opponent\'s &term_unit; with &term_life;
+        less than or equal to this card\'s &term_strength;.
     </string>
 
     <string name="ability_seance_name">Seance</string>
     <string name="ability_seance_description">
         &term_action_tap; this &term_unit;: Specify a card in your &term_graveyard;, then search your
         &term_deck; for an identical copy of that card. Choose one of the two cards immediately after
-        it in your &term_deck; and set it aside. Shuffle your &term_deck;, then place the card you've
+        it in your &term_deck; and set it aside. Shuffle your &term_deck;, then place the card you\'ve
         set aside on top of your &term_deck;.
     </string>
 

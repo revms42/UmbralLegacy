@@ -22,6 +22,7 @@ class AbilityUnitTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
 
-        AbilityDefinition.allAbilities.forEach { Log.d("Ability", it.describe(appContext)) }
+        var count = 0;
+        AbilityDefinition.allAbilities.forEach { Log.d("Ability", "${count++} ${it.name(appContext)}: ${it.describe(appContext)}") }
     }
 }
