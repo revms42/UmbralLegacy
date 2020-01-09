@@ -139,6 +139,7 @@
     <!ENTITY term_subservient "subservient">
     <!ENTITY term_counter "counter">
     <!ENTITY term_mana_pool "available energy">
+    <!ENTITY term_blood_price "blood price">
 
     <!ENTITY term_trigger_kills "kills">
     <!ENTITY term_trigger_kill "kill">
@@ -161,8 +162,16 @@
     <!ENTITY term_action_sacrifice "sacrifice">
     <!ENTITY term_action_kill "kill">
     <!ENTITY term_action_tap "tap">
+    <!ENTITY term_action_remove_from_the_game "remove from the game">
+    <!ENTITY term_action_summon "summon">
+    <!ENTITY term_action_draw "draw">
+
+    <!ENTITY term_state_tapped "tapped">
+    <!ENTITY term_state_untapped "untapped">
 
     <!ENTITY term_phase_untap "untap phase">
+    <!ENTITY term_phase_attack "attack phase">
+    <!ENTITY term_phase_draw "draw phase">
 ]>
 
 <resources>
@@ -312,6 +321,7 @@
     <string name="term_subservient">&term_subservient;</string>
     <string name="term_counter">&term_counter;</string>
     <string name="term_mana_pool">&term_mana_pool;</string>
+    <string name="term_blood_price">&term_blood_price;</string>
 
     <string name="term_trigger_kills">&term_trigger_kills;</string>
     <string name="term_trigger_kill">&term_trigger_kill;</string>
@@ -334,8 +344,15 @@
     <string name="term_action_sacrifice">&term_action_sacrifice;</string>
     <string name="term_action_kill">&term_action_kill;</string>
     <string name="term_action_tap">&term_action_tap;</string>
+    <string name="term_action_summon">&term_action_summon;</string>
+    <string name="term_action_draw">&term_action_draw;</string>
+
+    <string name="term_state_tapped">&term_state_tapped;</string>
+    <string name="term_state_untapped">&term_state_untapped;</string>
 
     <string name="term_phase_untap">&term_phase_untap;</string>
+    <string name="term_phase_attack">&term_phase_attack;</string>
+    <string name="term_phase_draw">&term_phase_draw;</string>
 
     <!-- Faction Abilities -->
 
@@ -615,5 +632,204 @@
         &term_deck; for an identical copy of that card. Choose one of the two cards immediately after
         it in your &term_deck; and set it aside. Shuffle your &term_deck;, then place the card you've
         set aside on top of your &term_deck;.
+    </string>
+
+    <string name="ability_champion_name">Champion</string>
+    <string name="ability_champion_description">
+        This &term_unit; gets +1/+1 for each other &term_unit; in its row.
+    </string>
+
+    <string name="ability_unholy_transformation_name">Unholy Transformation</string>
+    <string name="ability_unholy_transformation_description">
+        &term_action_sacrifice; this &term_unit; and the top card of your &term_deck; then put the
+        subsequent card directly into play in this card\'s spot without paying it\'s &term_summon_cost;.
+    </string>
+
+    <string name="ability_hex_name">Hex</string>
+    <string name="ability_hex_description">
+        &term_action_tap; this &term_unit;: While this &term_unit; remains &term_state_tapped; a
+        target &term_unit; of your choice gains a negative ability of your choice.
+    </string>
+
+    <string name="ability_grave_robber_name">Grave Robber</string>
+    <string name="ability_grave_robber_description">
+        Shuffle your &term_graveyard;. Take the top five cards of you &term_graveyard; into your
+        &term_deck;, then &term_action_remove_from_the_game; this card.
+    </string>
+
+    <string name="ability_demonic_fiddler_name">Demonic Fiddler</string>
+    <string name="ability_demonic_fiddler_description">
+        At the beginning of your turn your opponent\'s &term_front_row; and &term_back_row; switch
+        places.
+    </string>
+
+    <string name="ability_frightening_assault_name">Frightening Assault</string>
+    <string name="ability_frightening_assault_description">
+        If this &term_unit; does damage to a &term_unit; in your opponent\'s &term_back_row; they
+        must &term_action_discard; a card.
+    </string>
+
+    <!-- Negative Abilities -->
+
+    <string name="ability_fragile_name">Fragile</string>
+    <string name="ability_fragile_description">
+        After this &term_unit; attacks it &term_trigger_dies;.
+    </string>
+
+    <string name="ability_hungry_name">Hungry</string>
+    <string name="ability_hungry_description">
+        This &term_unit; must attack every turn or it &term_trigger_dies;.
+    </string>
+
+    <string name="ability_blood_price_name">Blood Price</string>
+    <string name="ability_blood_price_description">
+        This card can only have it\'s &term_summon_cost; paid by &term_trigger_sacrifice;.
+    </string>
+
+    <string name="ability_dark_cost_name">Dark Cost</string>
+    <string name="ability_dark_cost_description">
+        To &term_action_summon; this &term_unit;, in addition to it\'s &term_summon_cost;, you must
+        &term_action_discard; a card from the top of you &term_deck;.
+    </string>
+
+    <string name="ability_vengeful_name">Vengeful</string>
+    <string name="ability_vengeful_description">
+        When this &term_unit; is put into your &term_graveyard;, discard a card from the top of your
+        &term_deck;.
+    </string>
+
+    <string name="ability_cowardly_name">Cowardly</string>
+    <string name="ability_cowardly_description">
+        This &term_unit; may not attack alone.
+    </string>
+
+    <string name="ability_brash_name">Brash</string>
+    <string name="ability_brash_description">
+        This &term_unit; may only attack alone.
+    </string>
+
+    <string name="ability_hollow_name">Hollow</string>
+    <string name="ability_hollow_description">
+        Pay this &term_unit;\'s &term_summon_cost; every turn or it &term_trigger_dies;.
+    </string>
+
+    <string name="ability_ancient_name">Ancient</string>
+    <string name="ability_ancient_description">
+        You must pay one &term_mana_ball; of this &term_unit;\'s type in order to &term_action_untap;
+        it during your &term_phase_untap;.
+    </string>
+
+    <string name="ability_unique_name">Unique</string>
+    <string name="ability_unique_description">
+        When this &term_unit; card leaves play remove all copies of it from your &term_deck;
+    </string>
+
+    <string name="ability_etherial_name">Etherial</string>
+    <string name="ability_etherial_description">
+        This &term_unit; can only attack or defend if have played a card this round.
+    </string>
+
+    <string name="ability_ghoul_name">Ghoul</string>
+    <string name="ability_ghoul_description">
+        This &term_unit; can only attack or defend if &term_blood_price; has been paid this turn.
+    </string>
+
+    <string name="ability_sycophant_name">Sycophant</string>
+    <string name="ability_sycophant_description">
+        This &term_unit; may only attack if a more powerful &term_unit; of the same &term_group; is
+        present in play.
+    </string>
+
+    <string name="ability_sloth_name">Sloth</string>
+    <string name="ability_sloth_description">
+        This &term_unit; get\'s -1/0 for every other &term_unit; in its row.
+    </string>
+
+    <string name="ability_deaths_gift_name">Death\'s Gift</string>
+    <string name="ability_deaths_gift_description">
+        This &term_unit; only gains its other abilities after it has been placed into &term_graveyard;.
+    </string>
+
+    <!-- Archetype Abilities -->
+
+    <string name="ability_arbiter_name">Arbiter</string>
+    <string name="ability_arbiter_description">
+        While this &term_unit; is in play no one may &term_action_draw;.
+    </string>
+
+    <string name="ability_reaper_name">Reaper</string>
+    <string name="ability_reaper_description">
+        While this &term_unit; is in play, before any player &term_action_draw;\'s, that player
+        &term_action_discard;\'s the top card in their &term_deck;.
+    </string>
+
+    <string name="ability_executioner_name">Executioner</string>
+    <string name="ability_executioner_description">
+        While this &term_unit; is in play, if any card would be put into a &term_graveyard; instead
+        &term_action_remove_from_the_game; that card.
+    </string>
+
+    <string name="ability_lunatic_piper_name">Lunatic Piper</string>
+    <string name="ability_lunatic_piper_description">
+        While this &term_unit; is in play, all &term_unit;\'s capable of attacking during any player\'s
+        &term_phase_attack; must do so.
+    </string>
+
+    <string name="ability_lich_name">Lich</string>
+    <string name="ability_lich_description">
+        While this &term_unit; is in play, all players draw five cards during the &term_phase_draw;
+        and there is no hand limit.
+    </string>
+
+    <string name="ability_inquisitor_name">Inquisitor</string>
+    <string name="ability_inquisitor_description">
+        While this &term_unit; is in play, when a &term_unit; goes into a &term_graveyard; the controlling
+        player must &term_action_discard; a card from the top of their &term_deck;.
+    </string>
+
+    <!-- Combat Abilities -->
+
+    <string name="ability_phalanx_name">Phalanx</string>
+    <string name="ability_phalanx_description">
+        When attacked, any adjacent &term_unit;\'s to a &term_unit; with Phalanx distribute the
+        damage amongst themselves evenly.\n
+        When attacking, a &term_unit; with Phalanx combines their attack with the attack values
+        of any adjacent non-attacking &term_unit;\'s.\n
+        After combat, all Phalanx columns swap the back and front &term_unit;\'s.
+    </string>
+
+    <string name="ability_artillery_name">Artillery</string>
+    <string name="ability_artillery_description">
+        This &term_unit; deals no damage as a defender, and receives none as an attacker. When this
+        unit attacks it deals one quarter of its damage rounded down to the lead &term_unit; of the
+        column. It does the same amount to any adjacent &term_unit;.\n
+        Attacking does not cause this &term_unit; to &term_action_tap;.
+    </string>
+
+    <string name="ability_overrun_name">Overrun</string>
+    <string name="ability_overrun_description">
+        If this &term_unit; does damage in excess of what is required to &term_action_kill; the
+        &term_unit; at the front of the opposing column, damage is carried over to the &term_unit;
+        behind it. If no &term_unit; is present behind the first to take the damage, the opposing
+        player &term_action_discard;s a card from the top of their &term_deck;.
+    </string>
+
+    <string name="ability_flanking_name">Flanking</string>
+    <string name="ability_flanking_description">
+        If this &term_unit; does damage in excess of what is required to &term_action_kill; the &term_unit;
+        at the front of the opposing column, damage is carried over to the an adjacent &term_unit;
+        in the same row of your choice.
+    </string>
+
+    <string name="ability_wedge_name">Wedge</string>
+    <string name="ability_wedge_description">
+        This &term_unit; may combine its power with the unit behind it in its column when attacking.
+        If it does so both &term_unit;\'s &term_action_tap;, but only the first &term_unit; takes
+        damage.
+    </string>
+
+    <string name="ability_reach_name">Reach</string>
+    <string name="ability_reach_description">
+        Damage that this &term_unit; does in combat is resolved before it takes any damage.
     </string>
 </resources>
