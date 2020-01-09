@@ -486,13 +486,13 @@
 
     <string name="ability_paralyze_name">Paralyze</string>
     <string name="ability_paralyze_description">
-        &term_unit;s that take damage from this &term_unit; don't &term_action_untap; during their
-        owner's next &term_phase_untap;.
+        &term_unit;s that take damage from this &term_unit; don\'t &term_action_untap; during their
+        owner\'s next &term_phase_untap;.
     </string>
 
     <string name="ability_relentless_name">Relentless</string>
     <string name="ability_relentless_description">
-        This &term_unit; also &term_action_untap;s during your opponent's &term_phase_untap;.
+        This &term_unit; also &term_action_untap;s during your opponent\'s &term_phase_untap;.
     </string>
 
     <string name="ability_decaying_name">Decaying</string>
@@ -525,19 +525,19 @@
     <string name="ability_lord_description">
         When this &term_unit; &term_trigger_is_put_into_play;, search for a &term_subservient; &term_unit;
         to pair with this &term_unit; and &term_action_put_in_play; this &term_subservient; &term_unit;
-        without paying it's &term_summon_cost;. If this &term_unit; &term_trigger_death; you
+        without paying it\'s &term_summon_cost;. If this &term_unit; &term_trigger_death; you
         may &term_action_sacrifice; the paired &term_subservient; &term_unit; to keep this &term_unit;
         in play.
     </string>
 
     <string name="ability_vindictive_name">Vindictive</string>
     <string name="ability_vindictive_description">
-        It this unit &term_trigger_dies; in combat, &term_action_kill; it's opponent as well.
+        It this unit &term_trigger_dies; in combat, &term_action_kill; the &term_unit; it faced in combat as well.
     </string>
 
     <string name="ability_curse_name">Curse</string>
     <string name="ability_curse_description">
-        &term_action_sacrifice; another &term_unit; to put a -1/-1 &term_counter; on an opponent's &term_unit;.
+        &term_action_sacrifice; another &term_unit; to put a -1/-1 &term_counter; on an opponent\'s &term_unit;.
     </string>
 
     <string name="ability_wither_name">Wither</string>
@@ -552,13 +552,13 @@
 
     <string name="ability_fate_name">Fate</string>
     <string name="ability_fate_description">
-        When this &term_unit; deals damage, look at the top three cards of your opponent's &term_deck;,
+        When this &term_unit; deals damage, look at the top three cards of your opponent\'s &term_deck;,
         and return them in any order.
     </string>
 
     <string name="ability_heresy_name">Heresy</string>
     <string name="ability_heresy_description">
-        When this &term_unit; deals damage to an opponent, look at the top two cards of your opponent's &term_deck;,
+        When this &term_unit; deals damage to an opponent, look at the top two cards of your opponent\'s &term_deck;,
         and discard one of them.
     </string>
 

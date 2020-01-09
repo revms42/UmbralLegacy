@@ -24,6 +24,7 @@ interface AbilityDefinition {
             get() {
                 if(!initialized) {
                     FactionAbility.register()
+                    PositiveAbility.register()
                 }
                 return _allAbilities
             }
@@ -60,6 +61,33 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     DOPPELGANGER_ABILITY(R.string.ability_doppelganger_name, R.string.ability_doppelganger_description),
     MARKED_ABILITY(R.string.ability_marked_name, R.string.ability_marked_description),
     HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description);
+
+    companion object {
+        fun register() {
+            AbilityDefinition._allAbilities.addAll(values())
+        }
+    }
+}
+
+enum class PositiveAbility (override val abilityName: Int, override val description: Int) : AbilityDefinition {
+
+    BURN(R.string.ability_burn_name, R.string.ability_burn_description),
+    SACRIFICE(R.string.ability_sacrifice_name, R.string.ability_sacrifice_description),
+    PARALYZE(R.string.ability_paralyze_name, R.string.ability_paralyze_description),
+    RELENTLESS(R.string.ability_relentless_name, R.string.ability_relentless_description),
+    DECAYING(R.string.ability_decaying_name, R.string.ability_decaying_description),
+    PROTECTION_GREATER(R.string.ability_protection_greater_name, R.string.ability_protection_greater_description),
+    PROTECTION_LESSER(R.string.ability_protection_lesser_name, R.string.ability_protection_lesser_description),
+    HYPNOSIS(R.string.ability_hypnosis_name, R.string.ability_hypnosis_description),
+    RITUAL(R.string.ability_ritual_name, R.string.ability_ritual_description),
+    LORD(R.string.ability_lord_name, R.string.ability_lord_description),
+    VINDICTIVE(R.string.ability_vindictive_name, R.string.ability_vindictive_description),
+    CURSE(R.string.ability_curse_name, R.string.ability_curse_description),
+    WITHER(R.string.ability_wither_name, R.string.ability_wither_description),
+    POISON(R.string.ability_poison_name, R.string.ability_poison_description),
+    FATE(R.string.ability_fate_name, R.string.ability_fate_description),
+    HERESY(R.string.ability_heresy_name, R.string.ability_heresy_description),
+    TAXATION(R.string.ability_taxation_name, R.string.ability_taxation_description);
 
     companion object {
         fun register() {
