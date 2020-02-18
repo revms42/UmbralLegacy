@@ -1,12 +1,47 @@
 package org.ajar.umbrallegacy.model
 
 import android.content.Context
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import org.ajar.umbrallegacy.R
+
+enum class AbilityType(private val term: Int, var icon: Int = -1) {
+    FACTION(R.string.term_faction_ability) {
+        override val collection: Array<out AbilityDefinition>
+            get() = FactionAbility.values()
+    },
+    POSITIVE(R.string.term_positive_ability) {
+        override val collection: Array<out AbilityDefinition>
+            get() = PositiveAbility.values()
+
+    },
+    NEGATIVE(R.string.term_negative_ability) {
+        override val collection: Array<out AbilityDefinition>
+            get() = NegativeAbility.values()
+    },
+    ARCHETYPE(R.string.term_archetype_ability) {
+        override val collection: Array<out AbilityDefinition>
+            get() = ArchetypeAbilities.values()
+    },
+    COMBAT(R.string.term_combat_ability) {
+        override val collection: Array<out AbilityDefinition>
+            get() = CombatAbilities.values()
+    };
+
+    abstract val collection: Array<out AbilityDefinition>
+
+    fun displayName(context: Context): String {
+        return context.getString(term)
+    }
+}
 
 interface AbilityDefinition {
 
     val abilityName: Int
     val description: Int
+    val type: AbilityType
+    var cost: Int
 
     fun name(context: Context): String {
         return context.getString(abilityName)
@@ -16,26 +51,62 @@ interface AbilityDefinition {
         return context.getString(description)
     }
 
-    companion object {
-        var initialized = false
+    fun type(context: Context): String {
+        return type.displayName(context)
+    }
 
-        internal val _allAbilities = ArrayList<AbilityDefinition>()
-        val allAbilities: List<AbilityDefinition>
+    companion object {
+        private var initialized = false
+
+        private val _abilityMap = HashMap<Int, AbilityDefinition>()
+        private val abilityMap: HashMap<Int, AbilityDefinition>
             get() {
                 if(!initialized) {
-                    FactionAbility.register()
-                    PositiveAbility.register()
-                    NegativeAbility.register()
-                    ArchetypeAbilities.register()
-                    CombatAbilities.register()
+                    FactionAbility.values().forEach { _abilityMap[it.abilityName] = it }
+                    PositiveAbility.values().forEach { _abilityMap[it.abilityName] = it }
+                    NegativeAbility.values().forEach { _abilityMap[it.abilityName] = it }
+                    ArchetypeAbilities.values().forEach { _abilityMap[it.abilityName] = it }
+                    CombatAbilities.values().forEach { _abilityMap[it.abilityName] = it }
                     initialized = true
                 }
-                return _allAbilities
+                return _abilityMap
             }
+
+        val allAbilities: Collection<AbilityDefinition>
+            get() {
+                return abilityMap.values
+            }
+
+        operator fun get(key: Int) : AbilityDefinition? {
+            return abilityMap[key]
+        }
     }
 }
 
-enum class FactionAbility(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+@Entity(tableName = Ability.TABLE_NAME)
+data class Ability(
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(index = true, name = COLUMN_ID) var id: Long,
+    @ColumnInfo(name = COLUMN_NAME) var name: String,
+    @ColumnInfo(name = COLUMN_DESC) var description: String,
+    @ColumnInfo(name = COLUMN_TYPE) var type: AbilityType,
+    @ColumnInfo(name = COLUMN_COST) var cost: Int
+) {
+
+    companion object {
+        const val TABLE_NAME = "ability"
+        const val COLUMN_ID = "id"
+        const val COLUMN_NAME = "name"
+        const val COLUMN_DESC = "description"
+        const val COLUMN_TYPE = "type"
+        const val COLUMN_COST = "cost"
+
+        fun create(definition: AbilityDefinition, context: Context) : Ability {
+            return Ability(0, definition.name(context), definition.describe(context), definition.type, 1)
+        }
+    }
+}
+
+enum class FactionAbility(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
     VAMPIRE_ABILITY(R.string.ability_vampire_name, R.string.ability_vampire_description),
     NOSFERATU_ABILITY(R.string.ability_nosferatu_name, R.string.ability_nosferatu_description),
     WIGHT_ABILITY(R.string.ability_wight_name, R.string.ability_wight_description),
@@ -66,14 +137,10 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     MARKED_ABILITY(R.string.ability_marked_name, R.string.ability_marked_description),
     HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description);
 
-    companion object {
-        fun register() {
-            AbilityDefinition._allAbilities.addAll(values())
-        }
-    }
+    override val type = AbilityType.FACTION
 }
 
-enum class PositiveAbility (override val abilityName: Int, override val description: Int) : AbilityDefinition {
+enum class PositiveAbility (override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
 
     BURN(R.string.ability_burn_name, R.string.ability_burn_description),
     SACRIFICE(R.string.ability_sacrifice_name, R.string.ability_sacrifice_description),
@@ -106,14 +173,10 @@ enum class PositiveAbility (override val abilityName: Int, override val descript
     DEMONIC_FIDDLER(R.string.ability_demonic_fiddler_name, R.string.ability_demonic_fiddler_description),
     FRIGHTENING_ASSAULT(R.string.ability_frightening_assault_name, R.string.ability_frightening_assault_description);
 
-    companion object {
-        fun register() {
-            AbilityDefinition._allAbilities.addAll(values())
-        }
-    }
+    override val type = AbilityType.POSITIVE
 }
 
-enum class NegativeAbility(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+enum class NegativeAbility(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
     FRAGILE(R.string.ability_fragile_name, R.string.ability_fragile_description),
     HUNGRY(R.string.ability_hungry_name, R.string.ability_hungry_description),
     BLOOD_PRICE(R.string.ability_blood_price_name, R.string.ability_blood_price_description),
@@ -130,14 +193,10 @@ enum class NegativeAbility(override val abilityName: Int, override val descripti
     SLOTH(R.string.ability_sloth_name, R.string.ability_sloth_description),
     DEATHS_GIFT(R.string.ability_deaths_gift_name, R.string.ability_deaths_gift_description);
 
-    companion object {
-        fun register() {
-            AbilityDefinition._allAbilities.addAll(values())
-        }
-    }
+    override val type = AbilityType.NEGATIVE
 }
 
-enum class ArchetypeAbilities(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+enum class ArchetypeAbilities(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
     ARBITER(R.string.ability_arbiter_name, R.string.ability_arbiter_description),
     REAPER(R.string.ability_reaper_name, R.string.ability_reaper_description),
     EXECUTIONER(R.string.ability_executioner_name, R.string.ability_executioner_description),
@@ -145,14 +204,10 @@ enum class ArchetypeAbilities(override val abilityName: Int, override val descri
     LICH(R.string.ability_lich_name, R.string.ability_lich_description),
     INQUISITOR(R.string.ability_inquisitor_name, R.string.ability_inquisitor_description);
 
-    companion object {
-        fun register() {
-            AbilityDefinition._allAbilities.addAll(values())
-        }
-    }
+    override val type = AbilityType.ARCHETYPE
 }
 
-enum class CombatAbilities(override val abilityName: Int, override val description: Int) : AbilityDefinition {
+enum class CombatAbilities(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
     PHALANX(R.string.ability_phalanx_name, R.string.ability_phalanx_description),
     ARTILLERY(R.string.ability_artillery_name, R.string.ability_artillery_description),
     OVERRUN(R.string.ability_overrun_name, R.string.ability_overrun_description),
@@ -160,9 +215,5 @@ enum class CombatAbilities(override val abilityName: Int, override val descripti
     WEDGE(R.string.ability_wedge_name, R.string.ability_wedge_description),
     REACH(R.string.ability_reach_name, R.string.ability_reach_description);
 
-    companion object {
-        fun register() {
-            AbilityDefinition._allAbilities.addAll(values())
-        }
-    }
+    override val type = AbilityType.COMBAT
 }

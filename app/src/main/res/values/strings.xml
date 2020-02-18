@@ -140,6 +140,8 @@
     <!ENTITY term_counter "counter">
     <!ENTITY term_mana_pool "available energy">
     <!ENTITY term_blood_price "blood price">
+    <!ENTITY term_negative_ability "Detrimental Ability">
+    <!ENTITY term_positive_ability "Beneficial Ability">
 
     <!ENTITY term_trigger_kills "kills">
     <!ENTITY term_trigger_kill "kill">
@@ -322,6 +324,12 @@
     <string name="term_counter">&term_counter;</string>
     <string name="term_mana_pool">&term_mana_pool;</string>
     <string name="term_blood_price">&term_blood_price;</string>
+
+    <string name="term_faction_ability">Faction Ability</string>
+    <string name="term_positive_ability">&term_positive_ability;</string>
+    <string name="term_negative_ability">&term_negative_ability;</string>
+    <string name="term_archetype_ability">Archetype Ability</string>
+    <string name="term_combat_ability">Combat Ability</string>
 
     <string name="term_trigger_kills">&term_trigger_kills;</string>
     <string name="term_trigger_kill">&term_trigger_kill;</string>
@@ -648,7 +656,7 @@
     <string name="ability_hex_name">Hex</string>
     <string name="ability_hex_description">
         &term_action_tap; this &term_unit;: While this &term_unit; remains &term_state_tapped; a
-        target &term_unit; of your choice gains a negative ability of your choice.
+        target &term_unit; of your choice gains a &term_negative_ability; of your choice.
     </string>
 
     <string name="ability_grave_robber_name">Grave Robber</string>

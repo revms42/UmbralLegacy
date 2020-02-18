@@ -131,18 +131,20 @@ enum class Faction(override val factionName: Int, override val member: Int, over
 }
 
 
-open class GroupDefinition(
-        val name: Int,
-        val member: Int,
-        val members: Int,
-        vararg val factions: Faction
-)
+interface GroupDefinition {
+    val groupName: Int
+    val member: Int
+    val members: Int
+    val factions: Array<out Faction>
+}
 
-sealed class Group(name: Int, member: Int, members: Int, vararg factions: Faction) : GroupDefinition(name, member, members, *factions) {
-    object Stillblood : Group(R.string.group_stillblood_name, R.string.group_stillblood_member, R.string.group_stillblood_members, Faction.VAMPIRES, Faction.NOSFERATU, Faction.WIGHTS, Faction.ZOMBIES)
-    object Cursed : Group(R.string.group_cursed_name, R.string.group_cursed_member, R.string.group_cursed_members, Faction.LYCANTHROPES, Faction.ANIMATED, Faction.TOTEMIC_SPIRITS, Faction.WITCH_BOUND)
-    object Piercers : Group(R.string.group_piercers_name, R.string.group_piercers_member, R.string.group_piercers_members, Faction.WARLOCKS, Faction.ELEMENTALS, Faction.BOUND_DEMONS, Faction.MAGICAL_CONSTRUCTS)
-    object Fae : Group(R.string.group_fae_name, R.string.group_fae_member, R.string.group_fae_members, Faction.TROLLS, Faction.WISH_GRANTERS, Faction.UNSEELIE, Faction.HORNED_ONES)
-    object OldOnes : Group(R.string.group_old_ones_name, R.string.group_old_ones_member, R.string.group_old_ones_members, Faction.GREAT_OLD_ONES, Faction.ANCIENT_RACE, Faction.YELLOW_MASKS, Faction.CULTISTS)
-    object Hellbound : Group(R.string.group_hellbound_name, R.string.group_hellbound_member, R.string.group_hellbound_members, Faction.ARCHITECTS, Faction.MARKED, Faction.HELLSPAWN, Faction.DOPPLEGANGERS)
+enum class Group(override val groupName: Int, override val member: Int, override val members: Int, vararg factionList: Faction) : GroupDefinition {
+    STILLBLOOD(R.string.group_stillblood_name, R.string.group_stillblood_member, R.string.group_stillblood_members, Faction.VAMPIRES, Faction.NOSFERATU, Faction.WIGHTS, Faction.ZOMBIES),
+    CURSED(R.string.group_cursed_name, R.string.group_cursed_member, R.string.group_cursed_members, Faction.LYCANTHROPES, Faction.ANIMATED, Faction.TOTEMIC_SPIRITS, Faction.WITCH_BOUND),
+    PIERCERS(R.string.group_piercers_name, R.string.group_piercers_member, R.string.group_piercers_members, Faction.WARLOCKS, Faction.ELEMENTALS, Faction.BOUND_DEMONS, Faction.MAGICAL_CONSTRUCTS),
+    FAE(R.string.group_fae_name, R.string.group_fae_member, R.string.group_fae_members, Faction.TROLLS, Faction.WISH_GRANTERS, Faction.UNSEELIE, Faction.HORNED_ONES),
+    OLD_ONES(R.string.group_old_ones_name, R.string.group_old_ones_member, R.string.group_old_ones_members, Faction.GREAT_OLD_ONES, Faction.ANCIENT_RACE, Faction.YELLOW_MASKS, Faction.CULTISTS),
+    HELLBOUND(R.string.group_hellbound_name, R.string.group_hellbound_member, R.string.group_hellbound_members, Faction.ARCHITECTS, Faction.MARKED, Faction.HELLSPAWN, Faction.DOPPLEGANGERS);
+
+    override val factions = factionList
 }
