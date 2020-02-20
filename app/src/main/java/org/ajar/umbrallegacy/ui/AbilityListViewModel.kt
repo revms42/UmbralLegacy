@@ -11,6 +11,7 @@ class AbilityListViewModel(application: Application) : AndroidViewModel(applicat
 
     private val abilityDao: AbilityDAO
     val abilityLD: LiveData<List<Ability>>
+    var selectedAbility: Ability? = null
 
     init {
         AbilityDatabase.init(application)

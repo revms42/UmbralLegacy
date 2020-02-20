@@ -840,4 +840,7 @@
     <string name="ability_reach_description">
         Damage that this &term_unit; does in combat is resolved before it takes any damage.
     </string>
+
+    <string name="button_accept_text">Accept</string>
+    <string name="button_cancel_text">Cancel</string>
 </resources>
