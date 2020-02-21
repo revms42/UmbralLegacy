@@ -18,4 +18,8 @@ class AbilityListViewModel(application: Application) : AndroidViewModel(applicat
         abilityDao = AbilityDatabase.instance!!.abilityDao()
         abilityLD  = abilityDao.observeAllByName()
     }
+
+    fun commitSelected() {
+        selectedAbility?.also { abilityDao.insert(it) }
+    }
 }

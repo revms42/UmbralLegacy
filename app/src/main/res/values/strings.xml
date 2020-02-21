@@ -142,6 +142,9 @@
     <!ENTITY term_blood_price "blood price">
     <!ENTITY term_negative_ability "Detrimental Ability">
     <!ENTITY term_positive_ability "Beneficial Ability">
+    <!ENTITY term_faction_ability "Faction Ability">
+    <!ENTITY term_archetype_ability "Archetype Ability">
+    <!ENTITY term_combat_ability "Combat Ability">
 
     <!ENTITY term_trigger_kills "kills">
     <!ENTITY term_trigger_kill "kill">
@@ -325,11 +328,19 @@
     <string name="term_mana_pool">&term_mana_pool;</string>
     <string name="term_blood_price">&term_blood_price;</string>
 
-    <string name="term_faction_ability">Faction Ability</string>
+    <string name="term_faction_ability">&term_faction_ability;</string>
     <string name="term_positive_ability">&term_positive_ability;</string>
     <string name="term_negative_ability">&term_negative_ability;</string>
-    <string name="term_archetype_ability">Archetype Ability</string>
-    <string name="term_combat_ability">Combat Ability</string>
+    <string name="term_archetype_ability">&term_archetype_ability;</string>
+    <string name="term_combat_ability">&term_combat_ability;</string>
+    
+    <string-array name="ability_types">
+        <item>&term_faction_ability;</item>
+        <item>&term_positive_ability;</item>
+        <item>&term_negative_ability;</item>
+        <item>&term_archetype_ability;</item>
+        <item>&term_combat_ability;</item>
+    </string-array>
 
     <string name="term_trigger_kills">&term_trigger_kills;</string>
     <string name="term_trigger_kill">&term_trigger_kill;</string>

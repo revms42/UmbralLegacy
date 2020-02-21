@@ -34,6 +34,12 @@ enum class AbilityType(private val term: Int, var icon: Int = -1) {
     fun displayName(context: Context): String {
         return context.getString(term)
     }
+
+    companion object {
+        fun fromDisplayName(context: Context, name: String): AbilityType? {
+            return values().firstOrNull { it.displayName(context) == name }
+        }
+    }
 }
 
 interface AbilityDefinition {
