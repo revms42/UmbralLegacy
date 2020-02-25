@@ -5,6 +5,6 @@
     android:width="36dp"
     android:height="36dp">
     <path
-        android:pathData="M0,9 l18,-9 l18,9 v9 l-18,-9 l-18,9Z M0,27 l18,-9 l18,9 v9 l-18,-9 l-18,9Z"
-        android:fillColor="@color/abilityTypeBeneficial" />
+        android:pathData="M0,0 l18,9 l18,-9 v9 l-18,9 l-18,-9Z M0,18 l18,9 l18,-9 v9 l-18,9 l-18,-9Z"
+        android:fillColor="@color/abilityTypeDetrimental" />
 </vector>

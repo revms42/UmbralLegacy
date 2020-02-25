@@ -10,4 +10,10 @@
 
     <color name="colorListBackgroundUnselected">#FFFFFF</color>
     <color name="colorListBackgroundSelected">#008888</color>
+
+    <color name="abilityTypeBeneficial">#008000</color>
+    <color name="abilityTypeDetrimental">#800000</color>
+    <color name="abilityTypeArchetype">#700070</color>
+    <color name="abilityTypeFaction">#909000</color>
+    <color name="abilityTypeCombat">#0080A0</color>
 </resources>

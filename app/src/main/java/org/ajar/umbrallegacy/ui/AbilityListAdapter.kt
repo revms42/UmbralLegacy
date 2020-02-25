@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import org.ajar.umbrallegacy.model.Ability
 import android.view.LayoutInflater
+import android.widget.ImageView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import org.ajar.umbrallegacy.R
@@ -42,12 +43,12 @@ class AbilityListAdapter(private val abilities: LiveData<List<Ability>>, private
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private var nameTextView: TextView = itemView.findViewById(R.id.ability_name)
-        private var typeTextView: TextView = itemView.findViewById(R.id.ability_type)
+        private var typeIcon: ImageView = itemView.findViewById(R.id.ability_type)
         private var costTextView: TextView = itemView.findViewById(R.id.ability_cost)
 
         fun bind(ability: Ability, itemSelectionListener: ItemSelectionListener<Ability>) {
             nameTextView.text = ability.name
-            typeTextView.text = ability.type.displayName(itemView.context)
+            typeIcon.setImageDrawable(itemView.context.getDrawable(ability.type.icon))
             costTextView.text = ability.cost.toString()
 
             itemView.setOnClickListener {

@@ -21,6 +21,7 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
     private var type: AbilityType? = null
     private var spinnerAdapter: ArrayAdapter<CharSequence>? = null
     private var spinner: Spinner? = null
+    private var imageView: ImageView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return  inflater.inflate(R.layout.edit_ability_fragment, container, false)
@@ -42,6 +43,8 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
         spinner?.adapter = spinnerAdapter
         spinner?.onItemSelectedListener = this
         type?.also { setSelection(it) }
+
+        imageView = view?.findViewById(R.id.edit_ability_type_image)
 
         view?.findViewById<Button>(R.id.accept_button)?.setOnClickListener {
             //TODO: Make a change.
@@ -67,7 +70,10 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
         val selected = parent?.getItemAtPosition(pos).toString()
 
         selected.also { name ->
-            AbilityType.fromDisplayName(requireContext(), name)?.also { type = it }
+            AbilityType.fromDisplayName(requireContext(), name)?.also {
+                type = it
+                imageView?.setImageDrawable(requireContext().getDrawable(it.icon))
+            }
         }
     }
 

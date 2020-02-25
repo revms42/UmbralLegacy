@@ -6,25 +6,25 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.ajar.umbrallegacy.R
 
-enum class AbilityType(private val term: Int, var icon: Int = -1) {
-    FACTION(R.string.term_faction_ability) {
+enum class AbilityType(private val term: Int, var icon: Int = -1, var color: Int = -1) {
+    FACTION(R.string.term_faction_ability, R.drawable.faction_icon, R.color.abilityTypeFaction) {
         override val collection: Array<out AbilityDefinition>
             get() = FactionAbility.values()
     },
-    POSITIVE(R.string.term_positive_ability) {
+    POSITIVE(R.string.term_positive_ability, R.drawable.beneficial_icon, R.color.abilityTypeBeneficial) {
         override val collection: Array<out AbilityDefinition>
             get() = PositiveAbility.values()
 
     },
-    NEGATIVE(R.string.term_negative_ability) {
+    NEGATIVE(R.string.term_negative_ability, R.drawable.detrimental_icon, R.color.abilityTypeDetrimental) {
         override val collection: Array<out AbilityDefinition>
             get() = NegativeAbility.values()
     },
-    ARCHETYPE(R.string.term_archetype_ability) {
+    ARCHETYPE(R.string.term_archetype_ability, R.drawable.archetype_icon, R.color.abilityTypeArchetype) {
         override val collection: Array<out AbilityDefinition>
             get() = ArchetypeAbilities.values()
     },
-    COMBAT(R.string.term_combat_ability) {
+    COMBAT(R.string.term_combat_ability, R.drawable.combat_icon, R.color.abilityTypeCombat) {
         override val collection: Array<out AbilityDefinition>
             get() = CombatAbilities.values()
     };

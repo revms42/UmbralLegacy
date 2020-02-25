@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path
+        android:pathData="M0,9 l9,-3 v18 l9,-3 l9,3 v-18 l9,3 v18 l-18,9 l-18,-9Z"
+        android:fillColor="@color/abilityTypeFaction" />
+    <path
+        android:pathData="M18,3 l5,2 v5 l-5,2 l-5,-2 v-5 l5,-2"
+        android:fillColor="@color/abilityTypeFaction" />
+</vector>
