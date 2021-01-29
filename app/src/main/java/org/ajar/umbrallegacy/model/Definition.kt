@@ -147,4 +147,10 @@ enum class Group(override val groupName: Int, override val member: Int, override
     HELLBOUND(R.string.group_hellbound_name, R.string.group_hellbound_member, R.string.group_hellbound_members, Faction.ARCHITECTS, Faction.MARKED, Faction.HELLSPAWN, Faction.DOPPLEGANGERS);
 
     override val factions = factionList
+
+    companion object {
+        fun findGroup(faction: Faction): Group {
+            return values().first { it.factions.contains(faction) }
+        }
+    }
 }

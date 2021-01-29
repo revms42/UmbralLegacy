@@ -23,7 +23,7 @@
             android:id="@+id/edit_ability_type_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/beneficial_icon"
+            android:src="@drawable/ic_beneficial"
             android:layout_alignParentStart="true"/>
         <Spinner
             android:id="@+id/edit_ability_type_spinner"

@@ -8,14 +8,14 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.work.*
 import org.ajar.umbrallegacy.model.Ability
-import org.ajar.umbrallegacy.model.AbilityType
+import org.ajar.umbrallegacy.model.PrincipleAbilityType
 
 class InitialAbilityLoader(context: Context, workerParams: WorkerParameters) : Worker(context, workerParams) {
     override fun doWork(): Result {
         val contentDAO = AbilityDatabase.instance?.abilityDao()
         contentDAO?.also {
             if (it.getAll().isEmpty()) {
-                AbilityType.values().flatMap { abilityType ->
+                PrincipleAbilityType.values().flatMap { abilityType ->
                     abilityType.collection.asIterable()
                 }.map { abilityDefinition ->
                     Ability.create(abilityDefinition, applicationContext)

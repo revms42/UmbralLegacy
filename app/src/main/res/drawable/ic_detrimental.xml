@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/abilityTypeDetrimentalSecondary"
+        android:strokeColor="@color/abilityTypeDetrimentalPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9">
+        <path android:fillColor="@color/abilityTypeDetrimentalPrimary"
+            android:pathData="M18,0
+                        l-5,18
+                        l16,-2
+                        l-11,20.5
+                        l5,-18
+                        l-16,2
+                        z"/>
+        <group android:pivotY="18" android:pivotX="18" android:rotation="-10">
+            <path android:fillColor="@color/abilityTypeDetrimentalPrimary"
+                android:pathData="M19,4
+                        a5,5 0 0,1 0,10
+                        v4
+                        h-2
+                        v-4
+                        h2
+                        v2
+                        a5,5 0 0,0 0,-12
+                        z"/>
+        </group>
+        <group android:pivotY="18" android:pivotX="18" android:rotation="170">
+            <path android:fillColor="@color/abilityTypeDetrimentalPrimary"
+                android:pathData="M19,4
+                        a5,5 0 0,1 0,10
+                        v4
+                        h-2
+                        v-4
+                        h2
+                        v2
+                        a5,5 0 0,0 0,-12
+                        z"/>
+        </group>
+    </group>
+</vector>

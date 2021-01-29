@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import org.ajar.umbrallegacy.R
+import org.ajar.umbrallegacy.model.AbilityDefinition
 
 class AbilityListAdapter(private val abilities: LiveData<List<Ability>>, private val itemSelectionListener: ItemSelectionListener<Ability>) : RecyclerView.Adapter<AbilityListAdapter.ViewHolder>() {
 
@@ -48,7 +49,11 @@ class AbilityListAdapter(private val abilities: LiveData<List<Ability>>, private
 
         fun bind(ability: Ability, itemSelectionListener: ItemSelectionListener<Ability>) {
             nameTextView.text = ability.name
-            typeIcon.setImageDrawable(itemView.context.getDrawable(ability.type.icon))
+            val icon = AbilityDefinition.getFromName(ability.name, itemView.context)?.icon
+            (if(icon == null && ability.type.icon != -1) ability.type.icon else icon)?.also {
+                typeIcon.setImageDrawable(itemView.context.getDrawable(it))
+            }
+
             costTextView.text = ability.cost.toString()
 
             itemView.setOnClickListener {

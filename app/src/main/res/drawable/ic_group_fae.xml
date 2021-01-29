@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Torc and Hawthorne: Marks entrance to the fairy realm - https://en.wikipedia.org/wiki/Crataegus#Folklore -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupFaeSecondary"
+        android:strokeColor="@color/groupFaePrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotX="18" android:pivotY="18" android:rotation="20">
+        <path android:strokeColor="@color/groupFaePrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,5
+                a13,13 0 0,0 0,26
+                a2,2 0 0,0 0,-4
+                a2,2 0 0,0 0,4"/>
+    </group>
+
+    <group android:pivotX="18" android:pivotY="18" android:rotation="-20">
+        <path android:strokeColor="@color/groupFaePrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,5
+                a13,13 0 0,1 0,26
+                a2,2 0 0,1 0,-4
+                a2,2 0 0,1 0,4"/>
+    </group>
+
+    <group android:scaleX="0.5" android:scaleY="0.5" android:pivotX="18" android:pivotY="18" android:translateY="-1">
+        <path android:fillColor="@color/groupFaePrimary"
+            android:pathData="M18,0
+                l4,5
+                l3,-2
+                l-2,13
+                h-10
+                l-2,-13
+                l3,2z"/>
+        <group android:pivotY="18" android:pivotX="18" android:scaleY=".9" android:scaleX=".9" android:rotation="55" android:translateX="2" android:translateY="2">
+            <path android:fillColor="@color/groupFaePrimary"
+                android:pathData="M18,0
+                l4,5
+                l3,-2
+                l-2,13
+                h-10
+                l-2,-13
+                l3,2z"/>
+        </group>
+        <group android:pivotY="18" android:pivotX="18" android:scaleY=".9" android:scaleX=".9" android:rotation="-55" android:translateX="-2" android:translateY="2">
+            <path android:fillColor="@color/groupFaePrimary"
+                android:pathData="M18,0
+                l4,5
+                l3,-2
+                l-2,13
+                h-10
+                l-2,-13
+                l3,2z"/>
+        </group>
+        <group android:pivotY="18" android:pivotX="18" android:scaleY=".75" android:scaleX=".75" android:rotation="110" android:translateX="2" android:translateY="4">
+            <path android:fillColor="@color/groupFaePrimary"
+                android:pathData="M18,0
+                l4,5
+                l3,-2
+                l-2,13
+                h-10
+                l-2,-13
+                l3,2z"/>
+        </group>
+        <group android:pivotY="18" android:pivotX="18" android:scaleY=".75" android:scaleX=".75" android:rotation="-110" android:translateX="-2" android:translateY="4">
+            <path android:fillColor="@color/groupFaePrimary"
+                android:pathData="M18,0
+                l4,5
+                l3,-2
+                l-2,13
+                h-10
+                l-2,-13
+                l3,2z"/>
+        </group>
+        <path android:fillColor="@color/groupFaePrimary"
+            android:pathData="M18,16
+                a6,6 0 0,0 0,12
+                a6,6 0 0,0 0,-12z"/>
+        <path android:fillColor="@color/groupFaePrimary"
+            android:pathData="M19,26
+                a20,20 0 0,1 0,12
+                h-2
+                a20,20 0 0,0 0,-12z"/>
+    </group>
+
+</vector>

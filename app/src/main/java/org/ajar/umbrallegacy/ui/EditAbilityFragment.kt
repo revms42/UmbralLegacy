@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
 import org.ajar.umbrallegacy.R
-import org.ajar.umbrallegacy.model.AbilityType
+import org.ajar.umbrallegacy.model.AbilityDefinition
+import org.ajar.umbrallegacy.model.PrincipleAbilityType
 
 
 class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), AdapterView.OnItemSelectedListener {
@@ -18,7 +19,7 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
     }
 
     private lateinit var viewModel: AbilityListViewModel
-    private var type: AbilityType? = null
+    private var type: PrincipleAbilityType? = null
     private var spinnerAdapter: ArrayAdapter<CharSequence>? = null
     private var spinner: Spinner? = null
     private var imageView: ImageView? = null
@@ -67,17 +68,18 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
     override fun onNothingSelected(parent: AdapterView<*>?) {}
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, pos: Int, id: Long) {
+        val item = parent?.getItemAtPosition(pos)
         val selected = parent?.getItemAtPosition(pos).toString()
 
         selected.also { name ->
-            AbilityType.fromDisplayName(requireContext(), name)?.also {
+            PrincipleAbilityType.fromDisplayName(requireContext(),name)?.takeIf { it.icon != -1 }?.also {
                 type = it
                 imageView?.setImageDrawable(requireContext().getDrawable(it.icon))
             }
         }
     }
 
-    private fun setSelection(type: AbilityType) {
+    private fun setSelection(type: PrincipleAbilityType) {
         val index = spinnerAdapter?.getPosition(type.displayName(requireContext()))?: 0
         spinner?.setSelection(index)
     }

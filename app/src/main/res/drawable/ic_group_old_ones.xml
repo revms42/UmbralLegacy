@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Imix - https://symbolikon.com/meanings/mayan-symbols-meanings/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupOldOnesSecondary"
+        android:strokeColor="@color/groupOldOnesPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotX="18" android:pivotY="18" android:scaleX="0.6" android:scaleY="0.6">
+        <path android:strokeColor="@color/groupOldOnesPrimary"
+            android:strokeWidth="3"
+            android:pathData="M18,4
+                a12,6 0 0,0 0,12
+                a8,4 0 0,0 0,-8
+                a8,4 0 0,0 0,8
+                a12,6 0 0,0 0,-12z"/>
+        <path android:strokeColor="@color/groupOldOnesPrimary"
+            android:strokeWidth="3"
+            android:pathData="M18,36
+                v-21z
+                M12,36
+                v-15z
+                M6,36
+                v-9z
+                M24,36
+                v-15z
+                M30,36
+                v-9z"/>
+        <path android:strokeColor="@color/groupOldOnesPrimary"
+            android:strokeWidth="3"
+            android:pathData="M5,1
+                h26
+                a4,4 0 0,1 4,4
+                v26
+                a4,4 0 0,1 -4,4
+                h-26
+                a4,4 0 0,1 -4,-4
+                v-26
+                a4,4 0 0,1 4,-4
+                "/>
+    </group>
+</vector>

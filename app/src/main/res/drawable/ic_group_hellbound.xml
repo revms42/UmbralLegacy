@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leviathan Cross - https://en.wikipedia.org/wiki/List_of_occult_symbols -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupHellboundSecondary"
+        android:strokeColor="@color/groupHellboundPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+<group android:translateY="4">
+    <path android:fillColor="@color/groupHellboundPrimary"
+        android:pathData="M19,0
+                h3
+                a3,3 0 0,0 -3,3
+                v1
+                h5
+                a3,3 0 0,0 3,-3
+                v8
+                a3,3 0 0,0 -3,-3
+                h-5
+                v3
+                h8
+                a3,3 0 0,0 3,-3
+                v8
+                a3,3 0 0,0 -3,-3
+                h-8
+                v7
+                h-2
+                v-7
+                h-8
+                a3,3 0 0,0 -3,3
+                v-8
+                a3,3 0 0,0 3,3
+                h8
+                v-3
+                h-5
+                a3,3 0 0,0 -3,3
+                v-8
+                a3,3 0 0,0 3,3
+                h5
+                v-1
+                a3,3 0 0,0 -3,-3
+                hz"/>
+    <path android:strokeColor="@color/groupHellboundPrimary"
+        android:strokeWidth="2"
+        android:pathData="M10,23
+                l16,-8
+                a4,4 0 0,1 0,8
+                l-16,-8
+                a4,4 0 0,0 0,8z"/>
+    <path android:fillColor="@color/groupHellboundPrimary"
+        android:pathData="M18,22
+                a3,3 0 0,0 3,3
+                a3,3 0 0,0 -3,3
+                a3,3 0 0,0 -3,-3
+                a3,3 0 0,0 3,-3z"/>
+</group>
+
+</vector>

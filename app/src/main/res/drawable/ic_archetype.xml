@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/abilityTypeArchetypeSecondary"
+        android:strokeColor="@color/abilityTypeArchetypePrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:scaleX="0.8" android:scaleY="0.8" android:pivotY="18" android:pivotX="18">
+        <path android:fillColor="@color/abilityTypeArchetypePrimary"
+            android:pathData="M2.5,29
+                l8,-23
+                a2,4 0 0,0 -0.5,-6
+                a4,6 0 0,1 2,7
+                l-2,14
+                a5,5 0 0,0 6,0
+                l2,-22
+                l2,22
+                a5,5 0 0,0 6,0
+                l-2,-14
+                a4,6 0 0,1 2,-7
+                a2,4 0 0,0 -0.5,6
+                l8,23
+                a7,5 0 0,0 -5,-4
+                h-21
+                a7,5 0 0,0 -5,4
+                z"/>
+        <path android:fillColor="@color/abilityTypeArchetypePrimary"
+            android:pathData="M14.5,36
+                a2,2 0 0,0 2,-2
+                v-1
+                h-1
+                a2,2 0 0,0 -2,2
+                v-7
+                a2,2 0 0,0 2,2
+                h1
+                v-3
+                a2,2 0 0,0 -2,-2
+                h7
+                a2,2 0 0,0 -2,2
+                v3
+                h1
+                a2,2 0 0,0 2,-2
+                v7
+                a2,2 0 0,0 -2,-2
+                h-1
+                v1
+                a2,2 0 0,0 2,2z"/>
+    </group>
+</vector>

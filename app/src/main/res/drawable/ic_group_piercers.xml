@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Philosopher's Stone - https://symbolikon.com/meanings/alchemy-symbols-meanings/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupPiercersSecondary"
+        android:strokeColor="@color/groupPiercersPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotY="0" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,1
+                l16,28
+                h-32z"/>
+        <path android:fillColor="@color/groupPiercersPrimary"
+            android:pathData="M11,15
+                h14
+                v14
+                h-14z"/>
+        <path android:fillColor="@color/groupPiercersSecondary"
+            android:pathData="M18,16
+                a6,6 0 0,0 0,12
+                a6,6 0 0,0 0,-12z"/>
+    </group>
+</vector>

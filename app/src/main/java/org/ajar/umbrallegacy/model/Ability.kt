@@ -1,42 +1,50 @@
 package org.ajar.umbrallegacy.model
 
 import android.content.Context
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.ajar.umbrallegacy.R
 
-enum class AbilityType(private val term: Int, var icon: Int = -1, var color: Int = -1) {
-    FACTION(R.string.term_faction_ability, R.drawable.faction_icon, R.color.abilityTypeFaction) {
+interface AbilityType {
+    var icon: Int
+    var primaryColor: Int
+    var secondaryColor: Int
+    val collection: Array<out AbilityDefinition>
+    fun displayName(context: Context) : String
+}
+
+enum class PrincipleAbilityType(private val term: Int, override var icon: Int = -1, override var primaryColor: Int = -1, override var secondaryColor: Int = -1) : AbilityType{
+    FACTION(R.string.term_faction_ability, R.drawable.ic_faction_generic, R.color.abilityTypeFactionPrimary, R.color.abilityTypeFactionSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = FactionAbility.values()
     },
-    POSITIVE(R.string.term_positive_ability, R.drawable.beneficial_icon, R.color.abilityTypeBeneficial) {
+    POSITIVE(R.string.term_positive_ability, R.drawable.ic_beneficial, R.color.abilityTypeBeneficialPrimary, R.color.abilityTypeBeneficialSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = PositiveAbility.values()
 
     },
-    NEGATIVE(R.string.term_negative_ability, R.drawable.detrimental_icon, R.color.abilityTypeDetrimental) {
+    NEGATIVE(R.string.term_negative_ability, R.drawable.ic_detrimental, R.color.abilityTypeDetrimentalPrimary, R.color.abilityTypeDetrimentalSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = NegativeAbility.values()
     },
-    ARCHETYPE(R.string.term_archetype_ability, R.drawable.archetype_icon, R.color.abilityTypeArchetype) {
+    ARCHETYPE(R.string.term_archetype_ability, R.drawable.ic_archetype, R.color.abilityTypeArchetypePrimary, R.color.abilityTypeArchetypeSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = ArchetypeAbilities.values()
     },
-    COMBAT(R.string.term_combat_ability, R.drawable.combat_icon, R.color.abilityTypeCombat) {
+    COMBAT(R.string.term_combat_ability, R.drawable.ic_combat, R.color.abilityTypeCombatPrimary, R.color.abilityTypeCombatSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = CombatAbilities.values()
     };
 
-    abstract val collection: Array<out AbilityDefinition>
-
-    fun displayName(context: Context): String {
+    override fun displayName(context: Context): String {
         return context.getString(term)
     }
 
     companion object {
-        fun fromDisplayName(context: Context, name: String): AbilityType? {
+        fun fromDisplayName(context: Context, name: String): PrincipleAbilityType? {
             return values().firstOrNull { it.displayName(context) == name }
         }
     }
@@ -46,7 +54,10 @@ interface AbilityDefinition {
 
     val abilityName: Int
     val description: Int
-    val type: AbilityType
+    val type: PrincipleAbilityType
+    val icon: Int
+    val primaryColor: Int
+    val secondaryColor: Int
     var cost: Int
 
     fun name(context: Context): String {
@@ -86,6 +97,10 @@ interface AbilityDefinition {
         operator fun get(key: Int) : AbilityDefinition? {
             return abilityMap[key]
         }
+
+        fun getFromName(name: String, context: Context) : AbilityDefinition? {
+            return abilityMap.values.firstOrNull { context.getString(it.abilityName) == name }
+        }
     }
 }
 
@@ -94,7 +109,7 @@ data class Ability (
     @PrimaryKey(autoGenerate = true) @ColumnInfo(index = true, name = COLUMN_ID) var id: Long,
     @ColumnInfo(name = COLUMN_NAME) var name: String,
     @ColumnInfo(name = COLUMN_DESC) var description: String,
-    @ColumnInfo(name = COLUMN_TYPE) var type: AbilityType,
+    @ColumnInfo(name = COLUMN_TYPE) var type: PrincipleAbilityType,
     @ColumnInfo(name = COLUMN_COST) var cost: Int
 ) {
 
@@ -112,38 +127,40 @@ data class Ability (
     }
 }
 
-enum class FactionAbility(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
-    VAMPIRE_ABILITY(R.string.ability_vampire_name, R.string.ability_vampire_description),
-    NOSFERATU_ABILITY(R.string.ability_nosferatu_name, R.string.ability_nosferatu_description),
-    WIGHT_ABILITY(R.string.ability_wight_name, R.string.ability_wight_description),
-    ZOMBIE_ABILITY(R.string.ability_zombie_name, R.string.ability_zombie_description),
+enum class FactionAbility(override val abilityName: Int, override val description: Int,
+                          @DrawableRes override val icon: Int = -1, @ColorRes override val primaryColor: Int = -1,
+                          @ColorRes override val secondaryColor: Int = -1, override var cost: Int = 1) : AbilityDefinition {
+    VAMPIRE_ABILITY(R.string.ability_vampire_name, R.string.ability_vampire_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary),
+    NOSFERATU_ABILITY(R.string.ability_nosferatu_name, R.string.ability_nosferatu_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary),
+    WIGHT_ABILITY(R.string.ability_wight_name, R.string.ability_wight_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary),
+    ZOMBIE_ABILITY(R.string.ability_zombie_name, R.string.ability_zombie_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary),
 
-    LYCANTHROPE_ABILITY(R.string.ability_lycanthrope_name, R.string.ability_lycanthrope_description),
-    ANIMATED_ABILITY(R.string.ability_animated_name, R.string.ability_animated_description),
-    TOTEMIC_SPIRIT_ABILITY(R.string.ability_totemic_spirit_name, R.string.ability_totemic_spirit_description),
-    WITCH_BOUND_ABILITY(R.string.ability_witch_bound_name, R.string.ability_witch_bound_description),
+    LYCANTHROPE_ABILITY(R.string.ability_lycanthrope_name, R.string.ability_lycanthrope_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary),
+    ANIMATED_ABILITY(R.string.ability_animated_name, R.string.ability_animated_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary),
+    TOTEMIC_SPIRIT_ABILITY(R.string.ability_totemic_spirit_name, R.string.ability_totemic_spirit_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary),
+    WITCH_BOUND_ABILITY(R.string.ability_witch_bound_name, R.string.ability_witch_bound_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary),
 
-    WARLOCK_ABILITY(R.string.ability_warlock_name, R.string.ability_warlock_description),
-    ELEMENTAL_ABILITY(R.string.ability_elemental_name, R.string.ability_elemental_description),
-    BOUND_DEMON_ABILITY(R.string.ability_bound_demon_name, R.string.ability_bound_demon_description),
-    MAGICAL_CONSTRUCT_ABILITY(R.string.ability_magical_construct_name, R.string.ability_magical_construct_description),
+    WARLOCK_ABILITY(R.string.ability_warlock_name, R.string.ability_warlock_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary),
+    ELEMENTAL_ABILITY(R.string.ability_elemental_name, R.string.ability_elemental_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary),
+    BOUND_DEMON_ABILITY(R.string.ability_bound_demon_name, R.string.ability_bound_demon_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary),
+    MAGICAL_CONSTRUCT_ABILITY(R.string.ability_magical_construct_name, R.string.ability_magical_construct_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary),
 
-    HORNED_ONE_ABILITY(R.string.ability_horned_one_name, R.string.ability_horned_one_description),
-    WISH_GRANTER_ABILITY(R.string.ability_wish_granter_name, R.string.ability_wish_granter_description),
-    UNSEELIE_ABILITY(R.string.ability_unseelie_name, R.string.ability_unseelie_description),
-    TROLL_ABILITY(R.string.ability_troll_name, R.string.ability_troll_description),
+    HORNED_ONE_ABILITY(R.string.ability_horned_one_name, R.string.ability_horned_one_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary),
+    WISH_GRANTER_ABILITY(R.string.ability_wish_granter_name, R.string.ability_wish_granter_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary),
+    UNSEELIE_ABILITY(R.string.ability_unseelie_name, R.string.ability_unseelie_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary),
+    TROLL_ABILITY(R.string.ability_troll_name, R.string.ability_troll_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary),
 
-    GREAT_OLD_ONE_ABILITY(R.string.ability_great_old_one_name, R.string.ability_great_old_one_description),
-    ANCIENT_RACE_ABILITY(R.string.ability_ancient_race_name, R.string.ability_ancient_race_description),
-    CULTIST_ABILITY(R.string.ability_cultist_name, R.string.ability_cultist_description),
-    YELLOW_MASK_ABILITY(R.string.ability_yellow_mask_name, R.string.ability_yellow_mask_description),
+    GREAT_OLD_ONE_ABILITY(R.string.ability_great_old_one_name, R.string.ability_great_old_one_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary),
+    ANCIENT_RACE_ABILITY(R.string.ability_ancient_race_name, R.string.ability_ancient_race_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary),
+    CULTIST_ABILITY(R.string.ability_cultist_name, R.string.ability_cultist_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary),
+    YELLOW_MASK_ABILITY(R.string.ability_yellow_mask_name, R.string.ability_yellow_mask_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary),
 
-    ARCHITECT_ABILITY(R.string.ability_architect_name, R.string.ability_architect_description),
-    DOPPELGANGER_ABILITY(R.string.ability_doppelganger_name, R.string.ability_doppelganger_description),
-    MARKED_ABILITY(R.string.ability_marked_name, R.string.ability_marked_description),
-    HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description);
+    ARCHITECT_ABILITY(R.string.ability_architect_name, R.string.ability_architect_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary),
+    DOPPELGANGER_ABILITY(R.string.ability_doppelganger_name, R.string.ability_doppelganger_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary),
+    MARKED_ABILITY(R.string.ability_marked_name, R.string.ability_marked_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary),
+    HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary);
 
-    override val type = AbilityType.FACTION
+    override val type = PrincipleAbilityType.FACTION
 }
 
 enum class PositiveAbility (override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
@@ -179,7 +196,10 @@ enum class PositiveAbility (override val abilityName: Int, override val descript
     DEMONIC_FIDDLER(R.string.ability_demonic_fiddler_name, R.string.ability_demonic_fiddler_description),
     FRIGHTENING_ASSAULT(R.string.ability_frightening_assault_name, R.string.ability_frightening_assault_description);
 
-    override val type = AbilityType.POSITIVE
+    override val type = PrincipleAbilityType.POSITIVE
+    override val icon = R.drawable.ic_beneficial
+    override val primaryColor = R.color.abilityTypeBeneficialPrimary
+    override val secondaryColor = R.color.abilityTypeBeneficialSecondary
 }
 
 enum class NegativeAbility(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
@@ -199,7 +219,10 @@ enum class NegativeAbility(override val abilityName: Int, override val descripti
     SLOTH(R.string.ability_sloth_name, R.string.ability_sloth_description),
     DEATHS_GIFT(R.string.ability_deaths_gift_name, R.string.ability_deaths_gift_description);
 
-    override val type = AbilityType.NEGATIVE
+    override val type = PrincipleAbilityType.NEGATIVE
+    override val icon = R.drawable.ic_detrimental
+    override val primaryColor = R.color.abilityTypeDetrimentalPrimary
+    override val secondaryColor = R.color.abilityTypeDetrimentalSecondary
 }
 
 enum class ArchetypeAbilities(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
@@ -210,7 +233,10 @@ enum class ArchetypeAbilities(override val abilityName: Int, override val descri
     LICH(R.string.ability_lich_name, R.string.ability_lich_description),
     INQUISITOR(R.string.ability_inquisitor_name, R.string.ability_inquisitor_description);
 
-    override val type = AbilityType.ARCHETYPE
+    override val type = PrincipleAbilityType.ARCHETYPE
+    override val icon = R.drawable.ic_archetype
+    override val primaryColor = R.color.abilityTypeArchetypePrimary
+    override val secondaryColor = R.color.abilityTypeArchetypeSecondary
 }
 
 enum class CombatAbilities(override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
@@ -221,5 +247,8 @@ enum class CombatAbilities(override val abilityName: Int, override val descripti
     WEDGE(R.string.ability_wedge_name, R.string.ability_wedge_description),
     REACH(R.string.ability_reach_name, R.string.ability_reach_description);
 
-    override val type = AbilityType.COMBAT
+    override val type = PrincipleAbilityType.COMBAT
+    override val icon = R.drawable.ic_combat
+    override val primaryColor = R.color.abilityTypeCombatPrimary
+    override val secondaryColor = R.color.abilityTypeCombatSecondary
 }
