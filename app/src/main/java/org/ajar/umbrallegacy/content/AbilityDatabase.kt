@@ -18,7 +18,10 @@ class InitialAbilityLoader(context: Context, workerParams: WorkerParameters) : W
                 PrincipleAbilityType.values().flatMap { abilityType ->
                     abilityType.collection.asIterable()
                 }.map { abilityDefinition ->
-                    Ability.create(abilityDefinition, applicationContext)
+                    Ability.create(abilityDefinition, applicationContext).also { ability ->
+                        ability.icon = abilityDefinition.icon
+                        ability.cost = applicationContext.resources.getInteger(abilityDefinition.cost)
+                    }
                 }.forEach { ability ->
                     it.insert(ability)
                 }
