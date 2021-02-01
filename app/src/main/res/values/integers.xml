@@ -8,6 +8,7 @@
     <integer name="assassin_cost">6</integer>
     <integer name="champion_cost">5</integer>
     <integer name="lychanthrope_cost">1</integer>
+    <integer name="elemental_cost">0</integer>
     <integer name="horned_one_cost">1</integer>
     <integer name="troll_cost">1</integer>
     <integer name="architect_cost">4</integer>
@@ -59,6 +60,13 @@
     <integer name="primal_nature_cost">1</integer>
     <integer name="demonic_fiddler_cost">5</integer>
     <integer name="marked_cost">3</integer>
+
+    <integer name="arbiter_cost">0</integer>
+    <integer name="reaper_cost">0</integer>
+    <integer name="executioner_cost">0</integer>
+    <integer name="lunatic_piper_cost">0</integer>
+    <integer name="lich_cost">0</integer>
+    <integer name="inquistor_cost">0</integer>
 
     <integer name="fragile_cost">-10</integer>
     <integer name="hungry_cost">-5</integer>
