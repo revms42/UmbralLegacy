@@ -9,32 +9,32 @@ import androidx.room.PrimaryKey
 import org.ajar.umbrallegacy.R
 
 interface AbilityType {
-    var icon: Int
+    var icon: Image
     var primaryColor: Int
     var secondaryColor: Int
     val collection: Array<out AbilityDefinition>
     fun displayName(context: Context) : String
 }
 
-enum class PrincipleAbilityType(private val term: Int, override var icon: Int = -1, override var primaryColor: Int = -1, override var secondaryColor: Int = -1) : AbilityType{
-    FACTION(R.string.term_faction_ability, R.drawable.ic_faction_generic, R.color.abilityTypeFactionPrimary, R.color.abilityTypeFactionSecondary) {
+enum class PrincipleAbilityType(private val term: Int, override var icon: Image = Image(R.drawable.ic_invalid), override var primaryColor: Int = -1, override var secondaryColor: Int = -1) : AbilityType{
+    FACTION(R.string.term_faction_ability, Image(R.drawable.ic_faction_generic), R.color.abilityTypeFactionPrimary, R.color.abilityTypeFactionSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = FactionAbility.values()
     },
-    POSITIVE(R.string.term_positive_ability, R.drawable.ic_beneficial, R.color.abilityTypeBeneficialPrimary, R.color.abilityTypeBeneficialSecondary) {
+    POSITIVE(R.string.term_positive_ability, Image(R.drawable.ic_beneficial), R.color.abilityTypeBeneficialPrimary, R.color.abilityTypeBeneficialSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = PositiveAbility.values()
 
     },
-    NEGATIVE(R.string.term_negative_ability, R.drawable.ic_detrimental, R.color.abilityTypeDetrimentalPrimary, R.color.abilityTypeDetrimentalSecondary) {
+    NEGATIVE(R.string.term_negative_ability, Image(R.drawable.ic_detrimental), R.color.abilityTypeDetrimentalPrimary, R.color.abilityTypeDetrimentalSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = NegativeAbility.values()
     },
-    ARCHETYPE(R.string.term_archetype_ability, R.drawable.ic_archetype, R.color.abilityTypeArchetypePrimary, R.color.abilityTypeArchetypeSecondary) {
+    ARCHETYPE(R.string.term_archetype_ability, Image(R.drawable.ic_archetype), R.color.abilityTypeArchetypePrimary, R.color.abilityTypeArchetypeSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = ArchetypeAbilities.values()
     },
-    COMBAT(R.string.term_combat_ability, R.drawable.ic_combat, R.color.abilityTypeCombatPrimary, R.color.abilityTypeCombatSecondary) {
+    COMBAT(R.string.term_combat_ability, Image(R.drawable.ic_combat), R.color.abilityTypeCombatPrimary, R.color.abilityTypeCombatSecondary) {
         override val collection: Array<out AbilityDefinition>
             get() = CombatAbilities.values()
     };
@@ -55,7 +55,7 @@ interface AbilityDefinition {
     val abilityName: Int
     val description: Int
     val type: PrincipleAbilityType
-    val icon: Int
+    var icon: Image
     val primaryColor: Int
     val secondaryColor: Int
     var cost: Int
@@ -110,7 +110,8 @@ data class Ability (
     @ColumnInfo(name = COLUMN_NAME) var name: String,
     @ColumnInfo(name = COLUMN_DESC) var description: String,
     @ColumnInfo(name = COLUMN_TYPE) var type: PrincipleAbilityType,
-    @ColumnInfo(name = COLUMN_COST) var cost: Int
+    @ColumnInfo(name = COLUMN_COST) var cost: Int,
+    @ColumnInfo(name = COLUMN_ICON) var icon: Image
 ) {
 
     companion object {
@@ -120,15 +121,16 @@ data class Ability (
         const val COLUMN_DESC = "description"
         const val COLUMN_TYPE = "type"
         const val COLUMN_COST = "cost"
+        const val COLUMN_ICON = "icon"
 
         fun create(definition: AbilityDefinition, context: Context) : Ability {
-            return Ability(0, definition.name(context), definition.describe(context), definition.type, 1)
+            return Ability(0, definition.name(context), definition.describe(context), definition.type, 1, definition.type.icon)
         }
     }
 }
 
 enum class FactionAbility(override val abilityName: Int, override val description: Int,
-                          @DrawableRes override val icon: Int = -1, @ColorRes override val primaryColor: Int = -1,
+                          @DrawableRes icon: Int = -1, @ColorRes override val primaryColor: Int = -1,
                           @ColorRes override val secondaryColor: Int = -1, override var cost: Int = 1) : AbilityDefinition {
     VAMPIRE_ABILITY(R.string.ability_vampire_name, R.string.ability_vampire_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary),
     NOSFERATU_ABILITY(R.string.ability_nosferatu_name, R.string.ability_nosferatu_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary),
@@ -161,6 +163,7 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary);
 
     override val type = PrincipleAbilityType.FACTION
+    override var icon: Image = Image(icon)
 }
 
 enum class PositiveAbility (override val abilityName: Int, override val description: Int, override var cost: Int = 1) : AbilityDefinition {
@@ -197,7 +200,7 @@ enum class PositiveAbility (override val abilityName: Int, override val descript
     FRIGHTENING_ASSAULT(R.string.ability_frightening_assault_name, R.string.ability_frightening_assault_description);
 
     override val type = PrincipleAbilityType.POSITIVE
-    override val icon = R.drawable.ic_beneficial
+    override var icon = Image(R.drawable.ic_beneficial)
     override val primaryColor = R.color.abilityTypeBeneficialPrimary
     override val secondaryColor = R.color.abilityTypeBeneficialSecondary
 }
@@ -220,7 +223,7 @@ enum class NegativeAbility(override val abilityName: Int, override val descripti
     DEATHS_GIFT(R.string.ability_deaths_gift_name, R.string.ability_deaths_gift_description);
 
     override val type = PrincipleAbilityType.NEGATIVE
-    override val icon = R.drawable.ic_detrimental
+    override var icon = Image(R.drawable.ic_detrimental)
     override val primaryColor = R.color.abilityTypeDetrimentalPrimary
     override val secondaryColor = R.color.abilityTypeDetrimentalSecondary
 }
@@ -234,7 +237,7 @@ enum class ArchetypeAbilities(override val abilityName: Int, override val descri
     INQUISITOR(R.string.ability_inquisitor_name, R.string.ability_inquisitor_description);
 
     override val type = PrincipleAbilityType.ARCHETYPE
-    override val icon = R.drawable.ic_archetype
+    override var icon = Image(R.drawable.ic_archetype)
     override val primaryColor = R.color.abilityTypeArchetypePrimary
     override val secondaryColor = R.color.abilityTypeArchetypeSecondary
 }
@@ -248,7 +251,7 @@ enum class CombatAbilities(override val abilityName: Int, override val descripti
     REACH(R.string.ability_reach_name, R.string.ability_reach_description);
 
     override val type = PrincipleAbilityType.COMBAT
-    override val icon = R.drawable.ic_combat
+    override var icon = Image(R.drawable.ic_combat)
     override val primaryColor = R.color.abilityTypeCombatPrimary
     override val secondaryColor = R.color.abilityTypeCombatSecondary
 }

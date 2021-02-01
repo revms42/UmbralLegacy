@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/cardImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="36dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/content_desc_card_image"
+        app:layout_constraintBottom_toTopOf="@id/cardText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="5"
+        app:srcCompat="@drawable/ic_invalid"
+        android:background="@color/colorPrimary"/>
+
+    <ImageView
+        android:id="@+id/defenseR"
+        android:contentDescription="@string/content_desc_defense_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintTop_toTopOf="@id/top_guide"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_defense_zero" />
+
+    <ImageView
+        android:id="@+id/attackR"
+        android:contentDescription="@string/content_desc_attack_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintTop_toTopOf="@id/top_guide"
+        app:layout_constraintEnd_toStartOf="@id/defenseR"
+        app:srcCompat="@drawable/ic_attack_zero" />
+
+    <ImageView
+        android:id="@+id/costOneImageR"
+        android:contentDescription="@string/content_desc_cost_one_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@id/defenseR"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costTwoImageR"
+        android:contentDescription="@string/content_desc_cost_two_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costOneImageR"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costThreeImageR"
+        android:contentDescription="@string/content_desc_cost_three_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costTwoImageR"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costFourImageR"
+        android:contentDescription="@string/content_desc_cost_four_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costThreeImageR"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costFiveImageR"
+        android:contentDescription="@string/content_desc_cost_five_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costFourImageR"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costSixImageR"
+        android:contentDescription="@string/content_desc_cost_six_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costFiveImageR"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costTypeOneR"
+        android:contentDescription="@string/content_desc_payment_one_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toEndOf="@id/right_guide_cost"
+        app:layout_constraintTop_toTopOf="@id/costOneImageR"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeTwoR"
+        android:contentDescription="@string/content_desc_payment_two_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/right_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeOneR"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeThreeR"
+        android:contentDescription="@string/content_desc_payment_three_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/right_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeTwoR"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeFourR"
+        android:contentDescription="@string/content_desc_payment_four_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/right_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeThreeR"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeFiveR"
+        android:contentDescription="@string/content_desc_payment_five_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/right_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeFourR"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/attackL"
+        android:contentDescription="@string/content_desc_attack_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintTop_toTopOf="@id/top_guide"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_attack_zero" />
+
+    <ImageView
+        android:id="@+id/defenseL"
+        android:contentDescription="@string/content_desc_defense_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintTop_toTopOf="@id/top_guide"
+        app:layout_constraintStart_toEndOf="@id/attackL"
+        app:srcCompat="@drawable/ic_defense_zero" />
+
+    <ImageView
+        android:id="@+id/costOneImageL"
+        android:contentDescription="@string/content_desc_cost_one_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toBottomOf="@id/attackL"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costTwoImageL"
+        android:contentDescription="@string/content_desc_cost_two_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costOneImageL"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costThreeImageL"
+        android:contentDescription="@string/content_desc_cost_three_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costTwoImageL"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costFourImageL"
+        android:contentDescription="@string/content_desc_cost_four_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costThreeImageL"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costFiveImageL"
+        android:contentDescription="@string/content_desc_cost_five_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costFourImageL"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costSixImageL"
+        android:contentDescription="@string/content_desc_cost_six_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@id/costFiveImageL"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:srcCompat="@drawable/ic_cost" />
+
+    <ImageView
+        android:id="@+id/costTypeOneL"
+        android:contentDescription="@string/content_desc_payment_one_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintEnd_toStartOf="@id/left_guide_cost"
+        app:layout_constraintTop_toTopOf="@id/costOneImageL"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeTwoL"
+        android:contentDescription="@string/content_desc_payment_two_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@id/left_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeOneL"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeThreeL"
+        android:contentDescription="@string/content_desc_payment_three_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@id/left_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeTwoL"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeFourL"
+        android:contentDescription="@string/content_desc_payment_four_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@id/left_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeThreeL"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/costTypeFiveL"
+        android:contentDescription="@string/content_desc_payment_five_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toStartOf="@id/left_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/costTypeFourL"
+        app:srcCompat="@drawable/ic_payment_blood" />
+
+    <ImageView
+        android:id="@+id/archetypeImage"
+        android:contentDescription="@string/content_desc_archetypeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:scaleX="2.0"
+        android:scaleY="2.0"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:layout_constraintBottom_toTopOf="@id/abilityOneImage"
+        app:srcCompat="@drawable/ic_archetype" />
+
+    <ImageView
+        android:id="@+id/abilityOneImage"
+        android:contentDescription="@string/content_desc_ability_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:layout_constraintBottom_toBottomOf="@id/cardImage"
+        app:srcCompat="@drawable/ic_archetype" />
+
+    <ImageView
+        android:id="@+id/abilityTwoImage"
+        android:contentDescription="@string/content_desc_ability_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginStart="3dp"
+        app:layout_constraintStart_toEndOf="@id/abilityOneImage"
+        app:layout_constraintBottom_toBottomOf="@id/cardImage"
+        app:srcCompat="@drawable/ic_archetype" />
+
+    <ImageView
+        android:id="@+id/abilityThreeImage"
+        android:contentDescription="@string/content_desc_ability_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@id/abilityOneImage"
+        app:layout_constraintBottom_toBottomOf="@id/cardImage"
+        app:srcCompat="@drawable/ic_archetype" />
+
+    <ImageView
+        android:id="@+id/factionImage"
+        android:contentDescription="@string/content_desc_faction_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/top_guide"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:srcCompat="@drawable/ic_archetype" />
+
+    <TextView
+        android:id="@+id/cardText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintBottom_toTopOf="@id/flavorText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardImage"
+        app:layout_constraintVertical_weight="3" />
+
+    <TextView
+        android:id="@+id/flavorText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardText" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="36dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guide_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="36dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guide_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="36dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

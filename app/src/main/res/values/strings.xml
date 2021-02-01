@@ -123,7 +123,7 @@
     <!ENTITY term_faction "faction">
     <!ENTITY term_sacrifice_value "sacrifice value">
     <!ENTITY term_unit "unit">
-    <!ENTITY term_summon_cost "summon_cost">
+    <!ENTITY term_summon_cost "summon cost">
     <!ENTITY term_deck "deck">
     <!ENTITY term_hand "hand">
     <!ENTITY term_graveyard "graveyard">
@@ -340,6 +340,38 @@
         <item>&term_negative_ability;</item>
         <item>&term_archetype_ability;</item>
         <item>&term_combat_ability;</item>
+    </string-array>
+
+    <string-array name="faction_names">
+        <item>&faction_vampires_name;</item>
+        <item>&faction_nosferatu_name;</item>
+        <item>&faction_wights_name;</item>
+        <item>&faction_zombies_name;</item>
+
+        <item>&faction_lycanthropes_name;</item>
+        <item>&faction_animated_name;</item>
+        <item>&faction_witch_bound_name;</item>
+        <item>&faction_totemic_spirits_name;</item>
+
+        <item>&faction_warlocks_name;</item>
+        <item>&faction_elementals_name;</item>
+        <item>&faction_magical_constructs_name;</item>
+        <item>&faction_bound_demons_name;</item>
+
+        <item>&faction_trolls_name;</item>
+        <item>&faction_unseelie_name;</item>
+        <item>&faction_horned_ones_name;</item>
+        <item>&faction_wish_granters_name;</item>
+
+        <item>&faction_great_old_ones_name;</item>
+        <item>&faction_yellow_masks_name;</item>
+        <item>&faction_ancient_race_name;</item>
+        <item>&faction_cultists_name;</item>
+
+        <item>&faction_architects_name;</item>
+        <item>&faction_doppelgangers_name;</item>
+        <item>&faction_hellspawn_name;</item>
+        <item>&faction_marked_name;</item>
     </string-array>
 
     <string name="term_trigger_kills">&term_trigger_kills;</string>
@@ -854,4 +886,24 @@
 
     <string name="button_accept_text">Accept</string>
     <string name="button_cancel_text">Cancel</string>
+
+    <string name="content_desc_card_image">Card Image</string>
+    <string name="content_desc_cost_one_image">First &term_summon_cost; image: %1$s</string>
+    <string name="content_desc_cost_two_image">Second &term_summon_cost; image: %1$s</string>
+    <string name="content_desc_cost_three_image">Third &term_summon_cost; image: %1$s</string>
+    <string name="content_desc_cost_four_image">Fourth &term_summon_cost; image: %1$s</string>
+    <string name="content_desc_cost_five_image">Fifth &term_summon_cost; image: %1$s</string>
+    <string name="content_desc_cost_six_image">Fifth &term_summon_cost; image: %1$s</string>
+    <string name="content_desc_payment_one_image">First &term_sacrifice_value; image: %1$s</string>
+    <string name="content_desc_payment_two_image">Second &term_sacrifice_value; image: %1$s</string>
+    <string name="content_desc_payment_three_image">Third &term_sacrifice_value; image: %1$s</string>
+    <string name="content_desc_payment_four_image">Fourth &term_sacrifice_value; image: %1$s</string>
+    <string name="content_desc_payment_five_image">Fifth &term_sacrifice_value; image: %1$s</string>
+    <string name="content_desc_attack_image">Attack value image: %1$d</string>
+    <string name="content_desc_defense_image">Defense value image: %1$d</string>
+    <string name="content_desc_archetypeImage">Archetype image: %1$s</string>
+    <string name="content_desc_ability_one">First ability image: %1$s</string>
+    <string name="content_desc_ability_two">Second ability image: %1$s</string>
+    <string name="content_desc_ability_three">Third ability image: %1$s</string>
+    <string name="content_desc_faction_image">Faction image: %1$s</string>
 </resources>

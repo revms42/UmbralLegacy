@@ -30,6 +30,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/edit_ability_type_image"/>
+        <ImageView
+            android:id="@+id/edit_ability_faction_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/edit_ability_type_spinner"
+            android:src="@drawable/ic_faction_generic"/>
+        <Spinner
+            android:id="@+id/edit_ability_faction_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/edit_ability_faction_image"/>
     </RelativeLayout>
 
     <EditText

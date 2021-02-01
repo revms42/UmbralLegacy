@@ -50,8 +50,8 @@ class AbilityListAdapter(private val abilities: LiveData<List<Ability>>, private
         fun bind(ability: Ability, itemSelectionListener: ItemSelectionListener<Ability>) {
             nameTextView.text = ability.name
             val icon = AbilityDefinition.getFromName(ability.name, itemView.context)?.icon
-            (if(icon == null && ability.type.icon != -1) ability.type.icon else icon)?.also {
-                typeIcon.setImageDrawable(itemView.context.getDrawable(it))
+            (icon ?: ability.type.icon).also {
+                typeIcon.setImageDrawable(it.getDrawable(itemView.resources))
             }
 
             costTextView.text = ability.cost.toString()

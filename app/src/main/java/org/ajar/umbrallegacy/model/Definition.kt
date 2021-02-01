@@ -15,6 +15,7 @@ interface FactionDefinition {
     val member: Int
     val members: Int
     val type: FactionType
+    val groupIcon: Image
     val ability: FactionAbility
     val opposedFaction: MutableList<FactionDefinition>
     val subFaction: MutableList<FactionDefinition>
@@ -77,6 +78,7 @@ enum class Faction(override val factionName: Int, override val member: Int, over
 
     override val opposedFaction: MutableList<FactionDefinition> = ArrayList()
     override val subFaction: MutableList<FactionDefinition> = ArrayList()
+    override val groupIcon: Image = ability.icon // TODO: This works for right now because the group icon is the ability icon.
 
     companion object {
         private var _setup: Boolean = false

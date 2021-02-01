@@ -9,7 +9,15 @@
     <color name="colorUIAccent">#A00000</color>
 
     <color name="colorListBackgroundUnselected">#FFFFFF</color>
-    <color name="colorListBackgroundSelected">#008888</color>
+    <color name="colorListBackgroundSelected">#008888</color>s
+
+    <color name="groupNonePrimary">#000000</color>
+    <color name="groupNoneSecondary">#C0C0C0</color>
+    <color name="attackShadow">#F08000</color>
+    <color name="defenseShadow">#00F080</color>
+
+    <color name="costHandPrimary">#000000</color>
+    <color name="costHandSecondary">#00000000</color>
 
     <color name="abilityTypeBeneficialPrimary">#202060</color>  <color name="abilityTypeBeneficialSecondary">#A0F0A0</color>
     <color name="abilityTypeDetrimentalPrimary">#800000</color> <color name="abilityTypeDetrimentalSecondary">#F0C020</color>
@@ -17,10 +25,10 @@
     <color name="abilityTypeCombatPrimary">#800000</color>      <color name="abilityTypeCombatSecondary">#A0A0A0</color>
     <color name="abilityTypeFactionPrimary">#303030</color>      <color name="abilityTypeFactionSecondary">#C0C0C0</color>
 
-    <color name="groupStillbloodPrimary">#003060</color>    <color name="groupStillbloodSecondary">#606060</color>
-    <color name="groupCursedPrimary">#A0A000</color>        <color name="groupCursedSecondary">#400000</color>
+    <color name="groupStillbloodPrimary">#003060</color>    <color name="groupStillbloodSecondary">#90B090</color>
+    <color name="groupCursedPrimary">#C0C000</color>        <color name="groupCursedSecondary">#400000</color>
     <color name="groupPiercersPrimary">#400040</color>      <color name="groupPiercersSecondary">#009090</color>
-    <color name="groupFaePrimary">#004000</color>           <color name="groupFaeSecondary">#A06030</color>
-    <color name="groupOldOnesPrimary">#003040</color>       <color name="groupOldOnesSecondary">#909040</color>
+    <color name="groupFaePrimary">#004000</color>           <color name="groupFaeSecondary">#E09060</color>
+    <color name="groupOldOnesPrimary">#003040</color>       <color name="groupOldOnesSecondary">#B0B060</color>
     <color name="groupHellboundPrimary">#D00000</color>     <color name="groupHellboundSecondary">#000000</color>
 </resources>
