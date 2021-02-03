@@ -12,7 +12,7 @@ import org.ajar.umbrallegacy.model.PrincipleAbilityType
 
 class InitialAbilityLoader(context: Context, workerParams: WorkerParameters) : Worker(context, workerParams) {
     override fun doWork(): Result {
-        val contentDAO = AbilityDatabase.instance?.abilityDao()
+        val contentDAO = AbilityDatabase.abilities
         contentDAO?.also {
             if (it.getAll().isEmpty()) {
                 PrincipleAbilityType.values().flatMap { abilityType ->
@@ -40,8 +40,9 @@ abstract class AbilityDatabase : RoomDatabase() {
         private const val DATABASE_NAME = "AbilityDatabase"
 
         private var database: AbilityDatabase? = null
-        val instance: AbilityDatabase?
-            get() = database
+
+        val abilities: AbilityDAO?
+            get() = database?.abilityDao()
 
         fun init(context: Context): LiveData<Operation.State>? {
             if(database == null) {

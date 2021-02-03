@@ -15,7 +15,7 @@ interface AbilityDAO {
     fun findByName(name: String): Ability?
 
     @Query("SELECT * FROM ${Ability.TABLE_NAME} WHERE id = :id")
-    fun findById(id: Long): Ability?
+    fun findById(id: Int): Ability?
 
     @Query("SELECT * FROM ${Ability.TABLE_NAME} order by name")
     fun selectAll(): Cursor

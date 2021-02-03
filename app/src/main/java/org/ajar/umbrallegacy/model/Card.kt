@@ -6,12 +6,12 @@ import org.ajar.umbrallegacy.R
 interface Card {
     val id: Int
     var name: String
-    var faction: Faction
+    var faction: Faction?
     var attack: Int
     var defense: Int
-    var price: Int
-    var bloodPrice: Int
-    val abilities: List<Int>
+    var cost: List<Cost?>
+    var costType: List<Cost?>
+    val abilities: List<Int?>
 
     var cardImage: Image?
     var cardText: String?

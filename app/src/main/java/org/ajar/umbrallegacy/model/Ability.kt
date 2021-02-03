@@ -106,7 +106,7 @@ interface AbilityDefinition {
 
 @Entity(tableName = Ability.TABLE_NAME)
 data class Ability (
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(index = true, name = COLUMN_ID) var id: Long,
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(index = true, name = COLUMN_ID) var id: Int,
     @ColumnInfo(name = COLUMN_NAME) var name: String,
     @ColumnInfo(name = COLUMN_DESC) var description: String,
     @ColumnInfo(name = COLUMN_TYPE) var type: PrincipleAbilityType,
