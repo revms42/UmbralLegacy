@@ -158,6 +158,13 @@
         app:layout_constraintTop_toBottomOf="@id/costTypeFourR"
         app:srcCompat="@drawable/ic_payment_blood" />
 
+    <TextView
+        android:id="@+id/nameR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/left_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/top_guide"/>
+
     <ImageView
         android:id="@+id/attackL"
         android:contentDescription="@string/content_desc_attack_image"
@@ -292,6 +299,13 @@
         app:layout_constraintEnd_toStartOf="@id/left_guide_cost"
         app:layout_constraintTop_toBottomOf="@id/costTypeFourL"
         app:srcCompat="@drawable/ic_payment_blood" />
+
+    <TextView
+        android:id="@+id/nameL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
+        app:layout_constraintTop_toBottomOf="@id/top_guide"/>
 
     <ImageView
         android:id="@+id/archetypeImage"

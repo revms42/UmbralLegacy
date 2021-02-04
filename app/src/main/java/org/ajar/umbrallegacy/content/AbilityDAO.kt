@@ -1,6 +1,5 @@
 package org.ajar.umbrallegacy.content
 
-import android.database.Cursor
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import org.ajar.umbrallegacy.model.Ability
@@ -17,11 +16,8 @@ interface AbilityDAO {
     @Query("SELECT * FROM ${Ability.TABLE_NAME} WHERE id = :id")
     fun findById(id: Int): Ability?
 
-    @Query("SELECT * FROM ${Ability.TABLE_NAME} order by name")
-    fun selectAll(): Cursor
-
-    @Query("SELECT * FROM ${Ability.TABLE_NAME} WHERE id = :id")
-    fun selectById(id: Long): Cursor
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    fun update(ob: Ability)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(ob: Ability)

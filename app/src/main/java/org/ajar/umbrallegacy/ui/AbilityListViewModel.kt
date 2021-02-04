@@ -4,7 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import org.ajar.umbrallegacy.content.AbilityDAO
-import org.ajar.umbrallegacy.content.AbilityDatabase
+import org.ajar.umbrallegacy.content.UmbralDatabase
 import org.ajar.umbrallegacy.model.Ability
 
 class AbilityListViewModel(application: Application) : AndroidViewModel(application) {
@@ -14,8 +14,8 @@ class AbilityListViewModel(application: Application) : AndroidViewModel(applicat
     var selectedAbility: Ability? = null
 
     init {
-        AbilityDatabase.init(application)
-        abilityDao = AbilityDatabase.instance!!.abilityDao()
+        UmbralDatabase.init(application)
+        abilityDao = UmbralDatabase.abilities!!
         abilityLD  = abilityDao.observeAllByName()
     }
 

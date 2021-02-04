@@ -8,11 +8,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.work.*
 import org.ajar.umbrallegacy.model.Ability
+import org.ajar.umbrallegacy.model.Card
 import org.ajar.umbrallegacy.model.PrincipleAbilityType
 
 class InitialAbilityLoader(context: Context, workerParams: WorkerParameters) : Worker(context, workerParams) {
     override fun doWork(): Result {
-        val contentDAO = AbilityDatabase.abilities
+        val contentDAO = UmbralDatabase.abilities
         contentDAO?.also {
             if (it.getAll().isEmpty()) {
                 PrincipleAbilityType.values().flatMap { abilityType ->
@@ -31,22 +32,25 @@ class InitialAbilityLoader(context: Context, workerParams: WorkerParameters) : W
     }
 }
 
-@Database(entities = [ Ability::class ], version = 1)
+@Database(entities = [ Ability::class, Card::class ], version = 1)
 @TypeConverters(ContentTypeConverter::class)
-abstract class AbilityDatabase : RoomDatabase() {
+abstract class UmbralDatabase : RoomDatabase() {
     abstract fun abilityDao(): AbilityDAO
+    abstract fun cardDao(): CardDAO
 
     companion object {
-        private const val DATABASE_NAME = "AbilityDatabase"
+        private const val DATABASE_NAME = "UmbralDatabase"
 
-        private var database: AbilityDatabase? = null
+        private var database: UmbralDatabase? = null
 
         val abilities: AbilityDAO?
             get() = database?.abilityDao()
+        val cards: CardDAO?
+            get() = database?.cardDao()
 
         fun init(context: Context): LiveData<Operation.State>? {
             if(database == null) {
-                database = Room.databaseBuilder(context, AbilityDatabase::class.java, DATABASE_NAME).allowMainThreadQueries().build()
+                database = Room.databaseBuilder(context, UmbralDatabase::class.java, DATABASE_NAME).allowMainThreadQueries().build()
 
                 val workManager = WorkManager.getInstance(context)
 
