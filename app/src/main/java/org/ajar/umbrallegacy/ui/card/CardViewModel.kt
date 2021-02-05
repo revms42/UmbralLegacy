@@ -136,10 +136,10 @@ class CardViewModel : ViewModel() {
                 _factionImage.postValue(it.faction?.groupIcon) //TODO: Replace with faction image when available
 
                 val group = Group.findGroup(it.faction)
-                if(it.cardBackground == null || applyFactionStyles) _cardBackground.postValue(group.background)
-                if(it.cardImageBackground == null || applyFactionStyles) _cardImageBackground.postValue(group.background)
-                if(it.cardTextBackground == null || applyFactionStyles) _cardTextBackground.postValue(group.background)
-                if(it.flavorTextBackground == null || applyFactionStyles) _flavorTextBackground.postValue(group.background)
+                if(it.cardBackground == null || applyFactionStyles) _cardBackground.postValue(group.cardBackground)
+                if(it.cardImageBackground == null || applyFactionStyles) _cardImageBackground.postValue(group.textBackground)
+                if(it.cardTextBackground == null || applyFactionStyles) _cardTextBackground.postValue(group.textBackground)
+                if(it.flavorTextBackground == null || applyFactionStyles) _flavorTextBackground.postValue(group.textBackground)
                 if(it.nameStyle == null || applyFactionStyles) _cardNameStyle.postValue(group.nameStyle)
                 if(it.cardTextStyle == null || applyFactionStyles) _cardTextStyle.postValue(group.textStyle)
                 if(it.flavorTextStyle == null || applyFactionStyles) _flavorTextStyle.postValue(group.flavorStyle)

@@ -172,8 +172,9 @@
         style="@style/TextView.CardName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         app:layout_constraintStart_toEndOf="@id/left_guide_cost"
-        app:layout_constraintTop_toBottomOf="@id/top_guide"/>
+        app:layout_constraintBottom_toTopOf="@id/cardImage"/>
 
     <ImageView
         android:id="@+id/attackL"
@@ -314,9 +315,10 @@
         android:id="@+id/nameL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         style="@style/TextView.CardName"
         app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
-        app:layout_constraintTop_toBottomOf="@id/top_guide"/>
+        app:layout_constraintBottom_toTopOf="@id/cardImage"/>
 
     <ImageView
         android:id="@+id/archetypeImage"

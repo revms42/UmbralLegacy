@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.ActionOnlyNavDirections
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import org.ajar.umbrallegacy.R
 import org.ajar.umbrallegacy.model.Ability
 
@@ -29,17 +32,17 @@ class AbilityListFragment : Fragment(),
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this.activity!!).get(AbilityListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(AbilityListViewModel::class.java)
 
         val abilityRV = this.view?.findViewById<RecyclerView>(R.id.rvAbilities)
         val adapter = AbilityListAdapter(
             viewModel.abilityLD,
             this
         )
-        abilityRV?.layoutManager = LinearLayoutManager(this.activity!!)
+        abilityRV?.layoutManager = LinearLayoutManager(requireActivity())
         abilityRV?.adapter = adapter
 
-        viewModel.abilityLD.observe(this.activity!!, Observer {
+        viewModel.abilityLD.observe(requireActivity(), Observer {
             Log.d("${this::class.java}", "$it")
             adapter.notifyDataSetChanged()
         })
@@ -47,10 +50,6 @@ class AbilityListFragment : Fragment(),
 
     override fun onSelect(item: Ability, view: View) {
         viewModel.selectedAbility = item
-        this.activity!!.supportFragmentManager.beginTransaction().hide(this).add(R.id.fragment_frame,
-            EditAbilityFragment.newInstance(
-                this
-            )
-        ).runOnCommit { view.isSelected = false }.commit()
+        findNavController().navigate(AbilityListFragmentDirections.actionAbilityListFragmentToEditAbilityFragment())
     }
 }

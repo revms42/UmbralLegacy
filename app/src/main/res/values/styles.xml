@@ -29,103 +29,84 @@
 
     <style name="TextView.CardName" parent="TextView">
         <item name="android:fontFamily">@font/uncial_antiqua</item>
-        <item name="android:background">@color/groupNoneSecondary</item>
     </style>
 
     <style name="TextView.CardText" parent="TextView">
         <item name="android:textSize">6pt</item>
         <item name="android:fontFamily">@font/amethysta</item>
-        <item name="android:background">@drawable/background_none</item>
     </style>
 
     <style name="TextView.CardFlavorText" parent="TextView">
         <item name="android:textSize">5pt</item>
         <item name="android:textStyle">italic</item>
         <item name="android:fontFamily">@font/libre_baskerville</item>
-        <item name="android:background">@drawable/background_none</item>
     </style>
 
     <!-- Stillblood text -->
     <style name="TextView.CardName.Stillblood" parent="TextView.CardName">
-        <item name="android:background">@color/groupStillbloodSecondary</item>
+        <item name="android:textColor">@color/groupStillbloodSecondary</item>
     </style>
 
     <style name="TextView.CardText.Stillblood" parent="TextView.CardText">
-        <item name="android:background">@drawable/background_stillblood</item>
     </style>
 
     <style name="TextView.CardFlavorText.Stillblood" parent="TextView.CardFlavorText">
-        <item name="android:background">@drawable/background_stillblood</item>
     </style>
 
     <!-- Cursed text -->
     <style name="TextView.CardName.Cursed" parent="TextView.CardName">
-        <item name="android:background">@color/groupCursedSecondary</item>
         <item name="android:textColor">@color/groupCursedPrimary</item>
     </style>
 
     <style name="TextView.CardText.Cursed" parent="TextView.CardText">
-        <item name="android:background">@drawable/background_cursed</item>
         <item name="android:textColor">@color/groupCursedPrimary</item>
     </style>
 
     <style name="TextView.CardFlavorText.Cursed" parent="TextView.CardFlavorText">
-        <item name="android:background">@drawable/background_cursed</item>
         <item name="android:textColor">@color/groupCursedPrimary</item>
     </style>
 
     <!-- Piercers text -->
     <style name="TextView.CardName.Piercers" parent="TextView.CardName">
-        <item name="android:background">@color/groupPiercersSecondary</item>
+        <item name="android:textColor">@color/groupPiercersSecondary</item>
     </style>
 
     <style name="TextView.CardText.Piercers" parent="TextView.CardText">
-        <item name="android:background">@drawable/background_piercers</item>
     </style>
 
     <style name="TextView.CardFlavorText.Piercers" parent="TextView.CardFlavorText">
-        <item name="android:background">@drawable/background_piercers</item>
     </style>
 
     <!-- Fae text -->
     <style name="TextView.CardName.Fae" parent="TextView.CardName">
-        <item name="android:background">@color/groupFaeSecondary</item>
     </style>
 
     <style name="TextView.CardText.Fae" parent="TextView.CardText">
-        <item name="android:background">@drawable/background_fae</item>
     </style>
 
     <style name="TextView.CardFlavorText.Fae" parent="TextView.CardFlavorText">
-        <item name="android:background">@drawable/background_fae</item>
     </style>
 
     <!-- Old Ones text -->
     <style name="TextView.CardName.OldOnes" parent="TextView.CardName">
-        <item name="android:background">@color/groupOldOnesSecondary</item>
     </style>
 
     <style name="TextView.CardText.OldOnes" parent="TextView.CardText">
-        <item name="android:background">@drawable/background_old_ones</item>
     </style>
 
     <style name="TextView.CardFlavorText.OldOnes" parent="TextView.CardFlavorText">
-        <item name="android:background">@drawable/background_old_ones</item>
     </style>
 
     <!-- Old Ones text -->
     <style name="TextView.CardName.Hellbound" parent="TextView.CardName">
-        <item name="android:background">@color/groupHellboundSecondary</item>
         <item name="android:textColor">@color/groupHellboundPrimary</item>
     </style>
 
     <style name="TextView.CardText.Hellbound" parent="TextView.CardText">
-        <item name="android:background">@drawable/background_hellbound</item>
         <item name="android:textColor">@color/groupHellboundPrimary</item>
     </style>
 
     <style name="TextView.CardFlavorText.Hellbound" parent="TextView.CardFlavorText">
-        <item name="android:background">@drawable/background_hellbound</item>
         <item name="android:textColor">@color/groupHellboundPrimary</item>
     </style>
 

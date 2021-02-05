@@ -1,12 +1,15 @@
 package org.ajar.umbrallegacy.ui.card
 
+import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.card_horizontal_split.*
 import org.ajar.umbrallegacy.R
 import org.ajar.umbrallegacy.model.Faction
+import org.ajar.umbrallegacy.model.Group
 
 class CardViewActivity : AppCompatActivity() {
 
@@ -27,6 +30,7 @@ class CardViewActivity : AppCompatActivity() {
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
             cardViewModel.faction = nextFaction(cardViewModel.faction)
+            fab.setImageIcon(Icon.createWithResource(this, Group.findGroup(cardViewModel.faction).icon.resource!!))
             view.invalidate()
         }
     }

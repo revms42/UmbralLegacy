@@ -7,17 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import org.ajar.umbrallegacy.R
 import org.ajar.umbrallegacy.model.Faction
 import org.ajar.umbrallegacy.model.PrincipleAbilityType
 
 
-class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), AdapterView.OnItemSelectedListener {
-
-    companion object {
-        fun newInstance(backFragment: Fragment) =
-            EditAbilityFragment(backFragment)
-    }
+class EditAbilityFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     private lateinit var viewModel: AbilityListViewModel
 
@@ -37,7 +33,7 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(activity!!).get(AbilityListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(AbilityListViewModel::class.java)
         type = viewModel.selectedAbility?.type
 
         val nameTextBox = view?.findViewById<EditText>(R.id.edit_ability_name_text)?.also { it.setText(viewModel.selectedAbility?.name) }
@@ -58,10 +54,10 @@ class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), Adap
                 viewModel.commitSelected()
             }
 
-            activity!!.supportFragmentManager.beginTransaction().remove(this).show(backFragment).commit()
+            findNavController().navigate(EditAbilityFragmentDirections.actionNavEditAbilityFragmentToNavAbilityListFragment())
         }
         view?.findViewById<Button>(R.id.cancel_button)?.setOnClickListener {
-            activity!!.supportFragmentManager.beginTransaction().remove(this).show(backFragment).commit()
+            findNavController().navigate(EditAbilityFragmentDirections.actionNavEditAbilityFragmentToNavAbilityListFragment())
         }
     }
 

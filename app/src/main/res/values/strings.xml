@@ -887,6 +887,18 @@
         Damage that this &term_unit; does in combat is resolved before it takes any damage.
     </string>
 
+    <!-- Nav Strings -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Umbral Legacy</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_cards">Cards</string>
+    <string name="menu_abilities">Abilities</string>
+
     <string name="button_accept_text">Accept</string>
     <string name="button_cancel_text">Cancel</string>
 

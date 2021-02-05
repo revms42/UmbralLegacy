@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_homeFragment">
+    <fragment
+        android:id="@+id/nav_homeFragment"
+        android:name="org.ajar.umbrallegacy.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_cardFragment"
+            app:destination="@id/nav_cardFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_abilityListFragment"
+            app:destination="@id/nav_abilityListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_cardFragment"
+        android:name="org.ajar.umbrallegacy.ui.card.CardFragment"
+        android:label="CardFragment" >
+        <action
+            android:id="@+id/action_cardFragment_to_abilityListFragment"
+            app:destination="@id/nav_abilityListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_abilityListFragment"
+        android:name="org.ajar.umbrallegacy.ui.ability.AbilityListFragment"
+        android:label="AbilityListFragment" >
+        <action
+            android:id="@+id/action_abilityListFragment_to_editAbilityFragment"
+            app:destination="@id/nav_editAbilityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_editAbilityFragment"
+        android:name="org.ajar.umbrallegacy.ui.ability.EditAbilityFragment"
+        android:label="edit_ability_fragment"
+        tools:layout="@layout/edit_ability_fragment" >
+        <action
+            android:id="@+id/action_nav_editAbilityFragment_to_nav_abilityListFragment"
+            app:destination="@id/nav_abilityListFragment" />
+    </fragment>
+</navigation>
