@@ -5,6 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <View
+        android:id="@+id/borderView"
+        style="@style/ConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+    </View>
+
     <ImageView
         android:id="@+id/cardImage"
         android:layout_width="0dp"
@@ -21,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_weight="5"
         app:srcCompat="@drawable/ic_invalid"
-        android:background="@color/colorPrimary"/>
+        android:background="@drawable/background_none"/>
 
     <ImageView
         android:id="@+id/defenseR"
@@ -160,6 +169,7 @@
 
     <TextView
         android:id="@+id/nameR"
+        style="@style/TextView.CardName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/left_guide_cost"
@@ -304,6 +314,7 @@
         android:id="@+id/nameL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/TextView.CardName"
         app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
         app:layout_constraintTop_toBottomOf="@id/top_guide"/>
 
@@ -365,6 +376,7 @@
 
     <TextView
         android:id="@+id/cardText"
+        style="@style/TextView.CardText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -377,6 +389,7 @@
 
     <TextView
         android:id="@+id/flavorText"
+        style="@style/TextView.CardFlavorText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"

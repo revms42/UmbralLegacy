@@ -1,8 +1,8 @@
-package org.ajar.umbrallegacy
+package org.ajar.umbrallegacy.ui.ability
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import org.ajar.umbrallegacy.ui.*
+import org.ajar.umbrallegacy.R
 
 class AbilityListActivity : AppCompatActivity(){
 

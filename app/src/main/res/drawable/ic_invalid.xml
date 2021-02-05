@@ -4,14 +4,14 @@
     android:viewportHeight="36"
     android:width="36dp"
     android:height="36dp">
-    <path android:fillColor="@color/colorUIPrimary"
-        android:strokeColor="@color/colorUIAccent"
+    <path android:fillColor="@color/groupNoneSecondary"
+        android:strokeColor="@color/groupNonePrimary"
         android:strokeWidth="2"
         android:pathData="M18,1
                 a17,17 0 0,0 0,34
                 a17,17 0 0,0 0,-34z"/>
     <group android:pivotY="18" android:pivotX="18" android:rotation="45">
-        <path android:strokeColor="@color/colorUIAccent"
+        <path android:strokeColor="@color/groupNonePrimary"
             android:strokeWidth="2"
             android:pathData="M18,1
                 v34z"/>

@@ -82,6 +82,28 @@ class CardViewModel : ViewModel() {
             }
         }
 
+    private val _cardNameStyle = MutableLiveData<Int>()
+    val cardNameStyleLD: LiveData<Int> = _cardNameStyle
+    var cardNameStyle: Int
+        get() = _card?.nameStyle?: R.style.TextView_CardName
+        set(value) {
+            card?.also {
+                it.nameStyle = value
+                _cardNameStyle.postValue(it.nameStyle)
+            }
+        }
+    
+    private val _cardBackground = MutableLiveData<Image?>()
+    val cardBackgroundLD: LiveData<Image?> = _cardBackground
+    var cardBackground: Image?
+        get() = _card?.cardBackground
+        set(value) {
+            _card?.also { 
+                it.cardBackground = value
+                _cardBackground.postValue(it.cardBackground)
+            }
+        }
+
     private val _cardImage = MutableLiveData<Image?>()
     val cardImageLD: LiveData<Image?> = _cardImage
     var cardImage: Image?
@@ -90,6 +112,17 @@ class CardViewModel : ViewModel() {
             card?.also {
                 it.cardImage = value
                 _cardImage.postValue(it.cardImage)
+            }
+        }
+    
+    private val _cardImageBackground = MutableLiveData<Image?>()
+    val cardImageBackgroundLD: LiveData<Image?> = _cardImageBackground
+    var cardImageBackground: Image?
+        get() = card?.cardImageBackground
+        set(value) {
+            card?.also { 
+                it.cardImageBackground = value
+                _cardImageBackground.postValue(it.cardImageBackground)
             }
         }
 
@@ -101,8 +134,19 @@ class CardViewModel : ViewModel() {
             card?.also {
                 it.faction = value
                 _factionImage.postValue(it.faction?.groupIcon) //TODO: Replace with faction image when available
+
+                val group = Group.findGroup(it.faction)
+                if(it.cardBackground == null || applyFactionStyles) _cardBackground.postValue(group.background)
+                if(it.cardImageBackground == null || applyFactionStyles) _cardImageBackground.postValue(group.background)
+                if(it.cardTextBackground == null || applyFactionStyles) _cardTextBackground.postValue(group.background)
+                if(it.flavorTextBackground == null || applyFactionStyles) _flavorTextBackground.postValue(group.background)
+                if(it.nameStyle == null || applyFactionStyles) _cardNameStyle.postValue(group.nameStyle)
+                if(it.cardTextStyle == null || applyFactionStyles) _cardTextStyle.postValue(group.textStyle)
+                if(it.flavorTextStyle == null || applyFactionStyles) _flavorTextStyle.postValue(group.flavorStyle)
             }
         }
+
+    var applyFactionStyles = true //TODO: Eventaully factions may have their own styles, right now we use group.
 
     private val _cardText = MutableLiveData<String>()
     val cardTextLD: LiveData<String> = _cardText
@@ -115,6 +159,28 @@ class CardViewModel : ViewModel() {
             }
         }
 
+    private val _cardTextStyle = MutableLiveData<Int>()
+    val cardTextStyleLD: LiveData<Int> = _cardTextStyle
+    var cardTextStyle: Int
+        get() = _card?.cardTextStyle?: R.style.TextView_CardName
+        set(value) {
+            card?.also {
+                it.cardTextStyle = value
+                _cardTextStyle.postValue(it.cardTextStyle)
+            }
+        }
+
+    private val _cardTextBackground = MutableLiveData<Image?>()
+    val cardTextBackgroundLD: LiveData<Image?> = _cardTextBackground
+    var cardTextBackground: Image?
+        get() = card?.cardTextBackground
+        set(value) {
+            card?.also {
+                it.cardTextBackground = value
+                _cardTextBackground.postValue(it.cardTextBackground)
+            }
+        }
+
     private val _flavorText = MutableLiveData<String>()
     val flavorTextLD: LiveData<String> = _flavorText
     var flavorText: String?
@@ -123,6 +189,28 @@ class CardViewModel : ViewModel() {
             card?.also {
                 it.flavorText = value
                 _flavorText.postValue(it.flavorText)
+            }
+        }
+
+    private val _flavorTextStyle = MutableLiveData<Int>()
+    val flavorTextStyleLD: LiveData<Int> = _flavorTextStyle
+    var flavorTextStyle: Int
+        get() = _card?.flavorTextStyle?: R.style.TextView_CardName
+        set(value) {
+            card?.also {
+                it.flavorTextStyle = value
+                _flavorTextStyle.postValue(it.flavorTextStyle)
+            }
+        }
+
+    private val _flavorTextBackground = MutableLiveData<Image?>()
+    val flavorTextBackgroundLD: LiveData<Image?> = _flavorTextBackground
+    var flavorTextBackground: Image?
+        get() = card?.flavorTextBackground
+        set(value) {
+            card?.also {
+                it.flavorTextBackground = value
+                _flavorTextBackground.postValue(it.flavorTextBackground)
             }
         }
 
@@ -221,7 +309,10 @@ class CardViewModel : ViewModel() {
             }
         }
 
+    //TODO: Need some methods here for saving changes to cards.
+
     companion object {
-        private val nullIconImage = Image(R.drawable.ic_invalid)
+        val nullIconImage = Image(R.drawable.ic_invalid)
+        val nullBackground = Image(R.drawable.background_none)
     }
 }

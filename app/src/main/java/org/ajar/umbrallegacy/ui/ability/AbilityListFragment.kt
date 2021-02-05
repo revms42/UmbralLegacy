@@ -1,4 +1,4 @@
-package org.ajar.umbrallegacy.ui
+package org.ajar.umbrallegacy.ui.ability
 
 import android.os.Bundle
 import android.util.Log
@@ -13,10 +13,12 @@ import androidx.lifecycle.ViewModelProvider
 import org.ajar.umbrallegacy.R
 import org.ajar.umbrallegacy.model.Ability
 
-class AbilityListFragment : Fragment(), ItemSelectionListener<Ability>  {
+class AbilityListFragment : Fragment(),
+    ItemSelectionListener<Ability> {
 
     companion object {
-        fun newInstance() = AbilityListFragment()
+        fun newInstance() =
+            AbilityListFragment()
     }
 
     private lateinit var viewModel: AbilityListViewModel
@@ -30,7 +32,10 @@ class AbilityListFragment : Fragment(), ItemSelectionListener<Ability>  {
         viewModel = ViewModelProvider(this.activity!!).get(AbilityListViewModel::class.java)
 
         val abilityRV = this.view?.findViewById<RecyclerView>(R.id.rvAbilities)
-        val adapter = AbilityListAdapter(viewModel.abilityLD, this)
+        val adapter = AbilityListAdapter(
+            viewModel.abilityLD,
+            this
+        )
         abilityRV?.layoutManager = LinearLayoutManager(this.activity!!)
         abilityRV?.adapter = adapter
 
@@ -42,6 +47,10 @@ class AbilityListFragment : Fragment(), ItemSelectionListener<Ability>  {
 
     override fun onSelect(item: Ability, view: View) {
         viewModel.selectedAbility = item
-        this.activity!!.supportFragmentManager.beginTransaction().hide(this).add(R.id.fragment_frame, EditAbilityFragment.newInstance(this)).runOnCommit { view.isSelected = false }.commit()
+        this.activity!!.supportFragmentManager.beginTransaction().hide(this).add(R.id.fragment_frame,
+            EditAbilityFragment.newInstance(
+                this
+            )
+        ).runOnCommit { view.isSelected = false }.commit()
     }
 }

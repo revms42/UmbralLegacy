@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.EditAbilityFragment">
+    tools:context=".ui.ability.EditAbilityFragment">
 
     <EditText
         android:id="@+id/edit_ability_name_text"

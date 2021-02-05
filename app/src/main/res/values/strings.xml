@@ -184,6 +184,9 @@
     <string name="title_item_detail">Item Detail</string>
 
     <!-- Names -->
+    <string name="group_none_name">No group</string>
+    <string name="group_none_member">Non-aligned</string>
+    <string name="group_none_members">Non-aligneds</string>
 
     <string name="group_stillblood_name">&group_stillblood_name;</string>
     <string name="group_stillblood_member">&group_stillblood_member;</string>

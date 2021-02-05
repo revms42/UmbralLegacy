@@ -1,10 +1,7 @@
 package org.ajar.umbrallegacy.content
 
 import androidx.room.TypeConverter
-import org.ajar.umbrallegacy.model.CardLayout
-import org.ajar.umbrallegacy.model.Cost
-import org.ajar.umbrallegacy.model.Image
-import org.ajar.umbrallegacy.model.PrincipleAbilityType
+import org.ajar.umbrallegacy.model.*
 
 class ContentTypeConverter {
     @TypeConverter
@@ -59,5 +56,27 @@ class ContentTypeConverter {
     @TypeConverter
     fun fromStringToListCost(str: String?) : List<Cost>? {
         return str?.let { it.split(",").mapNotNull { cost -> fromStringToCost(cost) } }
+    }
+
+    @TypeConverter
+    fun fromFactionToInt(faction: Faction?) : Int? {
+        return faction?.ordinal
+    }
+
+    @TypeConverter
+    fun fromIntToFaction(res: Int?) : Faction? {
+        return res?.let { Faction.values()[it] }
+    }
+
+    @TypeConverter
+    fun fromIntListToString(list: List<Int>?) : String? {
+        return list?.joinToString()
+    }
+
+    @TypeConverter
+    fun fromStringToIntList(str: String?) : List<Int?>? {
+        return str?.let { string ->
+            string.split(",").mapNotNull { res -> if(res.isBlank()) null else res.toInt() }
+        }
     }
 }

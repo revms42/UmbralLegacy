@@ -16,8 +16,10 @@ import org.ajar.umbrallegacy.model.CardLayout
 import org.ajar.umbrallegacy.model.Image
 
 class CardFragment(private var card: Card) : Fragment() {
+    constructor() : this(Card())
+
     private lateinit var viewModel: CardViewModel
-    
+
     companion object {
         fun newInstance(card: Int? = null): CardFragment {
             return CardFragment(if(card == null) {
@@ -45,24 +47,48 @@ class CardFragment(private var card: Card) : Fragment() {
         super.onResume()
         
         view?.also { view ->
+            val borderView = view.findViewById<View>(R.id.borderView)
+            viewModel.cardBackgroundLD.observe(requireActivity(), Observer {
+                borderView.background = it?.getDrawable(resources)?: CardViewModel.nullBackground.getDrawable(resources)
+            })
+
             val cardTextView = view.findViewById<TextView>(R.id.cardText)
             viewModel.cardTextLD.observe(requireActivity(), Observer { 
                 cardTextView.text = it
+            })
+            viewModel.cardTextBackgroundLD.observe(requireActivity(), Observer {
+                if(it != null) {
+                    cardTextView.background = it.getDrawable(resources)
+                } else {
+                    cardTextView.background = CardViewModel.nullBackground.getDrawable(resources)
+                }
+            })
+            viewModel.cardTextStyleLD.observe(requireActivity(), Observer {
+                cardTextView.setTextAppearance(it)
             })
             
             val cardImageView = view.findViewById<ImageView>(R.id.cardImage)
             viewModel.cardImageLD.observe(requireActivity(), Observer { image -> 
                 if(image != null) {
                     cardImageView.setImageDrawable(image.getDrawable(resources))
-                    cardImageView.visibility = View.VISIBLE
                 } else {
-                    cardImageView.visibility = View.INVISIBLE
+                    cardImageView.setImageDrawable(CardViewModel.nullIconImage.getDrawable(resources))
                 }
             })
             
             val cardFlavorView = view.findViewById<TextView>(R.id.flavorText)
             viewModel.flavorTextLD.observe(requireActivity(), Observer { 
                 cardFlavorView.text = it
+            })
+            viewModel.flavorTextBackgroundLD.observe(requireActivity(), Observer {
+                if(it != null) {
+                    cardFlavorView.background = it.getDrawable(resources)
+                } else {
+                    cardFlavorView.background = CardViewModel.nullBackground.getDrawable(resources)
+                }
+            })
+            viewModel.flavorTextStyleLD.observe(requireActivity(), Observer {
+                cardFlavorView.setTextAppearance(it)
             })
             
             val factionImageView = view.findViewById<ImageView>(R.id.factionImage)
@@ -172,8 +198,14 @@ class CardFragment(private var card: Card) : Fragment() {
             val hide = fun(images: Array<View>) {
                 images.forEach { it.visibility = View.INVISIBLE }
             }
+
+            val hideImages = fun(images: Array<View>, cutoff: Int) {
+                images.forEachIndexed { index, view -> view.visibility = if(index < cutoff) View.INVISIBLE else View.VISIBLE }
+            }
             
             val rightOrientationFunc = fun() {
+                hideImages(imagesR, imagesR.size - 3)
+
                 viewModel.cost.forEachIndexed { index, cost ->
                     val costImage = when(index) {
                         0 -> costOneImageR
@@ -213,12 +245,18 @@ class CardFragment(private var card: Card) : Fragment() {
                         }
                     }
                 }
+                attackImageR.visibility = View.VISIBLE
                 attackImageR.setImageDrawable(AttributeImage.forInt(viewModel.attack).attackImage.getDrawable(resources))
-                defenseImageR.setImageDrawable(AttributeImage.forInt(viewModel.defense).attackImage.getDrawable(resources))
+
+                defenseImageR.visibility = View.VISIBLE
+                defenseImageR.setImageDrawable(AttributeImage.forInt(viewModel.defense).defenseImage.getDrawable(resources))
+
+                nameR.visibility = View.VISIBLE
                 nameR.text = viewModel.cardName
             }
             
             val leftOrientationFunc = fun() {
+                hideImages(imagesL, imagesL.size - 3)
                 viewModel.cost.forEachIndexed { index, cost ->
                     val costImage = when(index) {
                         0 -> costOneImageL
@@ -258,10 +296,25 @@ class CardFragment(private var card: Card) : Fragment() {
                         }
                     }
                 }
+                attackImageL.visibility = View.VISIBLE
                 attackImageL.setImageDrawable(AttributeImage.forInt(viewModel.attack).attackImage.getDrawable(resources))
-                defenseImageL.setImageDrawable(AttributeImage.forInt(viewModel.defense).attackImage.getDrawable(resources))
+
+                defenseImageL.visibility = View.VISIBLE
+                defenseImageL.setImageDrawable(AttributeImage.forInt(viewModel.defense).defenseImage.getDrawable(resources))
+
+                nameL.visibility = View.VISIBLE
                 nameL.text = viewModel.cardName
             }
+
+            viewModel.cardNameLD.observe(requireActivity(), Observer {
+                nameL.text = viewModel.cardName
+                nameR.text = viewModel.cardName
+            })
+
+            viewModel.cardNameStyleLD.observe(requireActivity(), Observer {
+                nameL.setTextAppearance(it)
+                nameR.setTextAppearance(it)
+            })
             
             viewModel.showRightCostBarLD.observe(requireActivity(), Observer { 
                 if(it) {
@@ -292,6 +345,8 @@ class CardFragment(private var card: Card) : Fragment() {
                 }
             })
         }
+
+        viewModel.card = this.card
     }
 
     //TODO: Two things left to do. First, unregister observers onPause. Second, redo everything if the card gets changed.

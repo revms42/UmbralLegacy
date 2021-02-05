@@ -1,4 +1,4 @@
-package org.ajar.umbrallegacy.ui
+package org.ajar.umbrallegacy.ui.ability
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,7 +15,8 @@ import org.ajar.umbrallegacy.model.PrincipleAbilityType
 class EditAbilityFragment(private val backFragment: Fragment) : Fragment(), AdapterView.OnItemSelectedListener {
 
     companion object {
-        fun newInstance(backFragment: Fragment) = EditAbilityFragment(backFragment)
+        fun newInstance(backFragment: Fragment) =
+            EditAbilityFragment(backFragment)
     }
 
     private lateinit var viewModel: AbilityListViewModel

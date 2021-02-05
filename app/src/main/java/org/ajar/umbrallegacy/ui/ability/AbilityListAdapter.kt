@@ -1,4 +1,4 @@
-package org.ajar.umbrallegacy.ui
+package org.ajar.umbrallegacy.ui.ability
 
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +36,9 @@ class AbilityListAdapter(private val abilities: LiveData<List<Ability>>, private
         val abilityRowView = inflater.inflate(R.layout.ability_item, parent, false)
 
         // Return a new holder instance
-        return ViewHolder(abilityRowView)
+        return ViewHolder(
+            abilityRowView
+        )
     }
 
     // Provide a direct reference to each of the views within a data item
