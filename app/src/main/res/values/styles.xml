@@ -44,7 +44,6 @@
 
     <!-- Stillblood text -->
     <style name="TextView.CardName.Stillblood" parent="TextView.CardName">
-        <item name="android:textColor">@color/groupStillbloodSecondary</item>
     </style>
 
     <style name="TextView.CardText.Stillblood" parent="TextView.CardText">

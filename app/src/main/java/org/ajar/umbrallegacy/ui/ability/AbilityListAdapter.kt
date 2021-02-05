@@ -33,7 +33,7 @@ class AbilityListAdapter(private val abilities: LiveData<List<Ability>>, private
         val inflater = LayoutInflater.from(context)
 
         // Inflate the custom layout
-        val abilityRowView = inflater.inflate(R.layout.ability_item, parent, false)
+        val abilityRowView = inflater.inflate(R.layout.layout_ability_item, parent, false)
 
         // Return a new holder instance
         return ViewHolder(

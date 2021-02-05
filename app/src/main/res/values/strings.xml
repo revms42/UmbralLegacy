@@ -895,6 +895,16 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Nav Activity Strings -->
+    <string name="cards_text">There are %1$d cards currently in the database.</string>
+    <string name="cards_button">Take me to Cards</string>
+    <string name="abilities_text">There are %1$d abilities currently in the database.</string>
+    <string name="abilities_button">Take me to Abilities</string>
+    <string name="decks_text">There are %1$d decks currently in the database.</string>
+    <string name="decks_button">Take me to Decks</string>
+    <string name="game_text">There %1$s currently an active game.</string>
+    <string name="game_button">Play Game</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_cards">Cards</string>
     <string name="menu_abilities">Abilities</string>

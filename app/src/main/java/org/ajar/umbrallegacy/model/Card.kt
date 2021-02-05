@@ -5,6 +5,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.ajar.umbrallegacy.R
+import org.ajar.umbrallegacy.content.UmbralDatabase
 
 interface CardDefinition {
     var id: Int
@@ -65,6 +66,36 @@ class Card(
     @ColumnInfo(name = COLUMN_SHOW_RIGHT) override var showRightCostBar: Boolean = false,
     @ColumnInfo(name = COLUMN_SHOW_ABILITY) override var showAbilityIcons: Boolean = false
 ) : CardDefinition {
+
+    fun expectedCost(): Int {
+        return attack + (defense - 1) + abilities.mapNotNull { abilityCode -> abilityCode?.let { UmbralDatabase.abilities?.findById(it) }?.cost?: 0 }.sum()
+    }
+
+    fun actualCost(): Int {
+        val typeList = ArrayList<Group>()
+        return cost.mapNotNull {
+            when(it) {
+                null -> 0
+                is Cost.OpenCost -> 1
+                is Cost.GroupCost -> {
+                    if (it.group == Group.findGroup(faction)) {
+                        2
+                    } else {
+                        if (!typeList.contains(it.group)) {
+                            typeList.add(it.group)
+                        }
+                        typeList.indexOf(it.group) + 2
+                    }
+
+                }
+            }
+        }.sum()
+    }
+
+    fun isValid(): Boolean {
+        return CardRequirements.values().map { it.validate(this) }.all { it }
+    }
+
     companion object {
         const val TABLE_NAME = "cards"
         const val COLUMN_ID = "id"
@@ -89,5 +120,41 @@ class Card(
         const val COLUMN_SHOW_LEFT = "left"
         const val COLUMN_SHOW_RIGHT = "right"
         const val COLUMN_SHOW_ABILITY = "show_abl"
+    }
+}
+
+interface CardValidator {
+    fun validate(card: Card): Boolean
+}
+
+enum class CardRequirements : CardValidator {
+    ATTACK_DEFENSE {
+        override fun validate(card: Card): Boolean {
+            return card.attack <= 6 && card.defense <= 6 && card.defense > 0
+        }
+    },
+    ONE_ARCHETYPE {
+        override fun validate(card: Card): Boolean {
+            return getAbilities(card).filter { it.type == PrincipleAbilityType.ARCHETYPE }.size <= 1
+        }
+    },
+    TWO_NON_NEGATIVE {
+        override fun validate(card: Card): Boolean {
+            return getAbilities(card).filter { it.type != PrincipleAbilityType.NEGATIVE }.size <= 2
+        }
+    },
+    ONE_NEGATIVE {
+        override fun validate(card: Card): Boolean {
+            return getAbilities(card).filter { it.type == PrincipleAbilityType.NEGATIVE }.size <= 1
+         }
+    },
+    COSTS_MATCH {
+        override fun validate(card: Card): Boolean {
+            return card.expectedCost() <= card.actualCost()
+        }
+    };
+
+    internal fun getAbilities(card: Card): List<Ability> {
+        return card.abilities.mapNotNull { id -> id?.let { UmbralDatabase.abilities?.findById(it) } }
     }
 }

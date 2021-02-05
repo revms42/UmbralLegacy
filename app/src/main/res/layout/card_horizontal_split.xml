@@ -37,7 +37,6 @@
         android:contentDescription="@string/content_desc_defense_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
         app:layout_constraintTop_toTopOf="@id/top_guide"
         app:layout_constraintEnd_toStartOf="@id/right_guide_cost"
         app:srcCompat="@drawable/ic_defense_zero" />
@@ -181,7 +180,6 @@
         android:contentDescription="@string/content_desc_attack_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
         app:layout_constraintTop_toTopOf="@id/top_guide"
         app:layout_constraintStart_toEndOf="@id/left_guide_cost"
         app:srcCompat="@drawable/ic_attack_zero" />
@@ -191,7 +189,7 @@
         android:contentDescription="@string/content_desc_defense_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
+        android:layout_marginStart="2dp"
         app:layout_constraintTop_toTopOf="@id/top_guide"
         app:layout_constraintStart_toEndOf="@id/attackL"
         app:srcCompat="@drawable/ic_defense_zero" />
@@ -383,6 +381,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
+        android:padding="6dp"
         app:layout_constraintBottom_toTopOf="@id/flavorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -398,6 +397,7 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="18dp"
+        android:padding="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

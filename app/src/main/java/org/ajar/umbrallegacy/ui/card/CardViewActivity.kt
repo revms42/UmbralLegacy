@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.card_horizontal_split.*
 import org.ajar.umbrallegacy.R
 import org.ajar.umbrallegacy.model.Faction
 import org.ajar.umbrallegacy.model.Group
@@ -18,7 +17,7 @@ class CardViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        this.setContentView(R.layout.card_view_activity)
+        this.setContentView(R.layout.activity_card_view)
 
         val nextFaction = fun(faction: Faction?): Faction {
             return faction?.let {

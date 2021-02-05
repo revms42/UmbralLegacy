@@ -4,350 +4,72 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import org.ajar.umbrallegacy.R
+import androidx.navigation.fragment.navArgs
 import org.ajar.umbrallegacy.content.UmbralDatabase
 import org.ajar.umbrallegacy.model.Card
 import org.ajar.umbrallegacy.model.CardLayout
-import org.ajar.umbrallegacy.model.Image
+import org.ajar.umbrallegacy.model.Faction
+import org.ajar.umbrallegacy.model.Group
+import org.ajar.umbrallegacy.ui.NavActivityViewModel
+import org.ajar.umbrallegacy.ui.NavigationActivity
 
-class CardFragment(private var card: Card) : Fragment() {
-    constructor() : this(Card())
+class CardFragment : Fragment() {
 
     private lateinit var viewModel: CardViewModel
-
-    companion object {
-        fun newInstance(card: Int? = null): CardFragment {
-            return CardFragment(if(card == null) {
-                Card()
-            } else {
-                UmbralDatabase.cards?.findById(card)?: Card()
-            })
-        }
-    }
+    private var navModel: NavActivityViewModel? = null
+    private lateinit var card: Card
+    private val args: CardFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        card = if(args.card != -1) {
+            UmbralDatabase.cards?.findById(args.card)?: Card()
+        } else {
+            Card()
+        }
+
         return inflater.inflate(card.layout.layoutRes?: CardLayout.IMAGE_TEXT_HORIZONTAL_SPLIT.layoutRes!!, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CardViewModel::class.java)
+
+        if(requireActivity() is NavigationActivity) {
+            navModel = ViewModelProvider(requireActivity()).get(NavActivityViewModel::class.java)
+
+            val nextFaction = fun(faction: Faction?): Faction {
+                return faction?.let {
+                    val nextOrdinal = if(it.ordinal <= Faction.values().size -2) it.ordinal + 1 else 0
+                    Faction.values()[nextOrdinal]
+                }?: Faction.VAMPIRES
+            }
+
+            navModel?.fabAction = fun() {
+                viewModel.faction = nextFaction(viewModel.faction)
+                navModel?.fabIcon = Group.findGroup(viewModel.faction).icon
+            }
+        } else {
+            navModel = null
+        }
     }
     
     override fun onResume() {
         super.onResume()
-        
-        view?.also { view ->
-            val borderView = view.findViewById<View>(R.id.borderView)
-            viewModel.cardBackgroundLD.observe(requireActivity(), Observer {
-                borderView.background = it?.getDrawable(resources)?: CardViewModel.nullBackground.getDrawable(resources)
-            })
-
-            val cardTextView = view.findViewById<TextView>(R.id.cardText)
-            viewModel.cardTextLD.observe(requireActivity(), Observer { 
-                cardTextView.text = it
-            })
-            viewModel.cardTextBackgroundLD.observe(requireActivity(), Observer {
-                if(it != null) {
-                    cardTextView.background = it.getDrawable(resources)
-                } else {
-                    cardTextView.background = CardViewModel.nullBackground.getDrawable(resources)
-                }
-            })
-            viewModel.cardTextStyleLD.observe(requireActivity(), Observer {
-                cardTextView.setTextAppearance(it)
-            })
-            
-            val cardImageView = view.findViewById<ImageView>(R.id.cardImage)
-            viewModel.cardImageLD.observe(requireActivity(), Observer { image -> 
-                if(image != null) {
-                    cardImageView.setImageDrawable(image.getDrawable(resources))
-                } else {
-                    cardImageView.setImageDrawable(CardViewModel.nullIconImage.getDrawable(resources))
-                }
-            })
-            
-            val cardFlavorView = view.findViewById<TextView>(R.id.flavorText)
-            viewModel.flavorTextLD.observe(requireActivity(), Observer { 
-                cardFlavorView.text = it
-            })
-            viewModel.flavorTextBackgroundLD.observe(requireActivity(), Observer {
-                if(it != null) {
-                    cardFlavorView.background = it.getDrawable(resources)
-                } else {
-                    cardFlavorView.background = CardViewModel.nullBackground.getDrawable(resources)
-                }
-            })
-            viewModel.flavorTextStyleLD.observe(requireActivity(), Observer {
-                cardFlavorView.setTextAppearance(it)
-            })
-            
-            val factionImageView = view.findViewById<ImageView>(R.id.factionImage)
-            viewModel.factionImageLD.observe(requireActivity(), Observer { image -> 
-                if(image != null) {
-                    factionImageView.setImageDrawable(image.getDrawable(resources))
-                    factionImageView.visibility = View.VISIBLE
-                } else {
-                    factionImageView.visibility = View.INVISIBLE
-                }
-            })
-            
-            val archetypeImageView = view.findViewById<ImageView>(R.id.archetypeImage)
-            viewModel.archetypeImageLD.observe(requireActivity(), Observer { image ->
-                if(image != null) {
-                    archetypeImageView.setImageDrawable(image.getDrawable(resources))
-                    archetypeImageView.visibility = View.VISIBLE
-                } else {
-                    archetypeImageView.visibility = View.INVISIBLE
-                }
-            })
-            
-            val abilityImageOneView = view.findViewById<ImageView>(R.id.abilityOneImage)
-            val abilityImageTwoView = view.findViewById<ImageView>(R.id.abilityTwoImage)
-            val abilityImageThreeView = view.findViewById<ImageView>(R.id.abilityThreeImage)
-            
-            val abilityImageFunc = fun(list: List<Image?>) {
-                abilityImageOneView.visibility = View.INVISIBLE
-                abilityImageTwoView.visibility = View.INVISIBLE
-                abilityImageThreeView.visibility = View.INVISIBLE
-                when {
-                    list.isNotEmpty() && list[0] != null -> {
-                        abilityImageOneView.visibility = View.VISIBLE
-                        abilityImageOneView.setImageDrawable(list[0]!!.getDrawable(resources))
-                    }
-                    list.size > 1 && list[1] != null -> {
-                        abilityImageTwoView.visibility = View.VISIBLE
-                        abilityImageTwoView.setImageDrawable(list[1]!!.getDrawable(resources))
-                    }
-                    list.size > 2 && list[2] != null -> {
-                        abilityImageThreeView.visibility = View.VISIBLE
-                        abilityImageThreeView.setImageDrawable(list[2]!!.getDrawable(resources))
-                    }
-                }
-            }
-            
-            viewModel.abilityImagesLD.observe(requireActivity(), Observer { list ->
-                abilityImageFunc(list)
-            })
-            
-            viewModel.showAbilityIconsLD.observe(requireActivity(), Observer { 
-                if(it) {
-                    abilityImageFunc(viewModel.abilityImagesLD.value?: emptyList())
-                } else {
-                    abilityImageFunc(emptyList())
-                }
-            })
-            
-            val costOneImageR = view.findViewById<ImageView>(R.id.costOneImageR)
-            val costTwoImageR = view.findViewById<ImageView>(R.id.costTwoImageR)
-            val costThreeImageR = view.findViewById<ImageView>(R.id.costThreeImageR)
-            val costFourImageR = view.findViewById<ImageView>(R.id.costFourImageR)
-            val costFiveImageR = view.findViewById<ImageView>(R.id.costFiveImageR)
-            val costSixImageR = view.findViewById<ImageView>(R.id.costSixImageR)
-            
-            val costTypeOneR = view.findViewById<ImageView>(R.id.costTypeOneR)
-            val costTypeTwoR = view.findViewById<ImageView>(R.id.costTypeTwoR)
-            val costTypeThreeR = view.findViewById<ImageView>(R.id.costTypeThreeR)
-            val costTypeFourR = view.findViewById<ImageView>(R.id.costTypeFourR)
-            val costTypeFiveR = view.findViewById<ImageView>(R.id.costTypeFiveR)
-            
-            val attackImageR = view.findViewById<ImageView>(R.id.attackR)
-            val defenseImageR = view.findViewById<ImageView>(R.id.defenseR)
-            val nameR = view.findViewById<TextView>(R.id.nameR)
-
-            val imagesR = arrayOf(
-                costOneImageR, costTwoImageR, costThreeImageR, 
-                costFourImageR, costFiveImageR, costSixImageR,
-                costTypeOneR, costTypeTwoR, costTypeThreeR,
-                costTypeFourR, costTypeFiveR, attackImageR, defenseImageR, nameR
-            )
-
-            val costOneImageL = view.findViewById<ImageView>(R.id.costOneImageL)
-            val costTwoImageL = view.findViewById<ImageView>(R.id.costTwoImageL)
-            val costThreeImageL = view.findViewById<ImageView>(R.id.costThreeImageL)
-            val costFourImageL = view.findViewById<ImageView>(R.id.costFourImageL)
-            val costFiveImageL = view.findViewById<ImageView>(R.id.costFiveImageL)
-            val costSixImageL = view.findViewById<ImageView>(R.id.costSixImageL)
-
-            val costTypeOneL = view.findViewById<ImageView>(R.id.costTypeOneL)
-            val costTypeTwoL = view.findViewById<ImageView>(R.id.costTypeTwoL)
-            val costTypeThreeL = view.findViewById<ImageView>(R.id.costTypeThreeL)
-            val costTypeFourL = view.findViewById<ImageView>(R.id.costTypeFourL)
-            val costTypeFiveL = view.findViewById<ImageView>(R.id.costTypeFiveL)
-
-            val attackImageL = view.findViewById<ImageView>(R.id.attackL)
-            val defenseImageL = view.findViewById<ImageView>(R.id.defenseL)
-            val nameL = view.findViewById<TextView>(R.id.nameL)
-
-            val imagesL = arrayOf(
-                costOneImageL, costTwoImageL, costThreeImageL,
-                costFourImageL, costFiveImageL, costSixImageL,
-                costTypeOneL, costTypeTwoL, costTypeThreeL,
-                costTypeFourL, costTypeFiveL, attackImageL, defenseImageL, nameL
-            )
-
-            val hide = fun(images: Array<View>) {
-                images.forEach { it.visibility = View.INVISIBLE }
-            }
-
-            val hideImages = fun(images: Array<View>, cutoff: Int) {
-                images.forEachIndexed { index, view -> view.visibility = if(index < cutoff) View.INVISIBLE else View.VISIBLE }
-            }
-            
-            val rightOrientationFunc = fun() {
-                hideImages(imagesR, imagesR.size - 3)
-
-                viewModel.cost.forEachIndexed { index, cost ->
-                    val costImage = when(index) {
-                        0 -> costOneImageR
-                        1 -> costTwoImageR
-                        2 -> costThreeImageR
-                        3 -> costFourImageR
-                        4 -> costFiveImageR
-                        5 -> costSixImageR
-                        else -> null
-                    }
-                    
-                    costImage?.also { 
-                        if(cost == null) {
-                            it.visibility = View.INVISIBLE
-                        } else {
-                            it.visibility = View.VISIBLE
-                            it.setImageDrawable(cost.icon.getDrawable(resources))
-                        }
-                    }
-                }
-                viewModel.costType.forEachIndexed { index, cost -> 
-                    val costTypeImage = when(index){
-                        0 -> costTypeOneR
-                        1 -> costTypeTwoR
-                        2 -> costTypeThreeR
-                        3 -> costTypeFourR
-                        4 -> costTypeFiveR
-                        else -> null
-                    }
-                    
-                    costTypeImage?.also { 
-                        if(cost == null) {
-                            it.visibility = View.INVISIBLE
-                        } else {
-                            it.visibility = View.VISIBLE
-                            it.setImageDrawable(cost.costIcon.getDrawable(resources))
-                        }
-                    }
-                }
-                attackImageR.visibility = View.VISIBLE
-                attackImageR.setImageDrawable(AttributeImage.forInt(viewModel.attack).attackImage.getDrawable(resources))
-
-                defenseImageR.visibility = View.VISIBLE
-                defenseImageR.setImageDrawable(AttributeImage.forInt(viewModel.defense).defenseImage.getDrawable(resources))
-
-                nameR.visibility = View.VISIBLE
-                nameR.text = viewModel.cardName
-            }
-            
-            val leftOrientationFunc = fun() {
-                hideImages(imagesL, imagesL.size - 3)
-                viewModel.cost.forEachIndexed { index, cost ->
-                    val costImage = when(index) {
-                        0 -> costOneImageL
-                        1 -> costTwoImageL
-                        2 -> costThreeImageL
-                        3 -> costFourImageL
-                        4 -> costFiveImageL
-                        5 -> costSixImageL
-                        else -> null
-                    }
-
-                    costImage?.also {
-                        if(cost == null) {
-                            it.visibility = View.INVISIBLE
-                        } else {
-                            it.visibility = View.VISIBLE
-                            it.setImageDrawable(cost.icon.getDrawable(resources))
-                        }
-                    }
-                }
-                viewModel.costType.forEachIndexed { index, cost ->
-                    val costTypeImage = when(index){
-                        0 -> costTypeOneL
-                        1 -> costTypeTwoL
-                        2 -> costTypeThreeL
-                        3 -> costTypeFourL
-                        4 -> costTypeFiveL
-                        else -> null
-                    }
-
-                    costTypeImage?.also {
-                        if(cost == null) {
-                            it.visibility = View.INVISIBLE
-                        } else {
-                            it.visibility = View.VISIBLE
-                            it.setImageDrawable(cost.costIcon.getDrawable(resources))
-                        }
-                    }
-                }
-                attackImageL.visibility = View.VISIBLE
-                attackImageL.setImageDrawable(AttributeImage.forInt(viewModel.attack).attackImage.getDrawable(resources))
-
-                defenseImageL.visibility = View.VISIBLE
-                defenseImageL.setImageDrawable(AttributeImage.forInt(viewModel.defense).defenseImage.getDrawable(resources))
-
-                nameL.visibility = View.VISIBLE
-                nameL.text = viewModel.cardName
-            }
-
-            viewModel.cardNameLD.observe(requireActivity(), Observer {
-                nameL.text = viewModel.cardName
-                nameR.text = viewModel.cardName
-            })
-
-            viewModel.cardNameStyleLD.observe(requireActivity(), Observer {
-                nameL.setTextAppearance(it)
-                nameR.setTextAppearance(it)
-            })
-            
-            viewModel.showRightCostBarLD.observe(requireActivity(), Observer { 
-                if(it) {
-                    hide(imagesL)
-                    rightOrientationFunc()
-                } else {
-                    hide(imagesR)
-                    leftOrientationFunc()
-                }
-            })
-
-            viewModel.costLD.observe(requireActivity(), Observer {
-                if(viewModel.showRightCostBar) {
-                    hide(imagesL)
-                    rightOrientationFunc()
-                } else {
-                    hide(imagesR)
-                    leftOrientationFunc()
-                }
-            })
-            viewModel.costTypeLD.observe(requireActivity(), Observer {
-                if(viewModel.showRightCostBar) {
-                    hide(imagesL)
-                    rightOrientationFunc()
-                } else {
-                    hide(imagesR)
-                    leftOrientationFunc()
-                }
-            })
-        }
-
-        viewModel.card = this.card
+        view?.also { viewModel.wireUpView(it, requireActivity()) }
+        viewModel.card = card
     }
 
-    //TODO: Two things left to do. First, unregister observers onPause. Second, redo everything if the card gets changed.
+    override fun onPause() {
+        super.onPause()
+        viewModel.unWireView(this)
+        navModel?.fabAction = null
+    }
+
+    //TODO: Two things left to do. Redo everything if the card gets changed.
 }

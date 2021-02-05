@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_none_dark">
+
+    <TextView
+        style = "@style/TextView.CardText"
+        android:id="@+id/decksTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:text="@string/decks_text"
+        android:background="@color/colorUIBackground"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/top_guide"
+        app:layout_constraintBottom_toTopOf="@id/decksButton"/>
+
+
+    <Button
+        android:id="@+id/decksButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:text="@string/decks_button"
+        android:background="@color/colorUIButton"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/decksTextView"
+        app:layout_constraintBottom_toTopOf="@id/cardsTextView"/>
+
+    <TextView
+        style = "@style/TextView.CardText"
+        android:id="@+id/cardsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:text="@string/cards_text"
+        android:background="@color/colorUIBackground"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/decksButton"
+        app:layout_constraintBottom_toTopOf="@id/cardsButton"/>
+
+
+    <Button
+        android:id="@+id/cardsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:text="@string/cards_button"
+        android:background="@color/colorUIButton"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/cardsTextView"
+        app:layout_constraintBottom_toTopOf="@id/abilitiesTextView"/>
+
+    <TextView
+        style = "@style/TextView.CardText"
+        android:id="@+id/abilitiesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:background="@color/colorUIBackground"
+        android:text="@string/abilities_text"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/cardsButton"
+        app:layout_constraintBottom_toTopOf="@id/abilitiesButton"/>
+
+    <Button
+        android:id="@+id/abilitiesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:text="@string/abilities_button"
+        android:background="@color/colorUIButton"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/abilitiesTextView"
+        app:layout_constraintBottom_toTopOf="@id/gameTextView"/>
+
+    <TextView
+        style = "@style/TextView.CardText"
+        android:id="@+id/gameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:background="@color/colorUIBackground"
+        android:text="@string/game_text"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/abilitiesButton"
+        app:layout_constraintBottom_toTopOf="@id/gameButton"/>
+
+    <Button
+        android:id="@+id/gameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:padding="3dp"
+        android:text="@string/game_button"
+        android:background="@color/colorUIButton"
+        app:layout_constraintStart_toEndOf="@id/start_guide"
+        app:layout_constraintEnd_toStartOf="@id/end_guide"
+        app:layout_constraintTop_toBottomOf="@id/gameTextView"
+        app:layout_constraintBottom_toTopOf="@id/bottom_guide"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="100dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

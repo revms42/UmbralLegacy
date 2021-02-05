@@ -22,6 +22,10 @@
         <action
             android:id="@+id/action_cardFragment_to_abilityListFragment"
             app:destination="@id/nav_abilityListFragment" />
+        <argument
+            android:name="card"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
     <fragment
         android:id="@+id/nav_abilityListFragment"
@@ -35,7 +39,7 @@
         android:id="@+id/nav_editAbilityFragment"
         android:name="org.ajar.umbrallegacy.ui.ability.EditAbilityFragment"
         android:label="edit_ability_fragment"
-        tools:layout="@layout/edit_ability_fragment" >
+        tools:layout="@layout/fragment_edit_ability" >
         <action
             android:id="@+id/action_nav_editAbilityFragment_to_nav_abilityListFragment"
             app:destination="@id/nav_abilityListFragment" />

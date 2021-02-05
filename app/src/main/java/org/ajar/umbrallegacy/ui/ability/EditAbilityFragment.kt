@@ -28,7 +28,7 @@ class EditAbilityFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private var factionImageView: ImageView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return  inflater.inflate(R.layout.edit_ability_fragment, container, false)
+        return  inflater.inflate(R.layout.fragment_edit_ability, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -10,8 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.ActionOnlyNavDirections
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import org.ajar.umbrallegacy.R
 import org.ajar.umbrallegacy.model.Ability
@@ -27,7 +25,7 @@ class AbilityListFragment : Fragment(),
     private lateinit var viewModel: AbilityListViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return  inflater.inflate(R.layout.ability_list_fragment, container, false)
+        return  inflater.inflate(R.layout.fragment_ability_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

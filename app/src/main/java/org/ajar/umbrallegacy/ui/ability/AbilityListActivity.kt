@@ -9,7 +9,7 @@ class AbilityListActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.ability_activity)
+        setContentView(R.layout.activity_ability_list)
 
         this.supportFragmentManager.beginTransaction().add(R.id.fragment_frame, AbilityListFragment.newInstance()).commitAllowingStateLoss()
     }

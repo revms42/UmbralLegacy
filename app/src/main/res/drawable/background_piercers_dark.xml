@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
-    <solid android:color="@color/groupPiercersTertiary" />
+    <gradient
+        android:angle="90"
+        android:centerColor="@color/groupPiercersSecondary"
+        android:endColor="@color/groupPiercersPrimary"
+        android:startColor="@color/groupPiercersTertiary"
+        android:type="linear" />
     <stroke android:width="4dp" android:color="@color/groupPiercersPrimary"/>
 </shape>
