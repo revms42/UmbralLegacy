@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chernobog: Black God - https://symbolikon.com/meanings/slavic-symbols-meanings/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupStillbloodSecondary"
+        android:strokeColor="@color/groupStillbloodPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+
+    <path android:fillColor="@color/groupStillbloodPrimary"
+        android:pathData="M18,5
+                l2,4
+                a2,3 0 0,1 -2,3
+                a2,3 0 0,1 -2,-3z"/>
+
+    <path android:fillColor="@color/groupStillbloodPrimary"
+        android:pathData="M13,7
+                a5,8 0 0,0 5,8
+                a5,8 0 0,0 5,-8
+                a4,10 0 0,1 -4,10
+                a1,1 0 0,0 1,1
+                a8,12 0 0,0 5,-2
+                a6,16 0 0,0 5,-3
+                a24,12 0 0,1 -7,12
+                a3,3 0 0,0 -4,-3
+                a1,2 0 0,0 1,2
+                l-2,8
+                l-2,-8
+                a1,2 0 0,0 1,-2
+                a3,3 0 0,0 -4,3
+                a24,12 0 0,1 -7,-12
+                a6,16 0 0,0 5,3
+                a8,12 0 0,0 5,2
+                a1,1 0 0,0 1,-1
+                a4,10 0 0,1 -4,-10z"/>
+</vector>
