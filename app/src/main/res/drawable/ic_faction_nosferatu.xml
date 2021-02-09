@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupStillbloodSecondary"
+        android:strokeColor="@color/groupStillbloodPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+
+    <path android:fillColor="@color/groupStillbloodPrimary"
+        android:pathData="M18,5
+                a13,13 0 0,1 13,13
+                a12,14 0 0,0 -12,14
+                l-1,-11
+                l-1,11
+                a12,14 0 0,0 -12.-14
+                a13,13 0 0,1 13,-13z"/>
+    <path android:fillColor="@color/groupStillbloodSecondary"
+        android:pathData="M11,12
+                a3,3 0 0,1 4,4
+                a3,3 0 0,1 -4,-4z"/>
+    <path android:fillColor="@color/groupStillbloodSecondary"
+        android:pathData="M25,12
+                a3,3 0 0,1 -4,4
+                a3,3 0 0,1 4,-4z"/>
+    <path android:fillColor="@color/groupStillbloodSecondary"
+        android:pathData="M17.75,15.5
+                l-1,4
+                h1z"/>
+    <path android:fillColor="@color/groupStillbloodSecondary"
+        android:pathData="M18.25,15.5
+                l1,4
+                h-1z"/>
+</vector>
