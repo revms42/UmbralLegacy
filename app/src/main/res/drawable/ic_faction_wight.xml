@@ -10,44 +10,23 @@
         android:pathData="M18,1
                 a17,17 0 0,0 0,34
                 a17,17 0 0,0 0,-34z"/>
-
-    <path android:fillColor="@color/groupStillbloodPrimary"
-        android:pathData="M21,5
-                h2
-                a24,8 0 0,1 0,12
-                l6,6
-                a2,2 0 0,0 3,0
-                l-4.5,4.5
-                a2,2 0 0,0 0,-3
-                l-6,-6
-                v12
-                a2,2 0 0,0 2,2
-                h-6
-                a2,2 0 0,0 2,-2
-                v-23.5
-                a2,2 0 0,0 -2,-2z"/>
-    <path android:fillColor="@color/groupStillbloodSecondary"
-        android:pathData="M22,6.5
-                a22,6 0 0,1 0,9z"/>
-
-    <group android:pivotY="18" android:pivotX="18" android:scaleX="-1">
+    <group android:pivotY="18" android:pivotX="18" android:rotation="5">
         <path android:fillColor="@color/groupStillbloodPrimary"
-            android:pathData="M21,5
-                h2
-                a24,8 0 0,1 0,12
-                l6,6
-                a2,2 0 0,0 3,0
-                l-4.5,4.5
-                a2,2 0 0,0 0,-3
-                l-6,-6
-                v12
-                a2,2 0 0,0 2,2
-                h-6
-                a2,2 0 0,0 2,-2
-                v-23.5
-                a2,2 0 0,0 -2,-2z"/>
-        <path android:fillColor="@color/groupStillbloodSecondary"
-            android:pathData="M22,6.5
-                a20,6 0 0,1 0,9z"/>
+            android:pathData="M20,5
+                a10,10 0 0,1 -4,26
+                a9,9 0 0,1 4,-24
+                a9,9 0 0,0 -4,21
+                a9,9 0 0,0 4,-19
+                z"/>
+        <path android:fillColor="@color/groupStillbloodPrimary"
+            android:pathData="M20,5
+                a16,16 0 0,1 -5,-1
+                a2,2 0 0,0 -1,2
+                a30,2 0 0,-1 0,2
+                a2,2 0 0,0 1,2
+                a16,16 0 0,1 5,-1z"/>
+        <path android:fillColor="@color/groupStillbloodPrimary"
+            android:pathData="M21,6
+                a2,1.25 0 0,0 -5,0z"/>
     </group>
 </vector>

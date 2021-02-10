@@ -135,7 +135,7 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     VAMPIRE_ABILITY(R.string.ability_vampire_name, R.string.ability_vampire_description, R.drawable.ic_faction_vampire, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.vampire_cost),
     NOSFERATU_ABILITY(R.string.ability_nosferatu_name, R.string.ability_nosferatu_description, R.drawable.ic_faction_nosferatu, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.nosferatu_cost),
     WIGHT_ABILITY(R.string.ability_wight_name, R.string.ability_wight_description, R.drawable.ic_faction_wight, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.wight_cost),
-    ZOMBIE_ABILITY(R.string.ability_zombie_name, R.string.ability_zombie_description, R.drawable.ic_group_stillblood, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.zombie_cost),
+    ZOMBIE_ABILITY(R.string.ability_zombie_name, R.string.ability_zombie_description, R.drawable.ic_faction_zombie, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.zombie_cost),
 
     LYCANTHROPE_ABILITY(R.string.ability_lycanthrope_name, R.string.ability_lycanthrope_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.lychanthrope_cost),
     ANIMATED_ABILITY(R.string.ability_animated_name, R.string.ability_animated_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.animated_cost),
