@@ -137,12 +137,12 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     WIGHT_ABILITY(R.string.ability_wight_name, R.string.ability_wight_description, R.drawable.ic_faction_wight, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.wight_cost),
     ZOMBIE_ABILITY(R.string.ability_zombie_name, R.string.ability_zombie_description, R.drawable.ic_faction_zombie, R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.integer.zombie_cost),
 
-    LYCANTHROPE_ABILITY(R.string.ability_lycanthrope_name, R.string.ability_lycanthrope_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.lychanthrope_cost),
-    ANIMATED_ABILITY(R.string.ability_animated_name, R.string.ability_animated_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.animated_cost),
-    TOTEMIC_SPIRIT_ABILITY(R.string.ability_totemic_spirit_name, R.string.ability_totemic_spirit_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.totemic_spirit_cost),
-    WITCH_BOUND_ABILITY(R.string.ability_witch_bound_name, R.string.ability_witch_bound_description, R.drawable.ic_group_cursed, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.witch_bound_cost),
+    LYCANTHROPE_ABILITY(R.string.ability_lycanthrope_name, R.string.ability_lycanthrope_description, R.drawable.ic_faction_lycanthrope, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.lychanthrope_cost),
+    ANIMATED_ABILITY(R.string.ability_animated_name, R.string.ability_animated_description, R.drawable.ic_faction_animated, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.animated_cost),
+    TOTEMIC_SPIRIT_ABILITY(R.string.ability_totemic_spirit_name, R.string.ability_totemic_spirit_description, R.drawable.ic_faction_totemic_spirit, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.totemic_spirit_cost),
+    WITCH_BOUND_ABILITY(R.string.ability_witch_bound_name, R.string.ability_witch_bound_description, R.drawable.ic_faction_witch_bound, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.witch_bound_cost),
 
-    WARLOCK_ABILITY(R.string.ability_warlock_name, R.string.ability_warlock_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.warlock_cost),
+    WARLOCK_ABILITY(R.string.ability_warlock_name, R.string.ability_warlock_description, R.drawable.ic_faction_warlock, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.warlock_cost),
     ELEMENTAL_ABILITY(R.string.ability_elemental_name, R.string.ability_elemental_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.elemental_cost),
     BOUND_DEMON_ABILITY(R.string.ability_bound_demon_name, R.string.ability_bound_demon_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.bound_demon_cost),
     MAGICAL_CONSTRUCT_ABILITY(R.string.ability_magical_construct_name, R.string.ability_magical_construct_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.magical_construct_cost),

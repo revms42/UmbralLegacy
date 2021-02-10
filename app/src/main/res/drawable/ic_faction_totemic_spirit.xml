@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hexagram - https://thoughtcatalog.com/christine-stockton/2018/05/witchcraft-symbols-and-meanings/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupCursedSecondary"
+        android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <path android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M6,12
+                h24"/>
+    <path android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M10,12
+                l16,16"/>
+    <path android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M26,12
+                l-16,16"/>
+    <path android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,5
+                v26"/>
+    <path android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,5
+                a3,3 0 0,1 0,6
+                a3,3 0 0,1 0,-6"/>
+</vector>

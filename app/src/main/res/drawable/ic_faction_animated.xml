@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hexagram - https://thoughtcatalog.com/christine-stockton/2018/05/witchcraft-symbols-and-meanings/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupCursedSecondary"
+        android:strokeColor="@color/groupCursedPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <path android:fillColor="@color/groupCursedPrimary"
+        android:pathData="M18,10
+                a8,8 0 0,1 0,16z"/>
+    <path android:fillColor="@color/groupCursedPrimary"
+        android:pathData="M16,11
+                l1,-4
+                h2
+                l1,4z"/>
+    <group android:pivotX="18" android:pivotY="18" android:rotation="36">
+        <path android:fillColor="@color/groupCursedPrimary"
+            android:pathData="M16,11
+                l1,-4
+                h2
+                l1,4z"/>
+    </group>
+    <group android:pivotX="18" android:pivotY="18" android:rotation="72">
+        <path android:fillColor="@color/groupCursedPrimary"
+            android:pathData="M16,11
+                l1,-4
+                h2
+                l1,4z"/>
+    </group>
+    <group android:pivotX="18" android:pivotY="18" android:rotation="108">
+        <path android:fillColor="@color/groupCursedPrimary"
+            android:pathData="M16,11
+                l1,-4
+                h2
+                l1,4z"/>
+    </group>
+    <group android:pivotX="18" android:pivotY="18" android:rotation="144">
+        <path android:fillColor="@color/groupCursedPrimary"
+            android:pathData="M16,11
+                l1,-4
+                h2
+                l1,4z"/>
+    </group>
+    <group android:pivotX="18" android:pivotY="18" android:rotation="180">
+        <path android:fillColor="@color/groupCursedPrimary"
+            android:pathData="M16,11
+                l1,-4
+                h2
+                l1,4z"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:scaleX="1.4" android:scaleY="1.4" android:translateY="3.8">
+        <path android:fillColor="@color/groupCursedPrimary"
+            android:pathData="M18,10
+                a5,5 0 0,0 -5,5
+                a5,5 0 0,1 1,3
+                a2,5 0 0,0 1,1
+                a2,2 0 0,1 1,2
+                h2z"/>
+        <path android:fillColor="@color/groupCursedSecondary"
+            android:pathData="M14.5,16
+                a3,5 0 0,0 3,0
+                a3,5 0 0,0 -3,0z"/>
+        <path android:fillColor="@color/groupCursedSecondary"
+            android:pathData="M17.5,18
+                l0.5,-1
+                l0.5,1z"/>
+    </group>
+    <path android:fillColor="@color/groupCursedSecondary"
+        android:pathData="M22,13
+                h-5
+                l3,6
+                h-1
+                l4,6
+                l-1,-5
+                h1z"/>
+</vector>
