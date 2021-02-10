@@ -364,8 +364,7 @@ class CardViewModel : ViewModel() {
             val factionImageView = view.findViewById<ImageView>(R.id.factionImage)
             this.factionLD.observe(activity, Observer { faction ->
                 if(faction != null) {
-                    val group = Group.findGroup(faction)
-                    factionImageView.setImageDrawable(group.icon.getDrawable(activity.resources))  //TODO: Replace with faction image when available
+                    factionImageView.setImageDrawable(faction.ability.icon.getDrawable(activity.resources))  //TODO: Replace with faction image when available
                     factionImageView.visibility = View.VISIBLE
                     factionImageView.contentDescription = activity.getString(R.string.content_desc_faction_image, activity.getString(faction.factionName))
                 } else {
