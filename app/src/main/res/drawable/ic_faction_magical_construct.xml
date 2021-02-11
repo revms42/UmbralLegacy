@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Philosopher's Stone - https://symbolikon.com/meanings/alchemy-symbols-meanings/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupPiercersSecondary"
+        android:strokeColor="@color/groupPiercersPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,3
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9" android:rotation="60">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,3
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9" android:rotation="120">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,3
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9" android:rotation="-60">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,3
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9" android:rotation="-120">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,3
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9" android:rotation="180">
+        <path android:strokeColor="@color/groupPiercersPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,3
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16"/>
+    </group>
+</vector>

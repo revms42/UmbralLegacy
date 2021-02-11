@@ -143,9 +143,9 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     WITCH_BOUND_ABILITY(R.string.ability_witch_bound_name, R.string.ability_witch_bound_description, R.drawable.ic_faction_witch_bound, R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.integer.witch_bound_cost),
 
     WARLOCK_ABILITY(R.string.ability_warlock_name, R.string.ability_warlock_description, R.drawable.ic_faction_warlock, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.warlock_cost),
-    ELEMENTAL_ABILITY(R.string.ability_elemental_name, R.string.ability_elemental_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.elemental_cost),
-    BOUND_DEMON_ABILITY(R.string.ability_bound_demon_name, R.string.ability_bound_demon_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.bound_demon_cost),
-    MAGICAL_CONSTRUCT_ABILITY(R.string.ability_magical_construct_name, R.string.ability_magical_construct_description, R.drawable.ic_group_piercers, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.magical_construct_cost),
+    ELEMENTAL_ABILITY(R.string.ability_elemental_name, R.string.ability_elemental_description, R.drawable.ic_faction_elemental, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.elemental_cost),
+    BOUND_DEMON_ABILITY(R.string.ability_bound_demon_name, R.string.ability_bound_demon_description, R.drawable.ic_faction_bound_demon, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.bound_demon_cost),
+    MAGICAL_CONSTRUCT_ABILITY(R.string.ability_magical_construct_name, R.string.ability_magical_construct_description, R.drawable.ic_faction_magical_construct, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.magical_construct_cost),
 
     HORNED_ONE_ABILITY(R.string.ability_horned_one_name, R.string.ability_horned_one_description, R.drawable.ic_faction_horned_one, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.horned_one_cost),
     WISH_GRANTER_ABILITY(R.string.ability_wish_granter_name, R.string.ability_wish_granter_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.wish_granter_cost),
