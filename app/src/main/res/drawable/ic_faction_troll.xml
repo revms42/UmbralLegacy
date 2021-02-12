@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Torc and Hawthorne: Marks entrance to the fairy realm - https://en.wikipedia.org/wiki/Crataegus#Folklore -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupFaeSecondary"
+        android:strokeColor="@color/groupFaePrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotY="18" android:pivotX="18" android:translateY="2">
+        <path android:fillColor="@color/groupFaePrimary"
+            android:pathData="M18,3
+                a10,10 0 0,0 0,20
+                a10,10 0 0,0 0,-20z"/>
+        <path android:fillColor="@color/groupFaeSecondary"
+            android:pathData="M18,5
+                a8,8 0 0,0 0,16
+                a8,8 0 0,0 0,-16z"/>
+        <group android:pivotY="13" android:pivotX="18" android:rotation="15">
+            <path android:fillColor="@color/groupFaePrimary"
+            android:pathData="M18,21
+                    a4,4 0 0,0 0,8
+                    a3,3 0 0,0 3,-3
+                    a2.5,2.5 0 0,0 -2.5,-2.5
+                    a2.2,2.2 0 0,0 -2.2,2.2
+                    a2,2 0 0,0 2,0
+                    a0.2,0.2 0 0,1 0.2,-0.2
+                    a0.5,0.5 0 0,1 0.5,0.5
+                    a1,1 0 0,1 -1,1
+                    a2,2 0 0,1 0,-4z"/>
+        </group>
+        <group android:pivotY="13" android:pivotX="18" android:rotation="-15" android:scaleX="-1">
+            <path android:fillColor="@color/groupFaePrimary"
+                android:pathData="M18,21
+                    a4,4 0 0,0 0,8
+                    a3,3 0 0,0 3,-3
+                    a2.5,2.5 0 0,0 -2.5,-2.5
+                    a2.2,2.2 0 0,0 -2.2,2.2
+                    a2,2 0 0,0 2,0
+                    a0.2,0.2 0 0,1 0.2,-0.2
+                    a0.5,0.5 0 0,1 0.5,0.5
+                    a1,1 0 0,1 -1,1
+                    a2,2 0 0,1 0,-4z"/>
+        </group>
+    </group>
+
+
+</vector>

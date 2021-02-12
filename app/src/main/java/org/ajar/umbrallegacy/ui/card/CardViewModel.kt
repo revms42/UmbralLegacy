@@ -134,10 +134,9 @@ class CardViewModel : ViewModel() {
     var faction: Faction?
         get() = card?.faction
         set(value) {
-            Log.e("CardViewModel", "New faction ${card?.faction?.factionName}")
             card?.also {
                 it.faction = value
-                _faction.postValue(it.faction) //TODO: Replace with faction image when available
+                _faction.postValue(it.faction)
 
                 val group = Group.findGroup(it.faction)
                 if(it.cardBackground == null || applyFactionStyles) _cardBackground.postValue(group.cardBackground)
@@ -543,41 +542,49 @@ class CardViewModel : ViewModel() {
             val leftOrientationFunc = fun() {
                 hideImages(imagesL, imagesL.size - 3)
                 this.cost.forEachIndexed { index, cost ->
-                    val costImage = when(index) {
-                        0 -> costOneImageL
-                        1 -> costTwoImageL
-                        2 -> costThreeImageL
-                        3 -> costFourImageL
-                        4 -> costFiveImageL
-                        5 -> costSixImageL
+                    val costPair = when(index) {
+                        0 -> Pair(costOneImageL, R.string.content_desc_cost_one_image)
+                        1 -> Pair(costTwoImageL, R.string.content_desc_cost_two_image)
+                        2 -> Pair(costThreeImageL, R.string.content_desc_cost_three_image)
+                        3 -> Pair(costFourImageL, R.string.content_desc_cost_four_image)
+                        4 -> Pair(costFiveImageL, R.string.content_desc_cost_five_image)
+                        5 -> Pair(costSixImageL, R.string.content_desc_cost_six_image)
                         else -> null
                     }
 
-                    costImage?.also {
+                    costPair?.also {
                         if(cost == null) {
-                            it.visibility = View.INVISIBLE
+                            it.first.visibility = View.INVISIBLE
                         } else {
-                            it.visibility = View.VISIBLE
-                            it.setImageDrawable(cost.icon.getDrawable(activity.resources))
+                            it.first.visibility = View.VISIBLE
+                            it.first.setImageDrawable(cost.icon.getDrawable(activity.resources))
+                            it.first.contentDescription = activity.getString(it.second, when(cost) {
+                                is Cost.GroupCost -> activity.getString(cost.group.groupName)
+                                is Cost.OpenCost -> activity.getString(R.string.group_none_name)
+                            })
                         }
                     }
                 }
                 this.costType.forEachIndexed { index, cost ->
-                    val costTypeImage = when(index){
-                        0 -> costTypeOneL
-                        1 -> costTypeTwoL
-                        2 -> costTypeThreeL
-                        3 -> costTypeFourL
-                        4 -> costTypeFiveL
+                    val costImagePair = when(index){
+                        0 -> Pair(costTypeOneL, R.string.content_desc_payment_one_image)
+                        1 -> Pair(costTypeTwoL, R.string.content_desc_payment_two_image)
+                        2 -> Pair(costTypeThreeL, R.string.content_desc_payment_three_image)
+                        3 -> Pair(costTypeFourL, R.string.content_desc_payment_four_image)
+                        4 -> Pair(costTypeFiveL, R.string.content_desc_payment_five_image)
                         else -> null
                     }
 
-                    costTypeImage?.also {
+                    costImagePair?.also {
                         if(cost == null) {
-                            it.visibility = View.INVISIBLE
+                            it.first.visibility = View.INVISIBLE
                         } else {
-                            it.visibility = View.VISIBLE
-                            it.setImageDrawable(cost.costIcon.getDrawable(activity.resources))
+                            it.first.visibility = View.VISIBLE
+                            it.first.setImageDrawable(cost.costIcon.getDrawable(activity.resources))
+                            it.first.contentDescription = activity.getString(it.second, when(cost) {
+                                is Cost.GroupCost -> activity.getString(cost.group.groupName)
+                                is Cost.OpenCost -> activity.getString(R.string.group_none_name)
+                            })
                         }
                     }
                 }

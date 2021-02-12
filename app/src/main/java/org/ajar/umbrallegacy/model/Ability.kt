@@ -148,9 +148,9 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     MAGICAL_CONSTRUCT_ABILITY(R.string.ability_magical_construct_name, R.string.ability_magical_construct_description, R.drawable.ic_faction_magical_construct, R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.integer.magical_construct_cost),
 
     HORNED_ONE_ABILITY(R.string.ability_horned_one_name, R.string.ability_horned_one_description, R.drawable.ic_faction_horned_one, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.horned_one_cost),
-    WISH_GRANTER_ABILITY(R.string.ability_wish_granter_name, R.string.ability_wish_granter_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.wish_granter_cost),
-    UNSEELIE_ABILITY(R.string.ability_unseelie_name, R.string.ability_unseelie_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.unseelie_cost),
-    TROLL_ABILITY(R.string.ability_troll_name, R.string.ability_troll_description, R.drawable.ic_group_fae, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.troll_cost),
+    WISH_GRANTER_ABILITY(R.string.ability_wish_granter_name, R.string.ability_wish_granter_description, R.drawable.ic_faction_wish_granter, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.wish_granter_cost),
+    UNSEELIE_ABILITY(R.string.ability_unseelie_name, R.string.ability_unseelie_description, R.drawable.ic_faction_unseelie, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.unseelie_cost),
+    TROLL_ABILITY(R.string.ability_troll_name, R.string.ability_troll_description, R.drawable.ic_faction_troll, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.troll_cost),
 
     GREAT_OLD_ONE_ABILITY(R.string.ability_great_old_one_name, R.string.ability_great_old_one_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.great_old_one_cost),
     ANCIENT_RACE_ABILITY(R.string.ability_ancient_race_name, R.string.ability_ancient_race_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.ancient_race_cost),

@@ -1,5 +1,6 @@
 package org.ajar.umbrallegacy.ui.card
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,10 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import org.ajar.umbrallegacy.content.UmbralDatabase
-import org.ajar.umbrallegacy.model.Card
-import org.ajar.umbrallegacy.model.CardLayout
-import org.ajar.umbrallegacy.model.Faction
-import org.ajar.umbrallegacy.model.Group
+import org.ajar.umbrallegacy.model.*
 import org.ajar.umbrallegacy.ui.NavActivityViewModel
 import org.ajar.umbrallegacy.ui.NavigationActivity
 
@@ -50,9 +48,29 @@ class CardFragment : Fragment() {
                 }?: Faction.VAMPIRES
             }
 
+
             navModel?.fabAction = fun() {
                 viewModel.faction = nextFaction(viewModel.faction)
-                navModel?.fabIcon = Group.findGroup(viewModel.faction).icon
+                val group = Group.findGroup(viewModel.faction)
+                viewModel.faction?.member?.also { viewModel.cardName = "New ${getString(it)}" }
+                viewModel.faction?.ability?.also {
+                    viewModel.cardText = getString(it.description)
+                    viewModel.cardImage = it.icon
+
+                    val rawCost = resources.getInteger(it.cost)
+                    val fullCost = rawCost / 2
+                    val halfCost = rawCost % 2
+
+                    val cost = ArrayList<Cost>()
+                    if(fullCost >= 1) cost.addAll((1..fullCost).map { Cost.GroupCost(group) })
+                    if(halfCost >= 1) cost.addAll((1..halfCost).map { Cost.OpenCost() })
+
+                    viewModel.cost = cost
+                }
+
+                viewModel.cardImageBackground = Image(ColorDrawable(group.colorTertiary))
+
+                navModel?.fabIcon = group.icon
             }
         } else {
             navModel = null

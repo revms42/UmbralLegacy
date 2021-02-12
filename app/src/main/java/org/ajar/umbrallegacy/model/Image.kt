@@ -9,12 +9,11 @@ import org.ajar.umbrallegacy.R
 import java.io.File
 
 @Suppress("DataClassPrivateConstructor")
-data class Image private constructor(private var _resource: Int? = null, private var _path: String? = null) {
+data class Image private constructor(private var _resource: Int? = null, private var _path: String? = null, private var drawable: Drawable? = null) {
 
-    constructor(@DrawableRes resource: Int) : this(resource, null)
-    constructor(path: String) : this(null, path)
-
-    private var drawable: Drawable? = null
+    constructor(@DrawableRes resource: Int) : this(resource, null, null)
+    constructor(path: String) : this(null, path, null)
+    constructor(drawable: Drawable) : this(null, null, drawable) //TODO: Temporary for testing purposes
 
     var resource: Int?
         get() = _resource

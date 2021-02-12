@@ -145,6 +145,9 @@ interface GroupDefinition {
     val flavorStyle: Int
     val textBackground: Image
     val cardBackground: Image
+    val colorPrimary: Int //TODO: Temp for testing
+    val colorSecondary: Int //TODO: Temp for testing
+    val colorTertiary: Int //TODO: Temp for testing
     val factions: Array<out Faction>
 }
 
@@ -153,48 +156,57 @@ enum class Group(override val groupName: Int, override val member: Int, override
                  override val nameStyle: Int, override val textStyle: Int,
                  override val flavorStyle: Int, override val textBackground: Image,
                  override val cardBackground: Image,
+                 override val colorPrimary: Int, override val colorSecondary: Int,
+                 override val colorTertiary: Int,
                  vararg factionList: Faction) : GroupDefinition {
     STILLBLOOD(R.string.group_stillblood_name, R.string.group_stillblood_member, R.string.group_stillblood_members,
         Image(R.drawable.ic_group_stillblood), Image(R.drawable.ic_payment_blood_stillblood),
         R.style.TextView_CardName_Stillblood, R.style.TextView_CardText_Stillblood,
         R.style.TextView_CardFlavorText_Stillblood, Image(R.drawable.background_stillblood),
         Image(R.drawable.background_stillblood_dark),
+        R.color.groupStillbloodPrimary, R.color.groupStillbloodSecondary, R.color.groupStillbloodTertiary,
         Faction.VAMPIRES, Faction.NOSFERATU, Faction.WIGHTS, Faction.ZOMBIES),
     CURSED(R.string.group_cursed_name, R.string.group_cursed_member, R.string.group_cursed_members,
         Image(R.drawable.ic_group_cursed), Image(R.drawable.ic_payment_blood_cursed),
         R.style.TextView_CardName_Cursed, R.style.TextView_CardText_Cursed,
         R.style.TextView_CardFlavorText_Cursed, Image(R.drawable.background_cursed),
         Image(R.drawable.background_cursed_dark),
+        R.color.groupCursedPrimary, R.color.groupCursedSecondary, R.color.groupCursedTertiary,
         Faction.LYCANTHROPES, Faction.ANIMATED, Faction.TOTEMIC_SPIRITS, Faction.WITCH_BOUND),
     PIERCERS(R.string.group_piercers_name, R.string.group_piercers_member, R.string.group_piercers_members,
         Image(R.drawable.ic_group_piercers), Image(R.drawable.ic_payment_blood_piercers),
         R.style.TextView_CardName_Piercers, R.style.TextView_CardText_Piercers,
         R.style.TextView_CardFlavorText_Piercers, Image(R.drawable.background_piercers),
         Image(R.drawable.background_piercers_dark),
+        R.color.groupPiercersPrimary, R.color.groupPiercersSecondary, R.color.groupPiercersTertiary,
         Faction.WARLOCKS, Faction.ELEMENTALS, Faction.BOUND_DEMONS, Faction.MAGICAL_CONSTRUCTS),
     FAE(R.string.group_fae_name, R.string.group_fae_member, R.string.group_fae_members,
         Image(R.drawable.ic_group_fae), Image(R.drawable.ic_payment_blood_fae),
         R.style.TextView_CardName_Fae, R.style.TextView_CardText_Fae,
         R.style.TextView_CardFlavorText_Fae, Image(R.drawable.background_fae),
         Image(R.drawable.background_fae_dark),
+        R.color.groupFaePrimary, R.color.groupFaeSecondary, R.color.groupFaeTertiary,
         Faction.TROLLS, Faction.WISH_GRANTERS, Faction.UNSEELIE, Faction.HORNED_ONES),
     OLD_ONES(R.string.group_old_ones_name, R.string.group_old_ones_member, R.string.group_old_ones_members,
         Image(R.drawable.ic_group_old_ones), Image(R.drawable.ic_payment_blood_old_ones),
         R.style.TextView_CardName_OldOnes, R.style.TextView_CardText_OldOnes,
         R.style.TextView_CardFlavorText_OldOnes, Image(R.drawable.background_old_ones),
         Image(R.drawable.background_old_ones_dark),
+        R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.color.groupOldOnesTertiary,
         Faction.GREAT_OLD_ONES, Faction.ANCIENT_RACE, Faction.YELLOW_MASKS, Faction.CULTISTS),
     HELLBOUND(R.string.group_hellbound_name, R.string.group_hellbound_member, R.string.group_hellbound_members,
         Image(R.drawable.ic_group_hellbound), Image(R.drawable.ic_payment_blood_hellbound),
         R.style.TextView_CardName_Hellbound, R.style.TextView_CardText_Hellbound,
         R.style.TextView_CardFlavorText_Hellbound, Image(R.drawable.background_hellbound),
         Image(R.drawable.background_hellbound_dark),
+        R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.color.groupHellboundTertiary,
         Faction.ARCHITECTS, Faction.MARKED, Faction.HELLSPAWN, Faction.DOPPLEGANGERS),
     NULL(R.string.group_none_name, R.string.group_none_member, R.string.group_none_members,
         Image(R.drawable.ic_cost), Image(R.drawable.ic_payment_blood),
         R.style.TextView_CardName, R.style.TextView_CardText,
         R.style.TextView_CardFlavorText, Image(R.drawable.background_none),
-        Image(R.drawable.background_none_dark));
+        Image(R.drawable.background_none_dark),
+        R.color.groupNonePrimary, R.color.groupNoneSecondary, R.color.groupNoneTertiary);
 
     override val factions = factionList
 
