@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://site.pelgranepress.com/index.php/our-yellow-sign-is-your-yellow-sign/ -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupOldOnesSecondary"
+        android:strokeColor="@color/groupOldOnesPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotX="18" android:pivotY="18" android:scaleX="1" android:scaleY="1" android:translateY="-2">
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M17,7
+                a40,40 0 0,0 -5,6
+                l-5,8
+                h20
+                a10,10 0 0,0 -7,-8
+                a8,20 0 0,1 5,6
+                h-14"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M16.5,16
+                v8
+                h3
+                v-8
+                a1.5,1.5 0 0,0 -3,0"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M13,28
+                a5,5 0 0,1 10,0
+                a5,5 0 0,1 -10,0"/>
+        <path android:fillColor="@color/groupOldOnesSecondary"
+            android:pathData="M13,29
+                a4,4 0 0,1 8,0
+                a4,4 0 0,1 -8,0"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M14,30
+                a1.4,1.4 0 0,1 2.8,0
+                a1.4,1.4 0 0,1 -2.8,0"/>
+        <path android:fillColor="@color/groupOldOnesSecondary"
+            android:pathData="M13.4,30.4
+                a1,1 0 0,1 2,0
+                a1,1 0 0,1 -2,0"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M18,11
+                a1.4,1.4 0 0,1 2.8,0
+                a1.4,1.4 0 0,1 -2.8,0"/>
+        <path android:fillColor="@color/groupOldOnesSecondary"
+            android:pathData="M19,10.4
+                a1,1 0 0,1 2,0
+                a1,1 0 0,1 -2,0"/>
+    </group>
+</vector>

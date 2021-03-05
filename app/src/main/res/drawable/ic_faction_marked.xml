@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leviathan Cross - https://en.wikipedia.org/wiki/List_of_occult_symbols -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupHellboundSecondary"
+        android:strokeColor="@color/groupHellboundPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="0.9" android:scaleX="0.9" android:translateY="1">
+        <path android:strokeColor="@color/groupHellboundPrimary"
+            android:strokeWidth="2"
+            android:pathData="M18,10
+                l-8,8
+                l8,8
+                l8,-8z"/>
+        <path android:strokeColor="@color/groupHellboundPrimary"
+            android:strokeWidth="2"
+            android:pathData="M14,14
+                l-4,-4
+                l-8,8"/>
+        <path android:strokeColor="@color/groupHellboundPrimary"
+            android:strokeWidth="2"
+            android:pathData="M22,14
+                l4,-4
+                l8,8"/>
+    </group>
+</vector>

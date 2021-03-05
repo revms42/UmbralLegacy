@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupOldOnesSecondary"
+        android:strokeColor="@color/groupOldOnesPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotX="18" android:pivotY="18" android:scaleX="0.8" android:scaleY="0.8">
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M5,18
+                a13.5,13 0 0,0 26,0
+                a13,13 0 0,1 -26,0
+                a13,13 0 0,1 26,0
+                a13.5,13 0 0,0 -26,0"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:pathData="M12,18
+                a6,6 0 0,0 12,0
+                a6,6 0 0,0 -12,0"/>
+        <path android:fillColor="@color/groupOldOnesSecondary"
+            android:pathData="M15,18
+                a3,3 0 0,0 6,0
+                a3,3 0 0,0 -6,0"/>
+    </group>
+    <group android:pivotX="18" android:pivotY="18" android:translateY="-1" android:scaleX="1.1" android:scaleY="1.1">
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:strokeColor="@color/groupOldOnesSecondary"
+            android:strokeWidth="0.5"
+            android:pathData="M18,5
+                a9,9 0 0,0 -1,10
+                a9,9 0 0,1 0,10
+                a12,12 0 0,0 2,0
+                a9,9 0 0,0 0,-10
+                a9,9 0 0,1 -1,-10"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:strokeColor="@color/groupOldOnesSecondary"
+            android:strokeWidth="0.5"
+            android:pathData="M15,23
+                a5,5 0 0,0 7,0
+                a4.5,7 0 0 1 -7,0"/>
+        <path android:fillColor="@color/groupOldOnesPrimary"
+            android:strokeColor="@color/groupOldOnesSecondary"
+            android:strokeWidth="0.5"
+            android:pathData="M18,25
+                a5,10 0 0,0 0,7
+                a1,1 0 0,0 1,0
+                a5,10 0 0,0 0,-7"/>
+    </group>
+</vector>

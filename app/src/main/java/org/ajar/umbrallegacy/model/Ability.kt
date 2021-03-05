@@ -153,14 +153,14 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     TROLL_ABILITY(R.string.ability_troll_name, R.string.ability_troll_description, R.drawable.ic_faction_troll, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.troll_cost),
 
     GREAT_OLD_ONE_ABILITY(R.string.ability_great_old_one_name, R.string.ability_great_old_one_description, R.drawable.ic_faction_great_old_one, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.great_old_one_cost),
-    ANCIENT_RACE_ABILITY(R.string.ability_ancient_race_name, R.string.ability_ancient_race_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.ancient_race_cost),
-    CULTIST_ABILITY(R.string.ability_cultist_name, R.string.ability_cultist_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.cultist_cost),
-    YELLOW_MASK_ABILITY(R.string.ability_yellow_mask_name, R.string.ability_yellow_mask_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.yellow_mask_cost),
+    ANCIENT_RACE_ABILITY(R.string.ability_ancient_race_name, R.string.ability_ancient_race_description, R.drawable.ic_faction_ancient_race, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.ancient_race_cost),
+    CULTIST_ABILITY(R.string.ability_cultist_name, R.string.ability_cultist_description, R.drawable.ic_faction_cultist, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.cultist_cost),
+    YELLOW_MASK_ABILITY(R.string.ability_yellow_mask_name, R.string.ability_yellow_mask_description, R.drawable.ic_faction_yellow_mask, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.yellow_mask_cost),
 
-    ARCHITECT_ABILITY(R.string.ability_architect_name, R.string.ability_architect_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.architect_cost),
-    DOPPELGANGER_ABILITY(R.string.ability_doppelganger_name, R.string.ability_doppelganger_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.doppleganger_cost),
-    MARKED_ABILITY(R.string.ability_marked_name, R.string.ability_marked_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.marked_cost),
-    HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description, R.drawable.ic_group_hellbound, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.hellspawn_cost);
+    ARCHITECT_ABILITY(R.string.ability_architect_name, R.string.ability_architect_description, R.drawable.ic_faction_architect, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.architect_cost),
+    DOPPELGANGER_ABILITY(R.string.ability_doppelganger_name, R.string.ability_doppelganger_description, R.drawable.ic_faction_doppelganger, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.doppleganger_cost),
+    MARKED_ABILITY(R.string.ability_marked_name, R.string.ability_marked_description, R.drawable.ic_faction_marked, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.marked_cost),
+    HELLSPAWN_ABILITY(R.string.ability_hellspawn_name, R.string.ability_hellspawn_description, R.drawable.ic_faction_hellspawn, R.color.groupHellboundPrimary, R.color.groupHellboundSecondary, R.integer.hellspawn_cost);
 
     override val type = PrincipleAbilityType.FACTION
     override var icon: Image = Image(icon)

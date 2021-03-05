@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leviathan Cross - https://en.wikipedia.org/wiki/List_of_occult_symbols -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupHellboundSecondary"
+        android:strokeColor="@color/groupHellboundPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <group android:pivotY="18" android:pivotX="18" android:translateY="-2">
+        <group android:pivotY="18" android:pivotX="18" android:scaleY="-1" android:scaleX="-1" android:rotation="-45" android:translateX="-5.5" android:translateY="-7">
+            <path android:fillColor="@color/groupHellboundPrimary"
+                android:pathData="M18,14
+                a4,4 0 0,0 0,8
+                a3,3 0 0,0 0,-6
+                a2,2 0 0,1 0,4.5
+                a2.5,2.5 0 0,1 0,-5z"/>
+        </group>
+        <group android:pivotY="18" android:pivotX="18" android:scaleY="-1" android:scaleX="1" android:rotation="45" android:translateX="5.5" android:translateY="-7">
+            <path android:fillColor="@color/groupHellboundPrimary"
+                android:pathData="M18,14
+                a4,4 0 0,0 0,8
+                a3,3 0 0,0 0,-6
+                a2,2 0 0,1 0,4.5
+                a2.5,2.5 0 0,1 0,-5z"/>
+        </group>
+        <path android:fillColor="@color/groupHellboundPrimary"
+            android:pathData="M13,16
+                a5,5 0 0,1 10,0
+                a5,5 0 0,0 -1,3
+                a2,5 0 0,1 -1,1
+                a2,2 0 0,0 -1,2
+                h-4
+                a2,2 0 0,0 -1,-2
+                a2,5 0 0,1 -1,-1
+                a5,5 0 0,0 -1,-3z"/>
+        <path android:fillColor="@color/groupHellboundSecondary"
+            android:pathData="M14.5,17
+                a3,5 0 0,0 3,0
+                a3,5 0 0,0 -3,0z"/>
+        <path android:fillColor="@color/groupHellboundSecondary"
+            android:pathData="M18.5,17
+                a3,5 0 0,0 3,0
+                a3,5 0 0,0 -3,0z"/>
+        <path android:fillColor="@color/groupHellboundSecondary"
+            android:pathData="M17.5,19
+                l0.5,-1
+                l0.5,1z"/>
+    </group>
+    <group>
+        <path android:fillColor="@color/groupHellboundPrimary"
+            android:pathData="M17.5,20
+                v5
+                h-3
+                v4
+                h-1
+                l1.5,3
+                l1.5-3
+                h-1
+                v-3
+                h2
+                v3
+                h-1
+                l1.5,3
+                l1.5-3
+                h-1
+                v-3
+                h2
+                v3
+                h-1
+                l1.5,3
+                l1.5-3
+                h-1
+                v-4
+                h-3
+                v-5z"/>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:translateX="-8" android:translateY="2" android:scaleX="0.5" android:scaleY="0.5" android:rotation="36">
+        <group>
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="72">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="144">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="-72">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="-144">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+    </group>
+    <group android:pivotY="18" android:pivotX="18" android:translateX="8" android:translateY="2" android:scaleX="0.5" android:scaleY="0.5" android:rotation="36">
+        <group>
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="72">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="144">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="-72">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+        <group android:pivotX="18" android:pivotY="18" android:rotation="-144">
+            <path android:strokeColor="@color/groupHellboundPrimary"
+                android:strokeWidth="1"
+                android:pathData="M12,16 h12"/>
+        </group>
+    </group>
+</vector>

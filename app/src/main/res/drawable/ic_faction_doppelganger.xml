@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leviathan Cross - https://en.wikipedia.org/wiki/List_of_occult_symbols -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="36"
+    android:viewportHeight="36"
+    android:width="36dp"
+    android:height="36dp">
+    <path android:fillColor="@color/groupHellboundSecondary"
+        android:strokeColor="@color/groupHellboundPrimary"
+        android:strokeWidth="2"
+        android:pathData="M18,1
+                a17,17 0 0,0 0,34
+                a17,17 0 0,0 0,-34z"/>
+    <path android:fillColor="@color/groupHellboundPrimary"
+        android:pathData="M18,3
+                a15,15 0 0,1 0,30"/>
+    <group android:pivotY="18" android:pivotX="18" android:scaleY="1.2" android:scaleX="1.2">
+        <path android:fillColor="@color/groupHellboundSecondary"
+            android:strokeColor="@color/groupHellboundPrimary"
+            android:strokeWidth="1"
+            android:pathData="M18,28
+                a14,14 0 0,1 -7,-7
+                a14,14 0 0,1 -1,-10
+                a14,14 0 0,0 8,1"/>
+        <path android:fillColor="@color/groupHellboundPrimary"
+            android:strokeColor="@color/groupHellboundSecondary"
+            android:strokeWidth="1"
+            android:pathData="M18,28
+                a14,14 0 0,0 7,-7
+                a14,14 0 0,0 1,-10
+                a14,14 0 0,1 -8,1"/>
+        <group android:pivotX="15" android:pivotY="18" android:rotation="12">
+            <path android:fillColor="@color/groupHellboundPrimary"
+                android:pathData="M17,18
+                    a2,0.5 0 0,0 -4,0
+                    a2,2 0 0,1 4,0"/>
+        </group>
+        <path android:fillColor="@color/groupHellboundPrimary"
+            android:pathData="M18,22
+                    a10,10 0 0,1 -5,-1
+                    a10,10 0 0,0 5,3"/>
+        <group android:pivotX="21" android:pivotY="18" android:rotation="12">
+            <path android:fillColor="@color/groupHellboundSecondary"
+                android:pathData="M18.5,16.5
+                    a2,0.5 0 0,0 4,0
+                    a2,2 0 0,1 -4,0"/>
+        </group>
+
+        <path android:fillColor="@color/groupHellboundSecondary"
+            android:pathData="M18,22
+                    a10,10 0 0,1 5,3
+                    a10,10 0 0,0 -5,-1"/>
+        <path android:strokeWidth="0.25"
+            android:strokeColor="@color/groupHellboundSecondary"
+            android:pathData="M18,22
+                    l-0.5,2
+                    l-0.5,-2
+                    l-0.5,2
+                    l-0.5,-3
+                    l-0.5,2
+                    l-0.5,-2
+                    l-0.5,2
+                    l-0.5,-2"/>
+    </group>
+</vector>
