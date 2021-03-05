@@ -152,7 +152,7 @@ enum class FactionAbility(override val abilityName: Int, override val descriptio
     UNSEELIE_ABILITY(R.string.ability_unseelie_name, R.string.ability_unseelie_description, R.drawable.ic_faction_unseelie, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.unseelie_cost),
     TROLL_ABILITY(R.string.ability_troll_name, R.string.ability_troll_description, R.drawable.ic_faction_troll, R.color.groupFaePrimary, R.color.groupFaeSecondary, R.integer.troll_cost),
 
-    GREAT_OLD_ONE_ABILITY(R.string.ability_great_old_one_name, R.string.ability_great_old_one_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.great_old_one_cost),
+    GREAT_OLD_ONE_ABILITY(R.string.ability_great_old_one_name, R.string.ability_great_old_one_description, R.drawable.ic_faction_great_old_one, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.great_old_one_cost),
     ANCIENT_RACE_ABILITY(R.string.ability_ancient_race_name, R.string.ability_ancient_race_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.ancient_race_cost),
     CULTIST_ABILITY(R.string.ability_cultist_name, R.string.ability_cultist_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.cultist_cost),
     YELLOW_MASK_ABILITY(R.string.ability_yellow_mask_name, R.string.ability_yellow_mask_description, R.drawable.ic_group_old_ones, R.color.groupOldOnesPrimary, R.color.groupOldOnesSecondary, R.integer.yellow_mask_cost),
